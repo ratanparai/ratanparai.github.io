@@ -21,7 +21,13 @@ All though my first reason to setup simple **_Jekyll_** blog is to focus on writ
 **NOTE:** I was sick (Cold Fever) and having trouble concentrating while setting up this blog. So keeping this as simple as possible for the time being.
 
 ## References:
+* footnote 
+{:footnotes}
+
 
 [^1]: Jekyll is a tool for transforming your plain text into static websites and blogs. It is simple, static, and blog-aware. Jekyll uses the Liquid templating language and has builtin Markdown and Textile support. - [Jekyll](http://jekyllrb.com/)
 
 [^2]: A minimalist Jekyll theme - [The Plain](https://github.com/heiswayi/the-plain)
+
+
+{% include comment.html %}

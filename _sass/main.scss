@@ -1,3 +1,5 @@
+$content_width: 500px;
+
 body {
   font-size: 14px;
   line-height: 20px;
@@ -364,4 +366,19 @@ section {
   100% {
     -webkit-transform: none;
   }
+}
+
+input , textarea {
+  display: block;
+  width: $content_width;
+  padding: 5px;
+  margin-top: 6px;
+}
+
+button {
+  margin-top: 6px;
+}
+
+.comments>li {
+  list-style: none;
 }
