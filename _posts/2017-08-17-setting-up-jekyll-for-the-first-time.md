@@ -13,7 +13,7 @@ At first I tried vanilla Jekyll theme. It was good but not my type. Then tried *
 This website has only one page and it is my portfolio page. Anyone can visit the page by clicking my `profile picture` from home page or clicking [here](/about)
 
 All though my first reason to setup simple **_Jekyll_** blog is to focus on writing rather than focusing on useless stuffs, but my hacker mind is firing up and here is the list of task I think I should complete to make this blog useful.
-- [ ] Set up comment section
+- [X] Set up comment section
 - [ ] Show reading time for each notes
 - [ ] Setup icons matching the design for post date and 
 - [ ] Import blog posts from WordPress/Medium 
