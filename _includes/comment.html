@@ -1,0 +1,31 @@
+{% if site.data.comments[page.slug] %}
+
+  <h2>
+    {% if site.data.comments[page.slug] | size > 1 %}
+      {{ site.data.comments[page.slug].size }} Comments:
+    {% endif %}
+    
+  </h2>
+<p>
+
+  {% assign comments = site.data.comments[page.slug] | sort %}
+  <ul class="comments"> 
+  {% for comment in comments %}
+    <li><b> </> {{comment[1].name}}</b>; <i>{{comment[1].date | date: "%B %d, %Y"}}</i>; {{ comment[1].message | markdownify }}</li>
+  {% endfor %}
+  </ul>   
+{% endif %}
+
+<h3>Leave a comment:</h3>
+<form method="POST" action="https://api.staticman.net/v2/entry/ratanparai/ratanparai.github.io/master/comments">
+  <input name="options[redirect]" type="hidden" value="{{page.url | absolute_url }}">
+  <!-- e.g. "2016-01-02-this-is-a-post" -->
+  <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+  <label>Name: </label><input name="fields[name]" type="text">
+  <label>E-mail: </label><input name="fields[email]" type="email">
+  <label>Message: </label><textarea name="fields[message]"></textarea>
+  
+  <button type="submit">Submit!</button>
+</form>
+
+
