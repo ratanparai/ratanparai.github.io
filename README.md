@@ -1,21 +1,30 @@
-# The Plain v3.0
+# About me
 
-The Plain is a minimalist Jekyll theme, designed to focus on writing that really matters to you and your audience. Everything else is just a distraction. Nothing more other than useful and understandable information sharing. I have made a final update to this theme. This theme is suit best for personal blog type, but not limited to. P/S: This theme is originally inspired from Leonard Lamprecht's original [Jekyll theme](https://github.com/leo/leo.github.io) (thanks!).
+> **“Never memorize something that you can look up.”** 
+> 
+> *― Albert Einstein*
 
-[**Live Demo**](http://heiswayi.github.io/the-plain/)
+Super nerd who loves Vim and customize all of the development environment. Love to take challenge for devising a better problem-solving method while learning new technologies and tools as needed.
 
-### Screenshot
+## Work History
 
-![The Plain Screenshot](http://i.imgur.com/8ZXhjfV.png)
+| **Leads Corporation Ltd.** | *Software Engineer* | July , 2017 - PRESENT|
+| **Leads Corporation Ltd.** | *Software Engineer Intern* | May, 2017 - June, 2017|
+| **GinilabLtd.** | *Mobile App Developer* | April, 2017 - May, 2017|
 
-### Philosophy
+## Projects
+</> **Anti-Skimming**; *Prime Bank Ltd.*; ASP.NET Mvc, Microsoft SQL Server, Entity Framework, Identity Framework, OAuth 2.0, root CA SSL cert, Java, Kotlin, HTML, CSS, JavaScript
 
-> Minimalism is a masterpiece of tranquility. -- Heiswayi Nrird
+</> [**SimpleSocket**](https://github.com/ratanparai/SimpleSocket); High performance Socket server for dotnet core*; C#, dotnet core; [NuGet](https://www.nuget.org/packages/Ratan.SimpleSocket/)
 
-### License
+</> **Nisha’s Tandoori**; *Ginilab Ltd.*; *Full rework of their old android application with re-usability in mind*; Java, Android SDK; [Play Store](https://play.google.com/store/apps/details?id=com.ginilab.nishastandoori&hl=en)
 
-[MIT](LICENSE.md)
+</> [**Booker**](https://github.com/ratanparai/booke); *Social network for book lovers using Goodreads API*; Node.JS, Express.JS, Socket.IO, Redis, MongoDB, Pug
 
-### Credits
+</> [**Booker Reader**](https://github.com/ratanparai/booker-desktop); *Ebook reader to showcase autometic book reading progress submit to Booker REST Api endpoint*; C#
 
-Many thanks to this theme [contributors](https://github.com/heiswayi/the-plain/graphs/contributors) that help fixing bugs or enhance this theme source code.
+</> [**Kodi plugin for Cinehub24**](https://github.com/ratanparai/cinehub24); *Link3 Ltd.*; Stream movies & Tv Shows from Cinehub24 inside *Kodi*; Python
+
+</> [**Hostel Management System**](https://github.com/ratanparai/Hostel-Management); *Buit a simple PHP framework from scratch*; PHP, HTML, JavaScript, jQuery
+
+</> **Sleepy**; *Text Adventure Game with Simple NLP*; Prolog
