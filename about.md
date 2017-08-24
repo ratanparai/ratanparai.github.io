@@ -16,7 +16,7 @@ Super nerd who loves Vim and customize all of the development environment. Love 
 | **GinilabLtd.** | *Mobile App Developer* | April, 2017 - May, 2017|
 
 ## Projects
-<running.../>**HRMBot**; AI powered bot for HR department with Facebook and Skype integration; *C# dotnet, rasa_nlu*
+<`running`/> **HRMBot**; Leads Corporation LTD; *AI powered bot for HR department with Facebook and Skype integration*; C# dotnet, LUIS, bot framework, bot builder, rasa_nlu
 
 </> **Anti-Skimming**; *Prime Bank Ltd.*; ASP.NET Mvc, Microsoft SQL Server, Entity Framework, Identity Framework, OAuth 2.0, root CA SSL cert, Java, Kotlin, HTML, CSS, JavaScript
 
