@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Change ssh port of CentOS 7 
 date: 2017-11-08 00:32:00 +0600
 categories: Linux

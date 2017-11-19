@@ -1,31 +1,22 @@
-{% if site.data.comments[page.slug] %}
-
-  <h2>
-    {% if site.data.comments[page.slug] | size > 1 %}
-      {{ site.data.comments[page.slug].size }} Comments:
-    {% endif %}
-    
-  </h2>
-<p>
-
-  {% assign comments = site.data.comments[page.slug] | sort %}
-  <ul class="comments"> 
-  {% for comment in comments %}
-    <li><b> </> {{comment[1].name}}</b>; <i>{{comment[1].date | date: "%B %d, %Y"}}</i>; {{ comment[1].message | markdownify }}</li>
-  {% endfor %}
-  </ul>   
-{% endif %}
-
-<h3>Leave a comment:</h3>
-<form method="POST" action="https://api.staticman.net/v2/entry/ratanparai/ratanparai.github.io/master/comments">
-  <input name="options[redirect]" type="hidden" value="{{page.url | absolute_url }}">
-  <!-- e.g. "2016-01-02-this-is-a-post" -->
-  <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-  <label>Name: </label><input name="fields[name]" type="text">
-  <label>E-mail: </label><input name="fields[email]" type="email">
-  <label>Message: </label><textarea name="fields[message]"></textarea>
-  
-  <button type="submit">Submit!</button>
-</form>
-
-
+<article id="comment{{ include.index }}" class="js-comment comment" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+  <div class="comment__avatar-wrapper">
+    <img class="comment__avatar" src="https://www.gravatar.com/avatar/{{ include.email }}?d=mm&s=80" alt="{{ include.name }}">
+  </div>
+  <div class="comment__content-wrapper">
+    <h3 class="comment__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      {% unless include.url == blank %}
+        <span itemprop="name"><a rel="external nofollow" itemprop="url" href="{{ include.url }}">{{ include.name }}</a></span>
+      {% else %}
+        <span itemprop="name">{{ include.name }}</span>
+      {% endunless %}
+    </h3>
+    <p class="comment__date">
+      {% if include.date %}
+        {% if include.index %}<a href="#comment{{ include.index }}" itemprop="url">{% endif %}
+        <time datetime="{{ include.date | date_to_xmlschema }}" itemprop="datePublished">{{ include.date | date: "%B %d, %Y at %I:%M %p" }}</time>
+        {% if include.index %}</a>{% endif %}
+      {% endif %}
+    </p>
+    <div itemprop="text">{{ include.message | markdownify }}</div>
+  </div>
+</article>

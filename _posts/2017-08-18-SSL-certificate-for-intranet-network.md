@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: single
 title: SSL certificate for Intranet network
 excerpt: SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem. 
 date: 2017-08-18 12:44:00 +0600
-tags: https, intranet-ssl, ssl, openssl
+tags: https,intranet-ssl,ssl,openssl
+toc: true
 ---
 ## Setup OpenSSL
 1. Download and install OpenSSL from [here](https://slproweb.com/products/Win32OpenSSL.html). For our current task **light** version is more than enough. I have downloaded [this](https://slproweb.com/download/Win64OpenSSL_Light-1_1_0f.exe) one
@@ -78,6 +79,3 @@ You can verify certificate chain in `Windows` for debugging purpose by running
 certutil -f -urlfetch -verify myhost.crt
 ```
 Where `myhost.crt` is the server certificate
-
-
-{% include comment.html %}

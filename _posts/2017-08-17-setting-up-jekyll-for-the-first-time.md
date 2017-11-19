@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: single
 title: Setting up Jekyll for the first time
 date: 2017-08-18 00:32:00 +0600
 categories: Jekyll
 excerpt: My first experience with Jekyll and how I am stating to love it
+comments: true
 ---
 
 This is my first **Jekyll**[^1] post and I am testing this thing out. So far looking good and fantastic.
@@ -28,6 +29,3 @@ All though my first reason to setup simple **_Jekyll_** blog is to focus on writ
 [^1]: Jekyll is a tool for transforming your plain text into static websites and blogs. It is simple, static, and blog-aware. Jekyll uses the Liquid templating language and has builtin Markdown and Textile support. - [Jekyll](http://jekyllrb.com/)
 
 [^2]: A minimalist Jekyll theme - [The Plain](https://github.com/heiswayi/the-plain)
-
-
-{% include comment.html %}
