@@ -1,6 +1,3 @@
----
----
-
 var idx = lunr(function () {
   this.field('title', {boost: 10})
   this.field('excerpt')
@@ -9,48 +6,80 @@ var idx = lunr(function () {
   this.ref('id')
 });
 
-{% assign count = 0 %}
-{% for c in site.collections %}
-  {% assign docs = c.docs %}
-  {% for doc in docs %}
+
+
+  
+  
     idx.add({
-      title: {{ doc.title | jsonify }},
-      excerpt: {{ doc.excerpt | strip_html | truncatewords: 20 | jsonify }},
-      categories: {{ doc.categories | jsonify }},
-      tags: {{ doc.tags | jsonify }},
-      id: {{ count }}
+      title: "Setting up Jekyll for the first time",
+      excerpt: "My first experience with Jekyll and how I am stating to love it",
+      categories: ["Jekyll"],
+      tags: [],
+      id: 0
     });
-    {% assign count = count | plus: 1 %}
-  {% endfor %}
-{% endfor %}
+    
+  
+    idx.add({
+      title: "SSL certificate for Intranet network",
+      excerpt: "SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem....",
+      categories: [],
+      tags: ["https,intranet-ssl,ssl,openssl"],
+      id: 1
+    });
+    
+  
+    idx.add({
+      title: "Change ssh port of CentOS 7",
+      excerpt: "Change ssh port of CentOS 7",
+      categories: ["Linux"],
+      tags: [],
+      id: 2
+    });
+    
+  
+
 
 console.log( jQuery.type(idx) );
 
 var store = [
-  {% for c in site.collections %}
-    {% if forloop.last %}
-      {% assign l = true %}
-    {% endif %}
-    {% assign docs = c.docs %}
-    {% for doc in docs %}
-      {% if doc.header.teaser %}
-        {% capture teaser %}{{ doc.header.teaser }}{% endcapture %}
-      {% else %}
-        {% assign teaser = site.teaser %}
-      {% endif %}
+  
+    
+    
+    
+      
       {
-        "title": {{ doc.title | jsonify }},
-        "url": {{ doc.url | absolute_url | jsonify }},
-        "excerpt": {{ doc.content | strip_html | truncatewords: 20 | jsonify }},
+        "title": "Setting up Jekyll for the first time",
+        "url": "http://localhost:4000/jekyll/setting-up-jekyll-for-the-first-time/",
+        "excerpt": "This is my first Jekyll1 post and I am testing this thing out. So far looking good and fantastic. At...",
         "teaser":
-          {% if teaser contains "://" %}
-            {{ teaser | jsonify }}
-          {% else %}
-            {{ teaser | absolute_url | jsonify }}
-          {% endif %}
-      }{% unless forloop.last and l %},{% endunless %}
-    {% endfor %}
-  {% endfor %}]
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "SSL certificate for Intranet network",
+        "url": "http://localhost:4000/SSL-certificate-for-intranet-network/",
+        "excerpt": "Setup OpenSSL Download and install OpenSSL from here. For our current task light version is more than enough. I have...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Change ssh port of CentOS 7",
+        "url": "http://localhost:4000/linux/change-centos7-ssh-port/",
+        "excerpt": "To change SSH port of CentOS 7 please follow those steps- At first backup the default configuration file. It is...",
+        "teaser":
+          
+            null
+          
+      }
+    
+  ]
 
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
@@ -58,7 +87,7 @@ $(document).ready(function() {
     var query = $(this).val();
     var result = idx.search(query);
     resultdiv.empty();
-    resultdiv.prepend('<p>'+result.length+' {{ site.data.ui-text[site.locale].results_found | default: "Result(s) found" }}</p>');
+    resultdiv.prepend('<p>'+result.length+' Result(s) found</p>');
     for (var item in result) {
       var ref = result[item].ref;
       if(store[ref].teaser){

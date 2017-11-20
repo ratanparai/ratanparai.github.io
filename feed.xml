@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-20T09:51:42+06:00</updated><id>http://localhost:4000/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>ratanparai@gmail.com</email></author><entry><title type="html">Change ssh port of CentOS 7</title><link href="http://localhost:4000/linux/change-centos7-ssh-port/" rel="alternate" type="text/html" title="Change ssh port of CentOS 7" /><published>2017-11-08T00:32:00+06:00</published><updated>2017-11-08T00:32:00+06:00</updated><id>http://localhost:4000/linux/change-centos7-ssh-port</id><content type="html" xml:base="http://localhost:4000/linux/change-centos7-ssh-port/">&lt;p&gt;To change SSH port of CentOS 7 please follow those steps-&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;At first backup the default configuration file. It is always a best practice to backup files before modification, so that we can restore it if anything unwanted happends.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Then open the &lt;code class=&quot;highlighter-rouge&quot;&gt;sshd_config&lt;/code&gt; file -
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;and change the port number(ex. 2122) -&lt;/p&gt;
+    &lt;div class=&quot;language-config highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Port&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2122&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;By default, SELinux only allows port 22 for SSH. What you need to do is enable the newly created port through SELinux. To do that, run the commands below
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;semanage port &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; ssh_port_t &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; tcp 2122
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add the new port to the firewall to allow access
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;firewall-cmd &lt;span class=&quot;nt&quot;&gt;--permanent&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--zone&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;public &lt;span class=&quot;nt&quot;&gt;--add-port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2122/tcp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Reload the firewall configuration file -
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;firewall-cmd &lt;span class=&quot;nt&quot;&gt;--reload&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now restart SSH service
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart sshd.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now exit and try to connect to new port
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh username@192.168.10.240 &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 2022
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Enjoy&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>ratanparai@gmail.com</email></author><summary type="html">Change ssh port of CentOS 7</summary></entry><entry><title type="html">SSL certificate for Intranet network</title><link href="http://localhost:4000/SSL-certificate-for-intranet-network/" rel="alternate" type="text/html" title="SSL certificate for Intranet network" /><published>2017-08-18T12:44:00+06:00</published><updated>2017-08-18T12:44:00+06:00</updated><id>http://localhost:4000/SSL-certificate-for-intranet-network</id><content type="html" xml:base="http://localhost:4000/SSL-certificate-for-intranet-network/">&lt;h2 id=&quot;setup-openssl&quot;&gt;Setup OpenSSL&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Download and install OpenSSL from &lt;a href=&quot;https://slproweb.com/products/Win32OpenSSL.html&quot;&gt;here&lt;/a&gt;. For our current task &lt;strong&gt;light&lt;/strong&gt; version is more than enough. I have downloaded &lt;a href=&quot;https://slproweb.com/download/Win64OpenSSL_Light-1_1_0f.exe&quot;&gt;this&lt;/a&gt; one&lt;/li&gt;
+  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\OpenSSL-Win64\bin&lt;/code&gt; to your environment variable &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;If you face &lt;strong&gt;no configuration error&lt;/strong&gt; when running OpenSSL, then you need to add a new &lt;strong&gt;Environment variable&lt;/strong&gt;: &lt;em&gt;&lt;strong&gt;Variable Name&lt;/strong&gt;&lt;/em&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;OPENSSL_CONF&lt;/code&gt; and &lt;em&gt;&lt;strong&gt;Variable Value&lt;/strong&gt;&lt;/em&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\OpenSSL-Win64\bin\openssl.cfg&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;generate-self-signed-root-ca&quot;&gt;Generate self signed root CA&lt;/h1&gt;
+&lt;h3 id=&quot;generate-root-ca-key&quot;&gt;Generate Root CA Key&lt;/h3&gt;
+&lt;p&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;cmd&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; to the directory you want to save the certificates &lt;em&gt;&lt;strong&gt;or&lt;/strong&gt;&lt;/em&gt; from the &lt;strong&gt;folder&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;SHITF&lt;/code&gt;+&lt;code class=&quot;highlighter-rouge&quot;&gt;RMB&lt;/code&gt; and select &lt;code class=&quot;highlighter-rouge&quot;&gt;Open Powershell Windows here&lt;/code&gt;. then type -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl genrsa &lt;span class=&quot;nt&quot;&gt;-des3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myrootca.key 2048
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;and press &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;. Type a new &lt;strong&gt;Password&lt;/strong&gt; to protect the key file&lt;/p&gt;
+
+&lt;h3 id=&quot;request-for-certificate&quot;&gt;Request for certificate&lt;/h3&gt;
+&lt;p&gt;Then create a certificate request using the root CA key file&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-new&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-key&lt;/span&gt; myrootca.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myrootca.req
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;When asked enter the &lt;strong&gt;Certificate Authority&lt;/strong&gt; information that will be shown as &lt;strong&gt;Authority&lt;/strong&gt; that verified the issued certificate.&lt;/p&gt;
+
+&lt;h3 id=&quot;self-signed-the-requested-certificate&quot;&gt;Self signed the requested certificate&lt;/h3&gt;
+&lt;p&gt;To self sign the request certificate run -&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl x509 &lt;span class=&quot;nt&quot;&gt;-req&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-days&lt;/span&gt; 7305 &lt;span class=&quot;nt&quot;&gt;-extensions&lt;/span&gt; v3_ca &lt;span class=&quot;nt&quot;&gt;-signkey&lt;/span&gt; myrootca.key &lt;span class=&quot;nt&quot;&gt;-in&lt;/span&gt; myrootca.req &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myrootca.crt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;you need to install the &lt;code class=&quot;highlighter-rouge&quot;&gt;.crt&lt;/code&gt; file to all of the &lt;strong&gt;computer&lt;/strong&gt; that you want to use varify your issued certificates. When importing &lt;code class=&quot;highlighter-rouge&quot;&gt;.crt&lt;/code&gt; certificate make sure you select &lt;code class=&quot;highlighter-rouge&quot;&gt;Place all certificates in the following store&lt;/code&gt; and browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;Trusted root certification authorities&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;issue-certificate-as-a-ca&quot;&gt;Issue Certificate as a CA&lt;/h2&gt;
+&lt;p&gt;We have created our own Certificate Authority in the previous step. Now its time to issue certificate.&lt;/p&gt;
+
+&lt;h3 id=&quot;generate-server-key&quot;&gt;Generate Server Key&lt;/h3&gt;
+&lt;p&gt;At first we need to create server key.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl genrsa &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myhost.key 2048
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;request-for-certificate-1&quot;&gt;Request for certificate&lt;/h3&gt;
+&lt;p&gt;Fill the information for the Server. When asked for &lt;code class=&quot;highlighter-rouge&quot;&gt;CA&lt;/code&gt;, give your web server’s &lt;code class=&quot;highlighter-rouge&quot;&gt;IP address&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;domain&lt;/code&gt; name&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-new&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-key&lt;/span&gt; myhost.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myhost.req
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;issue-the-certificate&quot;&gt;Issue the Certificate&lt;/h3&gt;
+&lt;p&gt;Create a new file and name it &lt;code class=&quot;highlighter-rouge&quot;&gt;v3.ext&lt;/code&gt; in the working directory with the contents. Change the &lt;code class=&quot;highlighter-rouge&quot;&gt;[alt_names]&lt;/code&gt; portion as needed.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-ext&quot;&gt;authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = localhost
+IP.2 = 192.168.10.240
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;after making required changes to the &lt;code class=&quot;highlighter-rouge&quot;&gt;v3.ext&lt;/code&gt; file run the command bellow in &lt;code class=&quot;highlighter-rouge&quot;&gt;cmd&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl x509 &lt;span class=&quot;nt&quot;&gt;-req&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-days&lt;/span&gt; 3650 &lt;span class=&quot;nt&quot;&gt;-CA&lt;/span&gt; myrootca.crt &lt;span class=&quot;nt&quot;&gt;-CAkey&lt;/span&gt; myrootca.key &lt;span class=&quot;nt&quot;&gt;-CAcreateserial&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sha256&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-extfile&lt;/span&gt; v3.ext &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myhost.crt &lt;span class=&quot;nt&quot;&gt;-in&lt;/span&gt; myhost.req
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;generate-pfx-file-for-iis-server&quot;&gt;Generate &lt;code class=&quot;highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file for &lt;code class=&quot;highlighter-rouge&quot;&gt;IIS&lt;/code&gt; Server&lt;/h2&gt;
+&lt;p&gt;To use the server certificate with &lt;code class=&quot;highlighter-rouge&quot;&gt;IIS&lt;/code&gt; server we need &lt;code class=&quot;highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file. To generate &lt;code class=&quot;highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file we need to run-&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl pkcs12 -export -out myhost.pfx -inkey myhost.key -in myhost.crt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;verify-certificate-chain&quot;&gt;*Verify Certificate Chain&lt;/h3&gt;
+&lt;p&gt;You can verify certificate chain in &lt;code class=&quot;highlighter-rouge&quot;&gt;Windows&lt;/code&gt; for debugging purpose by running&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;certutil -f -urlfetch -verify myhost.crt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Where &lt;code class=&quot;highlighter-rouge&quot;&gt;myhost.crt&lt;/code&gt; is the server certificate&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>ratanparai@gmail.com</email></author><category term="https,intranet-ssl,ssl,openssl" /><summary type="html">SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem.</summary></entry><entry><title type="html">Setting up Jekyll for the first time</title><link href="http://localhost:4000/jekyll/setting-up-jekyll-for-the-first-time/" rel="alternate" type="text/html" title="Setting up Jekyll for the first time" /><published>2017-08-18T00:32:00+06:00</published><updated>2017-08-18T00:32:00+06:00</updated><id>http://localhost:4000/jekyll/setting-up-jekyll-for-the-first-time</id><content type="html" xml:base="http://localhost:4000/jekyll/setting-up-jekyll-for-the-first-time/">&lt;p&gt;This is my first &lt;strong&gt;Jekyll&lt;/strong&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; post and I am testing this thing out. So far looking good and fantastic.&lt;/p&gt;
+
+&lt;p&gt;At first I tried vanilla Jekyll theme. It was good but not my type. Then tried &lt;strong&gt;The Plain&lt;/strong&gt;&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Jekyll theme. It is what I was thinking of but also not perfect for me. So I am going to use this theme as a base and develop my own from it as I see fit.&lt;/p&gt;
+
+&lt;p&gt;This website has only one page and it is my portfolio page. Anyone can visit the page by clicking my &lt;code class=&quot;highlighter-rouge&quot;&gt;profile picture&lt;/code&gt; from home page or clicking &lt;a href=&quot;/about&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;All though my first reason to setup simple &lt;strong&gt;&lt;em&gt;Jekyll&lt;/em&gt;&lt;/strong&gt; blog is to focus on writing rather than focusing on useless stuffs, but my hacker mind is firing up and here is the list of task I think I should complete to make this blog useful.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;[X] Set up comment section&lt;/li&gt;
+  &lt;li&gt;[ ] Show reading time for each notes&lt;/li&gt;
+  &lt;li&gt;[ ] Setup icons matching the design for post date and&lt;/li&gt;
+  &lt;li&gt;[ ] Import blog posts from WordPress/Medium&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; I was sick (Cold Fever) and having trouble concentrating while setting up this blog. So keeping this as simple as possible for the time being.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References:&lt;/h2&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Jekyll is a tool for transforming your plain text into static websites and blogs. It is simple, static, and blog-aware. Jekyll uses the Liquid templating language and has builtin Markdown and Textile support. - &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;A minimalist Jekyll theme - &lt;a href=&quot;https://github.com/heiswayi/the-plain&quot;&gt;The Plain&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Ratan Sunder Parai</name><email>ratanparai@gmail.com</email></author><summary type="html">My first experience with Jekyll and how I am stating to love it</summary></entry></feed>
