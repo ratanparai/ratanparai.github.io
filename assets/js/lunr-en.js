@@ -23,7 +23,7 @@ var idx = lunr(function () {
       title: "SSL certificate for Intranet network",
       excerpt: "SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem....",
       categories: [],
-      tags: ["https,intranet-ssl,ssl,openssl"],
+      tags: ["https","intranet-ssl","ssl","openssl"],
       id: 1
     });
     
@@ -32,7 +32,7 @@ var idx = lunr(function () {
       title: "Change ssh port of CentOS 7",
       excerpt: "Change ssh port of CentOS 7",
       categories: ["Linux"],
-      tags: [],
+      tags: ["CentOS 7","SSH"],
       id: 2
     });
     
