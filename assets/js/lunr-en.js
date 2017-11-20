@@ -49,7 +49,7 @@ var store = [
       
       {
         "title": "Setting up Jekyll for the first time",
-        "url": "http://localhost:4000/jekyll/setting-up-jekyll-for-the-first-time/",
+        "url": "https://ratanparai.github.io/jekyll/setting-up-jekyll-for-the-first-time/",
         "excerpt": "This is my first Jekyll1 post and I am testing this thing out. So far looking good and fantastic. At...",
         "teaser":
           
@@ -60,7 +60,7 @@ var store = [
       
       {
         "title": "SSL certificate for Intranet network",
-        "url": "http://localhost:4000/SSL-certificate-for-intranet-network/",
+        "url": "https://ratanparai.github.io/SSL-certificate-for-intranet-network/",
         "excerpt": "Setup OpenSSL Download and install OpenSSL from here. For our current task light version is more than enough. I have...",
         "teaser":
           
@@ -71,7 +71,7 @@ var store = [
       
       {
         "title": "Change ssh port of CentOS 7",
-        "url": "http://localhost:4000/linux/change-centos7-ssh-port/",
+        "url": "https://ratanparai.github.io/linux/change-centos7-ssh-port/",
         "excerpt": "To change SSH port of CentOS 7 please follow those steps- At first backup the default configuration file. It is...",
         "teaser":
           
