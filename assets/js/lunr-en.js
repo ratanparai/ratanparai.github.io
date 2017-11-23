@@ -37,6 +37,15 @@ var idx = lunr(function () {
     });
     
   
+    idx.add({
+      title: "Responsive image on jekyll",
+      excerpt: "Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image...",
+      categories: ["Jekyll"],
+      tags: ["responsive image","jekyll plugin","lazysizes"],
+      id: 3
+    });
+    
+  
 
 
 console.log( jQuery.type(idx) );
@@ -73,6 +82,17 @@ var store = [
         "title": "Change ssh port of CentOS 7",
         "url": "https://www.ratanparai.com/linux/change-centos7-ssh-port/",
         "excerpt": "To change SSH port of CentOS 7 please follow those steps- At first backup the default configuration file. It is...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Responsive image on jekyll",
+        "url": "https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/",
+        "excerpt": "Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image...",
         "teaser":
           
             null

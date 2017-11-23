@@ -1,4 +1,165 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2017-11-20T15:51:15+00:00</updated><id>https://www.ratanparai.com/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>ratanparai@gmail.com</email></author><entry><title type="html">Change ssh port of CentOS 7</title><link href="https://www.ratanparai.com/linux/change-centos7-ssh-port/" rel="alternate" type="text/html" title="Change ssh port of CentOS 7" /><published>2017-11-07T18:32:00+00:00</published><updated>2017-11-07T18:32:00+00:00</updated><id>https://www.ratanparai.com/linux/change-centos7-ssh-port</id><content type="html" xml:base="https://www.ratanparai.com/linux/change-centos7-ssh-port/">&lt;p&gt;To change SSH port of CentOS 7 please follow those steps-&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2017-11-23T20:43:33+00:00</updated><id>https://www.ratanparai.com/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>ratanparai@gmail.com</email></author><entry><title type="html">Responsive image on jekyll</title><link href="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/" rel="alternate" type="text/html" title="Responsive image on jekyll" /><published>2017-11-23T19:32:00+00:00</published><updated>2017-11-23T19:32:00+00:00</updated><id>https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll</id><content type="html" xml:base="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/">&lt;p&gt;Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image in every screen size is not optimal. Also showing a low quality blur version of the image while the real image is loading also improve the readability.&lt;/p&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;h3 id=&quot;jekyll-responsive-image-plugin&quot;&gt;jekyll-responsive-image plugin&lt;/h3&gt;
+&lt;p&gt;First, add -&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'jekyll-responsive-image'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to your &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then add it to the &lt;code class=&quot;highlighter-rouge&quot;&gt;plugins&lt;/code&gt; section of your &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;plugins:
+  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;paginate&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sitemap&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gist&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jemoji&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;archives&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;responsive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Last, install the plugin by running&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; If there is an error while installing the plugin plese run &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install libmagickwand-dev&lt;/code&gt; to install required library and try again.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuration&quot;&gt;Configuration&lt;/h2&gt;
+&lt;h3 id=&quot;_configyml-file&quot;&gt;_config.yml file&lt;/h3&gt;
+&lt;p&gt;Add those lines to the end of your &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file-&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Responsive images&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;responsive_image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# [Required]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Path to the image template.&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_includes/responsive-image.html&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# [Optional, Default: 85]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Quality to use when resizing images.&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;default_quality&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;90&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# [Optional, Default: []]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# An array of resize configuration objects. Each object must contain at least&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# a `width` value.&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;sizes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# lq&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;quality&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;10&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;480&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# [Required] How wide the resized image will be.&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;quality&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# [Optional] Overrides default_quality for this size.&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;800&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1400&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;quality&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;90&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# [Optional, Default: false]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Rotate resized images depending on their EXIF rotation attribute. Useful for&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# working with JPGs directly from digital cameras and smartphones&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;auto_rotate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# [Optional, Default: assets]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# The base directory where assets are stored. This is used to determine the&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# `dirname` value in `output_path_format` below.&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;base_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/images&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# The template used when generating filenames for resized images. Must be a&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# relative path.&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Parameters available are:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#   %{dirname}     Directory of the file relative to `base_path` (assets/sub/dir/some-file.jpg =&amp;gt; sub/dir)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#   %{basename}    Basename of the file (assets/some-file.jpg =&amp;gt; some-file.jpg)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#   %{filename}    Basename without the extension (assets/some-file.jpg =&amp;gt; some-file)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#   %{extension}   Extension of the file (assets/some-file.jpg =&amp;gt; jpg)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#   %{width}       Width of the resized image&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#   %{height}      Height of the resized image&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;output_path_format&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/images/resized/%{width}/%{basename}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# [Optional, Default: true]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Whether or not to save the generated assets into the source folder.&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;save_to_source&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# [Optional, Default: false]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Cache the result of {% responsive_image %} and {% responsive_image_block %} &lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# tags. See the &quot;Caching&quot; section of the README for more information.&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;#/ [Optional, Default: []]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# By default, only images referenced by the responsive_image and responsive_image_block&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# tags are resized. Here you can set a list of paths or path globs to resize other&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# images. This is useful for resizing images which will be referenced from stylesheets.&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;extra_images&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/foo/bar.png&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/bgs/*.png&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/avatars/*.{jpeg,jpg}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;create-image-template&quot;&gt;Create image template&lt;/h3&gt;
+&lt;p&gt;Now create a &lt;code class=&quot;highlighter-rouge&quot;&gt;responsive-image.html&lt;/code&gt; template file and paste the contents there-&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% capture srcset %}
+{% for i in resized %}
+    /{{ i.path }} {{ i.width }}w,
+{% endfor %}
+{% endcapture %}
+
+{% assign smallest = resized | sort: 'width' | first %}
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100%&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/{{ smallest.path }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ alt }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-srcset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ srcset | strip_newlines }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;blur-up lazyautosizes lazyload&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;add-lazysizes&quot;&gt;Add lazysizes&lt;/h3&gt;
+&lt;p&gt;You need to add lazysizes js file to your website. To do this, download the &lt;code class=&quot;highlighter-rouge&quot;&gt;min&lt;/code&gt; version from &lt;a href=&quot;https://github.com/aFarkas/lazysizes&quot;&gt;here&lt;/a&gt; and put it to your &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/js&lt;/code&gt; folder and add those line to your &lt;code class=&quot;highlighter-rouge&quot;&gt;script&lt;/code&gt; section depending on your theme.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ '/assets/js/lazysizes.min.js'| absolute_url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; I am using &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minimal mistake&lt;/code&gt;&lt;/a&gt; theme. So I added the &lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt; file in &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&amp;gt;scripts.html&lt;/code&gt; after the &lt;code class=&quot;highlighter-rouge&quot;&gt;main.min.js&lt;/code&gt; include code&lt;/p&gt;
+
+&lt;h3 id=&quot;css-modification&quot;&gt;CSS modification&lt;/h3&gt;
+&lt;p&gt;Now add those line to your css file for blur effect for smoth image pixel&lt;/p&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.no-js&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.lazyload&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.blur-up&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;blur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.blur-up.lazyloaded&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;blur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.fade-in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opacity&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.fade-in.lazyloaded&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;how-to-use&quot;&gt;How to use&lt;/h2&gt;
+&lt;p&gt;To insert image in a post use&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {% responsive_image path: assets/images/Rio.jpg %} 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;where  &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/images/Rio.jpg&lt;/code&gt; is your image path. This will take care of everything. Now you can enjoy responsive image in your blog.&lt;/p&gt;
+
+&lt;h2 id=&quot;testing&quot;&gt;Testing&lt;/h2&gt;
+&lt;p&gt;Here is a normal image-
+&lt;img src=&quot;/assets/images/Rio.jpg&quot; alt=&quot;rio&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;and here is a responsive image with lazy loading enabled&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/Rio.jpg&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/Rio.jpg 20w,    /assets/images/resized/480/Rio.jpg 480w,    /assets/images/resized/800/Rio.jpg 800w,    /assets/images/resized/1400/Rio.jpg 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>ratanparai@gmail.com</email></author><category term="responsive image" /><category term="jekyll plugin" /><category term="lazysizes" /><summary type="html">Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image in every screen size is not optimal. Also showing a low quality blur version of the image while the real image is loading also improve the readability. Installation jekyll-responsive-image plugin First, add -</summary></entry><entry><title type="html">Change ssh port of CentOS 7</title><link href="https://www.ratanparai.com/linux/change-centos7-ssh-port/" rel="alternate" type="text/html" title="Change ssh port of CentOS 7" /><published>2017-11-07T18:32:00+00:00</published><updated>2017-11-07T18:32:00+00:00</updated><id>https://www.ratanparai.com/linux/change-centos7-ssh-port</id><content type="html" xml:base="https://www.ratanparai.com/linux/change-centos7-ssh-port/">&lt;p&gt;To change SSH port of CentOS 7 please follow those steps-&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;At first backup the default configuration file. It is always a best practice to backup files before modification, so that we can restore it if anything unwanted happends.
