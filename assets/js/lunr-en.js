@@ -46,6 +46,15 @@ var idx = lunr(function () {
     });
     
   
+    idx.add({
+      title: "Java application with code coverage report using gradle",
+      excerpt: "Although we can use IDE for creating new java projects, if we use a build tool like `gradle` and create...",
+      categories: ["Java"],
+      tags: ["gradle","junit","code coverage","jacoco","unit test"],
+      id: 4
+    });
+    
+  
 
 
 console.log( jQuery.type(idx) );
@@ -93,6 +102,17 @@ var store = [
         "title": "Responsive image on jekyll",
         "url": "https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/",
         "excerpt": "Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Java application with code coverage report using gradle",
+        "url": "https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/",
+        "excerpt": "Although we can use IDE for creating new java projects, if we use a build tool like gradle and create...",
         "teaser":
           
             null

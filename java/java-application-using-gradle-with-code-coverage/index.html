@@ -1,0 +1,825 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.7.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Java application with code coverage report using gradle - Ratan Parai</title>
+
+
+
+
+<meta name="description" content="Although we can use IDE for creating new java projects, if we use a build tool like gradle and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.">
+
+
+
+
+<meta name="author" content="Ratan Sunder Parai">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Ratan Parai">
+<meta property="og:title" content="Java application with code coverage report using gradle">
+
+
+  <link rel="canonical" href="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/">
+  <meta property="og:url" content="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/">
+
+
+
+  <meta property="og:description" content="Although we can use IDE for creating new java projects, if we use a build tool like gradle and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="twitter:site" content="@ratanparai">
+  <meta name="twitter:title" content="Java application with code coverage report using gradle">
+  <meta name="twitter:description" content="Although we can use IDE for creating new java projects, if we use a build tool like gradle and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.">
+  <meta name="twitter:url" content="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Ratan Sunder Parai">
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2017-12-13T06:13:00+00:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ratan Sunder Parai",
+      "url" : "https://www.ratanparai.com",
+      "sameAs" : ["https://twitter.com/ratanparai","https://facebook.com/ratanparai","https://instagram.com/ratanparai","https://www.linkedin.com/in/ratanparai","https://plus.google.com/u/0/+RatanParai"]
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://www.ratanparai.com/feed.xml" type="application/atom+xml" rel="alternate" title="Ratan Parai Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://www.ratanparai.com/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+<script id="dsq-count-scr" src="//ratanparai.disqus.com/count.js" async></script>
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://www.ratanparai.com/">Ratan Parai</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://www.ratanparai.com/">Home</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://www.ratanparai.com/search/">Search</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://www.ratanparai.com/about/">About</a></li>
+          
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://www.ratanparai.com/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">></span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://www.ratanparai.com/categories/java" itemprop="item"><span itemprop="name">Java</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        <li class="current">Java application with code coverage report using gradle</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://www.ratanparai.com/assets/images/bio-photo.jpg" class="author__avatar" alt="Ratan Sunder Parai" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Ratan Sunder Parai</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Trying to find my way in the amazing unknown world with so much to unlock.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Dhaka, Bangladesh</span>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:contact@ratanparai.com">
+            <meta itemprop="email" content="contact@ratanparai.com" />
+            <i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/ratanparai" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/ratanparai" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/ratanparai" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ratanparai" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/1055383/ratan-parai" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stack Overflow
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://last.fm/user/shampad" itemprop="sameAs">
+            <i class="fa fa-fw fa-lastfm-square" aria-hidden="true"></i> Last.fm
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Java application with code coverage report using gradle">
+    <meta itemprop="description" content="Although we can use IDE for creating new java projects, if we use a build tool like gradle and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.">
+    <meta itemprop="datePublished" content="December 13, 2017">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Java application with code coverage report using gradle
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#create-new-application">Create new application</a></li>
+  <li><a href="#gradle-tasks">Gradle tasks</a></li>
+  <li><a href="#code-coverage-metric">Code Coverage metric</a></li>
+  <li><a href="#references">References:</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>Although we can use IDE for creating new java projects, if we use a build tool like <code class="highlighter-rouge">gradle</code> and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.</p>
+<h2 id="create-new-application">Create new application</h2>
+
+<p>Create new <code class="highlighter-rouge">java-application</code> type <code class="highlighter-rouge">Java</code> project using <code class="highlighter-rouge">gradle</code> -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gradle init <span class="nt">--type</span> java-application
+</code></pre></div></div>
+
+<p class="notice--danger"><strong>Please note:</strong> The Build Init plugin is currently <a href="https://docs.gradle.org/current/userguide/feature_lifecycle.html">incubating</a>. Please be aware that the DSL and other configuration may change in later Gradle versions. To know more about gradle supported java projects read <a href="https://docs.gradle.org/current/userguide/build_init_plugin.html">Gradle Build Init plugin</a> documentation.</p>
+
+<p>This command create a <code class="highlighter-rouge">gradle.build</code> file with the contents</p>
+
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ * This build file was generated by the Gradle 'init' task.
+ *
+ * This generated file contains a sample Java project to get you started.
+ * For more details take a look at the Java Quickstart chapter in the Gradle
+ * user guide available at https://docs.gradle.org/4.2.1/userguide/tutorial_java_projects.html
+ */</span>
+
+<span class="c1">// Apply the java plugin to add support for Java</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'java'</span>
+
+<span class="c1">// Apply the application plugin to add support for building an application</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'application'</span>
+
+<span class="c1">// In this section you declare where to find the dependencies of your project</span>
+<span class="k">repositories</span> <span class="o">{</span>
+    <span class="c1">// Use jcenter for resolving your dependencies.</span>
+    <span class="c1">// You can declare any Maven/Ivy/file repository here.</span>
+    <span class="n">jcenter</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="k">dependencies</span> <span class="o">{</span>
+    <span class="c1">// This dependency is found on compile classpath of this component and consumers.</span>
+    <span class="n">compile</span> <span class="s1">'com.google.guava:guava:22.0'</span>
+
+    <span class="c1">// Use JUnit test framework</span>
+    <span class="n">testCompile</span> <span class="s1">'junit:junit:4.12'</span>
+<span class="o">}</span>
+
+<span class="c1">// Define the main class for the application</span>
+<span class="n">mainClassName</span> <span class="o">=</span> <span class="s1">'App'</span>
+</code></pre></div></div>
+
+<h2 id="gradle-tasks">Gradle tasks</h2>
+
+<p>To check all tasks of the project run -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gradle task <span class="nt">--all</span>
+</code></pre></div></div>
+
+<p>You will see list of tasks available for the project and short description about what the task is about. If you want to run any of the task then just run</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gradle &lt;task name&gt;
+</code></pre></div></div>
+
+<p>where <code class="highlighter-rouge">&lt;task name&gt;</code> is the task from the previous command. For example If you run -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gradle build
+</code></pre></div></div>
+
+<p>then the <code class="highlighter-rouge">distribution</code>(<strong>compressed executable</strong>) file will be found in  <code class="highlighter-rouge">buld&gt;distributions</code> folder. There is <code class="highlighter-rouge">tar</code> and <code class="highlighter-rouge">zip</code> archive. You can extract and use either of them.</p>
+
+<p>You can create new custom tasks or add plugin that have prebuilt task that you can use.</p>
+
+<h2 id="code-coverage-metric">Code Coverage metric</h2>
+
+<p>Code coverage is one of the most important metric for any project. From <a href="https://en.wikipedia.org/wiki/Code_coverage">Wikipedia</a> -</p>
+
+<blockquote>
+  <p>In computer science, test coverage is a measure used to describe the degree to which the source code of a program is executed when a particular test suite runs. A program with high test coverage, measured as a percentage, has had more of its source code executed during testing which suggests it has a lower chance of containing undetected software bugs compared to a program with low test coverage.</p>
+</blockquote>
+
+<p>We are going to use <code class="highlighter-rouge">JaCoCo</code><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> for test coverage. At first we need to add <code class="highlighter-rouge">JaCoCo</code> as <code class="highlighter-rouge">dependencies</code> -</p>
+
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="c1">// Apply the jacoco plugin to add support for test coverage</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'jacoco'</span>
+<span class="o">...</span>
+</code></pre></div></div>
+
+<p>Now if we run -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gradle task <span class="nt">--all</span>
+</code></pre></div></div>
+
+<p>we will see that there is two new task available under <code class="highlighter-rouge">Verification tasks</code></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">Verification tasks
+------------------
+</span>check - Runs all checks.
+jacocoTestCoverageVerification - Verifies code coverage metrics based on specified rules for the test task.
+jacocoTestReport - Generates code coverage report for the test task.
+test - Runs the unit tests.
+</code></pre></div></div>
+
+<p>now we can <code class="highlighter-rouge">create code coverage</code> report by running -</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gradle jacocoTestReport
+</code></pre></div></div>
+
+<p>but I want to create <strong>code coverage report</strong> when I run <code class="highlighter-rouge">gradle test</code> command which run all <code class="highlighter-rouge">tests</code> for the project. To do so edit your <code class="highlighter-rouge">gradle.build</code> file -</p>
+
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<span class="c1">// create test coverage every time the test task is performed</span>
+<span class="n">test</span><span class="o">.</span><span class="na">finalizedBy</span> <span class="n">jacocoTestReport</span>
+
+</code></pre></div></div>
+
+<p>Now run <code class="highlighter-rouge">gradle build</code> or <code class="highlighter-rouge">gradle test</code> to generate the <strong>Code Coverage Report</strong>. The <strong>Code Coverage Report</strong> can be found in <strong>build&gt;reports&gt;jacoco&gt;test&gt;html</strong>. Open the <code class="highlighter-rouge">index.html</code> file here to view the <strong>Coverage Report</strong></p>
+
+<p><img width="100%" src="/assets/images/resized/20/jacocoReport.jpg" alt="" data-srcset="    /assets/images/resized/20/jacocoReport.jpg 20w,    /assets/images/resized/480/jacocoReport.jpg 480w,    /assets/images/resized/800/jacocoReport.jpg 800w," class="blur-up lazyautosizes lazyload " /></p>
+
+<p class="notice--danger"><strong>Please Note:</strong> We can use <code class="highlighter-rouge">JaCoCo</code> to generate <code class="highlighter-rouge">Code Coverage Report</code> for <strong>Continuous Code Quality</strong> tools like <strong>SonarQube</strong><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>. I will discuss about it in future articles.</p>
+
+<h2 id="references">References:</h2>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://www.eclemma.org/jacoco/">JaCoCo</a> is a free code coverage library for Java, which has been created by the EclEmma team based on the lessons learned from using and integration existing libraries for many years. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="https://www.sonarqube.org/">SonarQube</a> - <code class="highlighter-rouge">SonarQube</code> is an open source platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells and security vulnerabilities on 20+ Programming languages. SonarQube offers reports on duplicated code, coding standards, unit tests, code coverage, code complexity, comments, bugs, and security vulnerabilities. SonarQube can record metrics history and provides evolution graphs. SonarQube’s greatest asset is that it provides fully automated analysis and integration with Maven, Ant, Gradle, MSBuild and continuous integration tools. SonarQube also integrates with Eclipse, Visual Studio and IntelliJ IDEA development environments through the SonarLint plugins and integrates with external tools like LDAP, Active Directory, GitHub, etc. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://www.ratanparai.com/tags/code-coverage" class="page__taxonomy-item" rel="tag">code coverage</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.ratanparai.com/tags/gradle" class="page__taxonomy-item" rel="tag">gradle</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.ratanparai.com/tags/jacoco" class="page__taxonomy-item" rel="tag">jacoco</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.ratanparai.com/tags/junit" class="page__taxonomy-item" rel="tag">junit</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.ratanparai.com/tags/unit-test" class="page__taxonomy-item" rel="tag">unit test</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://www.ratanparai.com/categories/java" class="page__taxonomy-item" rel="tag">Java</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-12-13T06:13:00+00:00">December 13, 2017</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/" class="pagination--pager" title="Responsive image on jekyll
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a Comment</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/" rel="permalink">Responsive image on jekyll
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+        <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/#disqus_thread">~</a>
+      </p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image in every screen size is not optima...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.ratanparai.com/linux/change-centos7-ssh-port/" rel="permalink">Change ssh port of CentOS 7
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+        <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="https://www.ratanparai.com/linux/change-centos7-ssh-port/#disqus_thread">~</a>
+      </p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Change ssh port of CentOS 7
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.ratanparai.com/SSL-certificate-for-intranet-network/" rel="permalink">SSL certificate for Intranet network
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+        <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="https://www.ratanparai.com/SSL-certificate-for-intranet-network/#disqus_thread">~</a>
+      </p>
+    
+    <p class="archive__item-excerpt" itemprop="description">SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem.
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time/" rel="permalink">Setting up Jekyll for the first time
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+        <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time/#disqus_thread">~</a>
+      </p>
+    
+    <p class="archive__item-excerpt" itemprop="description">My first experience with Jekyll and how I am stating to love it
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/ratanparai"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+      <li><a href="https://github.com/ratanparai"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://www.ratanparai.com/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Ratan Sunder Parai.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://www.ratanparai.com/assets/js/main.min.js"></script>
+  <script src="https://www.ratanparai.com/assets/js/lazysizes.min.js"></script>
+
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104767835-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/java/java-application-using-gradle-with-code-coverage"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ratanparai.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>
