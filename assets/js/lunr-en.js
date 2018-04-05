@@ -55,6 +55,15 @@ var idx = lunr(function () {
     });
     
   
+    idx.add({
+      title: "Compile TaskWarrior in Ubuntu",
+      excerpt: "Although you can install `TaskWarrior` from `Ubuntu` package manager, but it doesn't have latest version. So you have to download...",
+      categories: ["Taskwarrior"],
+      tags: ["Ubuntu"],
+      id: 5
+    });
+    
+  
 
 
 console.log( jQuery.type(idx) );
@@ -113,6 +122,17 @@ var store = [
         "title": "Java application with code coverage report using gradle",
         "url": "https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/",
         "excerpt": "Although we can use IDE for creating new java projects, if we use a build tool like gradle and create...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Compile TaskWarrior in Ubuntu",
+        "url": "https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/",
+        "excerpt": "Taskwarrior is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast,...",
         "teaser":
           
             null

@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2018-01-03T08:40:11+00:00</updated><id>https://www.ratanparai.com/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Java application with code coverage report using gradle</title><link href="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/" rel="alternate" type="text/html" title="Java application with code coverage report using gradle" /><published>2017-12-13T06:13:00+00:00</published><updated>2017-12-13T06:13:00+00:00</updated><id>https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage</id><content type="html" xml:base="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/">&lt;p&gt;Although we can use IDE for creating new java projects, if we use a build tool like &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle&lt;/code&gt; and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2018-04-05T16:05:58+00:00</updated><id>https://www.ratanparai.com/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Compile TaskWarrior in Ubuntu</title><link href="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/" rel="alternate" type="text/html" title="Compile TaskWarrior in Ubuntu" /><published>2018-04-05T15:50:00+00:00</published><updated>2018-04-05T15:50:00+00:00</updated><id>https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu</id><content type="html" xml:base="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/">&lt;p&gt;&lt;a href=&quot;https://taskwarrior.org/&quot;&gt;Taskwarrior&lt;/a&gt; is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast, and unobtrusive. It does its job then gets out of your way.&lt;/p&gt;
+
+&lt;p&gt;Although you can install &lt;code class=&quot;highlighter-rouge&quot;&gt;TaskWarrior&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Ubuntu&lt;/code&gt; package manager, but it doesn’t have latest version. So to get the latest version of &lt;code class=&quot;highlighter-rouge&quot;&gt;TaskWarrior&lt;/code&gt;, you have to download source code and compile it.&lt;/p&gt;
+
+&lt;p&gt;Install required package in ubuntu&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; build-essential cmake git uuid-dev libgnutls28-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;download taskwarrior archive&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;url_of_latest_task-x.x.x.tar.gz]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After installing required packages run those following command to build and install taskwarrior on your machine&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;task-x.x.x.tar.gz
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xzvf task-x.x.x.tar.gz
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;task-x.x.x
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cmake &lt;span class=&quot;nt&quot;&gt;-DCMAKE_BUILD_TYPE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;release &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+...
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;make
+...
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Change the &lt;code class=&quot;highlighter-rouge&quot;&gt;x's&lt;/code&gt; with the correct version number from the &lt;a href=&quot;https://taskwarrior.org/download/&quot;&gt;TaskWarrior Download&lt;/a&gt; page.&lt;/p&gt;
+
+&lt;p&gt;Now run &lt;code class=&quot;highlighter-rouge&quot;&gt;Taskwarrior&lt;/code&gt; from terminal by the command -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;task
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Ubuntu" /><summary type="html">Although you can install `TaskWarrior` from `Ubuntu` package manager, but it doesn't have latest version. So you have to download source code and compile it.</summary></entry><entry><title type="html">Java application with code coverage report using gradle</title><link href="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/" rel="alternate" type="text/html" title="Java application with code coverage report using gradle" /><published>2017-12-13T06:13:00+00:00</published><updated>2017-12-13T06:13:00+00:00</updated><id>https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage</id><content type="html" xml:base="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/">&lt;p&gt;Although we can use IDE for creating new java projects, if we use a build tool like &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle&lt;/code&gt; and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.&lt;/p&gt;
 &lt;h2 id=&quot;create-new-application&quot;&gt;Create new application&lt;/h2&gt;
 
 &lt;p&gt;Create new &lt;code class=&quot;highlighter-rouge&quot;&gt;java-application&lt;/code&gt; type &lt;code class=&quot;highlighter-rouge&quot;&gt;Java&lt;/code&gt; project using &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle&lt;/code&gt; -&lt;/p&gt;
