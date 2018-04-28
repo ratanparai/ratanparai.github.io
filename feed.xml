@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.0">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2018-04-24T03:46:50+00:00</updated><id>https://www.ratanparai.com/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Compile TaskWarrior in Ubuntu</title><link href="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/" rel="alternate" type="text/html" title="Compile TaskWarrior in Ubuntu" /><published>2018-04-05T15:50:00+00:00</published><updated>2018-04-05T15:50:00+00:00</updated><id>https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu</id><content type="html" xml:base="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/">&lt;p&gt;&lt;a href=&quot;https://taskwarrior.org/&quot;&gt;Taskwarrior&lt;/a&gt; is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast, and unobtrusive. It does its job then gets out of your way.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.0">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2018-04-28T21:22:05+00:00</updated><id>https://www.ratanparai.com/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Writing unit tests for C++ with Bazel</title><link href="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/" rel="alternate" type="text/html" title="Writing unit tests for C++ with Bazel" /><published>2018-04-28T21:05:00+00:00</published><updated>2018-04-28T21:05:00+00:00</updated><id>https://www.ratanparai.com/c++/writing-unit-tests-with-bazel</id><content type="html" xml:base="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/">&lt;p&gt;For last couple of months I am in love with writing &lt;strong&gt;Unit Tests&lt;/strong&gt;. I wasn’t like that. You may say I was adventurous, hardcore and love living dangerous life! But that wasn’t the case, believe me. I was just plain dumb. So how was my life before I started writing &lt;strong&gt;Unit Tests&lt;/strong&gt;?&lt;/p&gt;
+
+&lt;p&gt;I was so afraid to refactor my codes. There is a high possibility it may break something else in somewhere that I will not be able to detect soon. But eventually when I will do, it will be very hard to trace why it is broken and fix it. Nobody around me told me to write &lt;strong&gt;Unit Tests&lt;/strong&gt; and few who did, didn’t even write Unit Tests for themselves! It was like &lt;a href=&quot;https://en.wikipedia.org/wiki/Aesop&quot;&gt;Aesob&lt;/a&gt;’s &lt;a href=&quot;https://fablesofaesop.com/the-two-crabs.html&quot;&gt;The Two Crabs&lt;/a&gt; story I read at my childhood.&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/the-two-crab-aesop.jpg&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/the-two-crab-aesop.jpg 20w,    /assets/images/resized/480/the-two-crab-aesop.jpg 480w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Although I did some &lt;strong&gt;C++&lt;/strong&gt; codes in University and attended some &lt;strong&gt;Programming Competition&lt;/strong&gt; where I’ve used C++ for writing code, but I never did &lt;strong&gt;Object Oriented Programming&lt;/strong&gt; with C++. So few months ago I have started learning C++ in my free time. At first I tried to use &lt;strong&gt;CMAKE&lt;/strong&gt; to build. After using it for sometime, I found &lt;strong&gt;Bazel&lt;/strong&gt;. It is faster, more organized and modular.&lt;/p&gt;
+
+&lt;p&gt;At first lets look at the folder structure-&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;│   gmock.BUILD
+│   WORKSPACE
+│
+├───src
+│   ├───lib
+│   │       BUILD
+│   │       Greeting.cc
+│   │       Greeting.h
+│   │
+│   └───main
+│           BUILD
+│           main.cc
+│
+└───tests
+        BUILD
+        Greeting_test.cc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There should be a &lt;code class=&quot;highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file in the &lt;strong&gt;root&lt;/strong&gt; of your source code. It contains &lt;strong&gt;external dependencies&lt;/strong&gt;. If you don’t have any external dependencies in your project, your &lt;code class=&quot;highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file should be empty, But you must have this file.&lt;/p&gt;
+
+&lt;p&gt;We are using &lt;strong&gt;GoogleTest&lt;/strong&gt; as external dependency. Lets look inside our &lt;code class=&quot;highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file-&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;new_git_repository(
+    name = &quot;googletest&quot;,
+    build_file = &quot;gmock.BUILD&quot;,
+    remote = &quot;https://github.com/google/googletest&quot;,
+    tag = &quot;release-1.8.0&quot;,
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here, the dependency is added as a git repository. As a result, when we build the project, it will download the &lt;strong&gt;git&lt;/strong&gt; repository and run the &lt;code class=&quot;highlighter-rouge&quot;&gt;build_file&lt;/code&gt; &lt;strong&gt;gmock.BUILD&lt;/strong&gt; to build the &lt;strong&gt;GoogleTest&lt;/strong&gt; library, which we will import in our &lt;strong&gt;tests&lt;/strong&gt;. The content of the &lt;strong&gt;gmock.BUILD&lt;/strong&gt; file is-&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cc_library(
+    name = &quot;gtest&quot;,
+    srcs = [
+        &quot;googletest/src/gtest-all.cc&quot;,
+        &quot;googlemock/src/gmock-all.cc&quot;,
+    ],
+    hdrs = glob([
+        &quot;**/*.h&quot;,
+        &quot;googletest/src/*.cc&quot;,
+        &quot;googlemock/src/*.cc&quot;,
+    ]),
+    includes = [
+        &quot;googlemock&quot;,
+        &quot;googletest&quot;,
+        &quot;googletest/include&quot;,
+        &quot;googlemock/include&quot;,
+    ],
+    linkopts = [&quot;-pthread&quot;],
+    visibility = [&quot;//visibility:public&quot;],
+)
+
+cc_library(
+    name = &quot;gtest_main&quot;,
+    srcs = [&quot;googlemock/src/gmock_main.cc&quot;],
+    linkopts = [&quot;-pthread&quot;],
+    visibility = [&quot;//visibility:public&quot;],
+    deps = [&quot;:gtest&quot;],
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This concludes our initial setup of &lt;strong&gt;GoogleTest&lt;/strong&gt; with &lt;strong&gt;Bazel&lt;/strong&gt;. Now we need to add &lt;code class=&quot;highlighter-rouge&quot;&gt;@googletest//:gtest_main&lt;/code&gt; as a dependency of our test library, &lt;code class=&quot;highlighter-rouge&quot;&gt;cc_test&lt;/code&gt; and import &lt;code class=&quot;highlighter-rouge&quot;&gt;gtest/gtest.h&lt;/code&gt; to our &lt;strong&gt;unit test&lt;/strong&gt; file. Example &lt;strong&gt;BUILD&lt;/strong&gt; file &lt;code class=&quot;highlighter-rouge&quot;&gt;tests&lt;/code&gt; -&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cc_test(
+    name = &quot;tests&quot;,
+    srcs = glob([&quot;**/*.cc&quot;]),
+    deps = [
+        &quot;//src/lib:GreetingLib&quot;,
+        &quot;@googletest//:gtest_main&quot;,
+    ],
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Here the first dependency is &lt;code class=&quot;highlighter-rouge&quot;&gt;cc_library&lt;/code&gt; dependency, where we have a &lt;code class=&quot;highlighter-rouge&quot;&gt;Greeting&lt;/code&gt; class that have a &lt;strong&gt;public&lt;/strong&gt; method, &lt;code class=&quot;highlighter-rouge&quot;&gt;getGreetingMessage()&lt;/code&gt; that return &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello World!&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And content of the &lt;code class=&quot;highlighter-rouge&quot;&gt;greeting_test.cc&lt;/code&gt;-&lt;/p&gt;
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;gtest/gtest.h&quot;
+#include &quot;src/lib/Greeting.h&quot;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;TEST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GreetingShould&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ReturnHelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Greeting&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;actual&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getGreetingMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;EXPECT_EQ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;actual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;building-and-running-unit-tests&quot;&gt;Building and Running unit tests&lt;/h3&gt;
+&lt;p&gt;Building the gradle project is easy. You just need to run-&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bazel build ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;to build every &lt;strong&gt;cc_library&lt;/strong&gt; and &lt;strong&gt;cc_binary&lt;/strong&gt; of the project. And to run all &lt;strong&gt;unit tests&lt;/strong&gt; just run-&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bazel &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I have created a &lt;strong&gt;git&lt;/strong&gt; repository , which you can clone and use as your starting point. Please feel free to &lt;strong&gt;star&lt;/strong&gt; it if you think my repository helps you.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ratanparai/cpp-template&quot;&gt;CPP-Template&lt;/a&gt;&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="bazel" /><category term="googletest" /><summary type="html">On my journey to be a better programmer, I stated to learn C++. This is how I am using bazel to build my project with google test integration.</summary></entry><entry><title type="html">Compile TaskWarrior in Ubuntu</title><link href="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/" rel="alternate" type="text/html" title="Compile TaskWarrior in Ubuntu" /><published>2018-04-05T15:50:00+00:00</published><updated>2018-04-05T15:50:00+00:00</updated><id>https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu</id><content type="html" xml:base="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/">&lt;p&gt;&lt;a href=&quot;https://taskwarrior.org/&quot;&gt;Taskwarrior&lt;/a&gt; is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast, and unobtrusive. It does its job then gets out of your way.&lt;/p&gt;
 
 &lt;p&gt;Although you can install &lt;code class=&quot;highlighter-rouge&quot;&gt;TaskWarrior&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Ubuntu&lt;/code&gt; package manager, but it doesn’t have latest version. So to get the latest version of &lt;code class=&quot;highlighter-rouge&quot;&gt;TaskWarrior&lt;/code&gt;, you have to download source code and compile it.&lt;/p&gt;
 

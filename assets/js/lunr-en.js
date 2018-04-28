@@ -64,6 +64,15 @@ var idx = lunr(function () {
     });
     
   
+    idx.add({
+      title: "Writing unit tests for C++ with Bazel",
+      excerpt: "On my journey to be a better programmer, I stated to learn C++. This is how I am using bazel...",
+      categories: ["C++"],
+      tags: ["bazel","googletest"],
+      id: 6
+    });
+    
+  
 
 
 console.log( jQuery.type(idx) );
@@ -133,6 +142,17 @@ var store = [
         "title": "Compile TaskWarrior in Ubuntu",
         "url": "https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/",
         "excerpt": "Taskwarrior is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast,...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Writing unit tests for C++ with Bazel",
+        "url": "https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/",
+        "excerpt": "For last couple of months I am in love with writing Unit Tests. I wasn’t like that. You may say...",
         "teaser":
           
             null
