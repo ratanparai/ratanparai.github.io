@@ -65,7 +65,7 @@ var idx = lunr(function () {
     
   
     idx.add({
-      title: "Writing unit tests for C++ with Bazel",
+      title: "Writing unit tests for C++ with Bazel and GoogleTest",
       excerpt: "On my journey to be a better programmer, I stated to learn C++. This is how I am using bazel...",
       categories: ["C++"],
       tags: ["bazel","googletest"],
@@ -150,7 +150,7 @@ var store = [
     
       
       {
-        "title": "Writing unit tests for C++ with Bazel",
+        "title": "Writing unit tests for C++ with Bazel and GoogleTest",
         "url": "https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/",
         "excerpt": "For last couple of months I am in love with writing Unit Tests. I wasn’t like that. You may say...",
         "teaser":
