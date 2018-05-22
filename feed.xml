@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2018-05-22T04:18:49+00:00</updated><id>https://www.ratanparai.com/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Writing unit tests for C++ with Bazel and GoogleTest</title><link href="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/" rel="alternate" type="text/html" title="Writing unit tests for C++ with Bazel and GoogleTest" /><published>2018-04-28T21:05:00+00:00</published><updated>2018-04-28T21:05:00+00:00</updated><id>https://www.ratanparai.com/c++/writing-unit-tests-with-bazel</id><content type="html" xml:base="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/">&lt;p&gt;For last couple of months I am in love with writing &lt;strong&gt;Unit Tests&lt;/strong&gt;. I wasn’t like that. You may say I was adventurous, hardcore and love living dangerous life! But that wasn’t the case, believe me. I was just plain dumb. So how was my life before I started writing &lt;strong&gt;Unit Tests&lt;/strong&gt;?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.2">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2018-05-22T15:11:29+00:00</updated><id>https://www.ratanparai.com/</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Functional Testing of ASP.NET core 2.1 MVC Application</title><link href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/" rel="alternate" type="text/html" title="Functional Testing of ASP.NET core 2.1 MVC Application" /><published>2018-05-22T15:00:00+00:00</published><updated>2018-05-22T15:00:00+00:00</updated><id>https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv</id><content type="html" xml:base="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/">&lt;p&gt;In ASP.NET core 2.1, setting up functional testing project got much easier with the release of &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/a&gt; nuget package. In this post we are going to setup a functional test project.&lt;/p&gt;
+
+&lt;h2 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;/h2&gt;
+
+&lt;p&gt;To follow this tutorial you should have-&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-rc1&quot;&gt;.NET Core 2.1 RC1 SDK&lt;/a&gt; and&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VS Code&lt;/a&gt; or &lt;a href=&quot;https://www.visualstudio.com/downloads/&quot;&gt;Microsoft Visual Studio 2017&lt;/a&gt; v15.7 Preview 1 or newer, installed on your system&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;create-test-project&quot;&gt;Create test project&lt;/h2&gt;
+&lt;p&gt;Create a folder and name it &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloWorld&lt;/code&gt;, because why not :stuck_out_tongue_winking_eye:. Open &lt;strong&gt;PowerShell&lt;/strong&gt; window inside the folder (&lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;code class=&quot;highlighter-rouge&quot;&gt;right click&lt;/code&gt; anywhere inside the folder and select &lt;code class=&quot;highlighter-rouge&quot;&gt;Open PowerShell window here&lt;/code&gt;) and create a solution:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new sln
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now create a basic &lt;strong&gt;MVC&lt;/strong&gt; project inside &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; directory and &lt;strong&gt;xunit&lt;/strong&gt; project inside &lt;code class=&quot;highlighter-rouge&quot;&gt;tests&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new mvc -o .\src\HelloWorld.Mvc
+dotnet new xunit -o .\tests\HelloWorld.FunctionalTests
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add those two project to the &lt;strong&gt;solution&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet sln add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj
+dotnet sln add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Reference the &lt;strong&gt;MVC&lt;/strong&gt; project form the &lt;strong&gt;FunctionalTests&lt;/strong&gt; project:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj reference .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;write-functional-test&quot;&gt;Write functional Test&lt;/h2&gt;
+
+&lt;p&gt;Add &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/a&gt; to the functional test project:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj package Microsoft.AspNetCore.Mvc.Testing -v 2.1.0-rc1-final
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now open the project in &lt;strong&gt;VS Code&lt;/strong&gt; or &lt;strong&gt;Visual Studio 2017 15.7 Preview 1 or newer&lt;/strong&gt; and create a new class inside &lt;strong&gt;HelloWorld.FunctionalTests&lt;/strong&gt; project and name it &lt;code class=&quot;highlighter-rouge&quot;&gt;HomePageShould.cs&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;HelloWorld.Mvc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Net&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Net.Http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Threading.Tasks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Xunit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;HelloWorld.FunctionalTests&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HomePageShould&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IClassFixture&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebApplicationFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Startup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;readonly&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpClient&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;HomePageShould&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebApplicationFactory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Startup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;_client&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;CreateClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Task&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ReturnHttpStatusCodeOk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;GetAsync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+            &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Equal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpStatusCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;StatusCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;run-the-test&quot;&gt;Run the test&lt;/h2&gt;
+
+&lt;p&gt;Now run the &lt;strong&gt;test&lt;/strong&gt;. It should fail with the error message&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Message: System.IO.FileNotFoundException : Could not load file or assembly ‘Microsoft.AspNetCore, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60’. The system cannot find the file specified.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To resolve it, add &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.App/&quot;&gt;Microsoft.AspNetCore.App&lt;/a&gt; nuget package to the &lt;strong&gt;test&lt;/strong&gt; project&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj package Microsoft.AspNetCore.App -v 2.1.0-rc1-final
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now run the test from &lt;code class=&quot;highlighter-rouge&quot;&gt;Test&lt;/code&gt;&amp;gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Run&lt;/code&gt;&amp;gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;All Tests&lt;/code&gt; (Visual Studio 2017) or from &lt;strong&gt;PowerShell&lt;/strong&gt;-&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet test .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You should see green tick of happiness.&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="asp.net core" /><category term="functional testing" /><category term="dotnet core" /><summary type="html">In ASP.NET core 2.1, setting up functional testing project got much easier with the release of [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing) nuget package.</summary></entry><entry><title type="html">Writing unit tests for C++ with Bazel and GoogleTest</title><link href="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/" rel="alternate" type="text/html" title="Writing unit tests for C++ with Bazel and GoogleTest" /><published>2018-04-28T21:05:00+00:00</published><updated>2018-04-28T21:05:00+00:00</updated><id>https://www.ratanparai.com/c++/writing-unit-tests-with-bazel</id><content type="html" xml:base="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/">&lt;p&gt;For last couple of months I am in love with writing &lt;strong&gt;Unit Tests&lt;/strong&gt;. I wasn’t like that. You may say I was adventurous, hardcore and love living dangerous life! But that wasn’t the case, believe me. I was just plain dumb. So how was my life before I started writing &lt;strong&gt;Unit Tests&lt;/strong&gt;?&lt;/p&gt;
 
 &lt;p&gt;I was so afraid to refactor my codes. There is a high possibility it may break something else in somewhere that I will not be able to detect soon. But eventually when I will do, it will be very hard to trace why it is broken and fix it. Nobody around me told me to write &lt;strong&gt;Unit Tests&lt;/strong&gt; and few who did, didn’t even write Unit Tests for themselves! It was like &lt;a href=&quot;https://en.wikipedia.org/wiki/Aesop&quot;&gt;Aesob&lt;/a&gt;’s &lt;a href=&quot;https://fablesofaesop.com/the-two-crabs.html&quot;&gt;The Two Crabs&lt;/a&gt; story I read at my childhood.&lt;/p&gt;
 

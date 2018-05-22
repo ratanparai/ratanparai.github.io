@@ -73,6 +73,15 @@ var idx = lunr(function () {
     });
     
   
+    idx.add({
+      title: "Functional Testing of ASP.NET core 2.1 MVC Application",
+      excerpt: "In ASP.NET core 2.1, setting up functional testing project got much easier with the release of [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing) nuget package.",
+      categories: ["dotnet"],
+      tags: ["asp.net core","functional testing","dotnet core"],
+      id: 7
+    });
+    
+  
 
 
 console.log( jQuery.type(idx) );
@@ -153,6 +162,17 @@ var store = [
         "title": "Writing unit tests for C++ with Bazel and GoogleTest",
         "url": "https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/",
         "excerpt": "For last couple of months I am in love with writing Unit Tests. I wasn’t like that. You may say...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Functional Testing of ASP.NET core 2.1 MVC Application",
+        "url": "https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/",
+        "excerpt": "In ASP.NET core 2.1, setting up functional testing project got much easier with the release of Microsoft.AspNetCore.Mvc.Testing nuget package. In...",
         "teaser":
           
             null
