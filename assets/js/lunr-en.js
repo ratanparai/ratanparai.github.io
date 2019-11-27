@@ -82,6 +82,24 @@ var idx = lunr(function () {
     });
     
   
+    idx.add({
+      title: "Zero to Hero in Microservices with dotnet core - Introduction",
+      excerpt: "In this series of blog articles, we are going to start from a basic dotnet core MVC application and then...",
+      categories: ["Microservices"],
+      tags: ["microservices","dotnet core"],
+      id: 8
+    });
+    
+  
+    idx.add({
+      title: "Part one: Getting started with asp.net core MVC",
+      excerpt: "Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for...",
+      categories: ["Microservices"],
+      tags: [],
+      id: 9
+    });
+    
+  
 
 
 console.log( jQuery.type(idx) );
@@ -173,6 +191,28 @@ var store = [
         "title": "Functional Testing of ASP.NET core 2.1 MVC Application",
         "url": "https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/",
         "excerpt": "In ASP.NET core 2.1, setting up functional testing project got much easier with the release of Microsoft.AspNetCore.Mvc.Testing nuget package. In...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Zero to Hero in Microservices with dotnet core - Introduction",
+        "url": "https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/",
+        "excerpt": "In this series of blog articles, we are going to start from a basic dotnet core MVC application and then...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Part one: Getting started with asp.net core MVC",
+        "url": "https://www.ratanparai.com/microservices/part-1-mvc-application/",
+        "excerpt": "Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for...",
         "teaser":
           
             null

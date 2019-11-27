@@ -19,12 +19,12 @@
 
 
 
-<title>SSL certificate for Intranet network - Ratan Parai</title>
+<title>Zero to Hero in Microservices with dotnet core - Introduction - Ratan Parai</title>
 
 
 
 
-<meta name="description" content="SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem.">
+<meta name="description" content="In this series of blog articles, we are going to start from a basic dotnet core MVC application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-">
 
 
 
@@ -33,15 +33,15 @@
 
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="Ratan Parai">
-<meta property="og:title" content="SSL certificate for Intranet network">
+<meta property="og:title" content="Zero to Hero in Microservices with dotnet core - Introduction">
 
 
-  <link rel="canonical" href="https://www.ratanparai.com/SSL-certificate-for-intranet-network/">
-  <meta property="og:url" content="https://www.ratanparai.com/SSL-certificate-for-intranet-network/">
+  <link rel="canonical" href="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/">
+  <meta property="og:url" content="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/">
 
 
 
-  <meta property="og:description" content="SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem.">
+  <meta property="og:description" content="In this series of blog articles, we are going to start from a basic dotnet core MVC application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-">
 
 
 
@@ -58,9 +58,9 @@
 
 
   <meta name="twitter:site" content="@ratanparai">
-  <meta name="twitter:title" content="SSL certificate for Intranet network">
-  <meta name="twitter:description" content="SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem.">
-  <meta name="twitter:url" content="https://www.ratanparai.com/SSL-certificate-for-intranet-network/">
+  <meta name="twitter:title" content="Zero to Hero in Microservices with dotnet core - Introduction">
+  <meta name="twitter:description" content="In this series of blog articles, we are going to start from a basic dotnet core MVC application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-">
+  <meta name="twitter:url" content="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/">
 
   
     <meta name="twitter:card" content="summary">
@@ -82,7 +82,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2017-08-18T06:44:00+00:00">
+  <meta property="article:published_time" content="2019-11-27T02:30:00+00:00">
 
 
 
@@ -206,7 +206,17 @@
         <span class="sep">></span>
       
       
-        <li class="current">SSL certificate for Intranet network</li>
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://www.ratanparai.com/categories/microservices" itemprop="item"><span itemprop="name">Microservices</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        <li class="current">Zero to Hero in Microservices with dotnet core - Introduction</li>
       
     
   </ol>
@@ -351,15 +361,15 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="SSL certificate for Intranet network">
-    <meta itemprop="description" content="SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem.">
-    <meta itemprop="datePublished" content="August 18, 2017">
+    <meta itemprop="headline" content="Zero to Hero in Microservices with dotnet core - Introduction">
+    <meta itemprop="description" content="In this series of blog articles, we are going to start from a basic dotnet core MVC application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-">
+    <meta itemprop="datePublished" content="November 27, 2019">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">SSL certificate for Intranet network
+          <h1 class="page__title" itemprop="headline">Zero to Hero in Microservices with dotnet core - Introduction
 </h1>
           
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
@@ -367,7 +377,7 @@
 
 
 
-  2 minute read
+  less than 1 minute read
 
               <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="#disqus_thread">~</a>
             </p>
@@ -377,97 +387,23 @@
 
       <section class="page__content" itemprop="text">
         
-          <aside class="sidebar__right">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
-              <ul class="toc__menu">
-  <li><a href="#setup-openssl">Setup OpenSSL</a>
-    <ul>
-      <li><a href="#generate-root-ca-key">Generate Root CA Key</a></li>
-      <li><a href="#request-for-certificate">Request for certificate</a></li>
-      <li><a href="#self-signed-the-requested-certificate">Self signed the requested certificate</a></li>
-    </ul>
-  </li>
-  <li><a href="#issue-certificate-as-a-ca">Issue Certificate as a CA</a>
-    <ul>
-      <li><a href="#generate-server-key">Generate Server Key</a></li>
-      <li><a href="#request-for-certificate-1">Request for certificate</a></li>
-      <li><a href="#issue-the-certificate">Issue the Certificate</a></li>
-    </ul>
-  </li>
-  <li><a href="#generate-pfx-file-for-iis-server">Generate .pfx file for IIS Server</a>
-    <ul>
-      <li><a href="#verify-certificate-chain">*Verify Certificate Chain</a></li>
-    </ul>
-  </li>
-</ul>
-            </nav>
-          </aside>
-        
-        <h2 id="setup-openssl">Setup OpenSSL</h2>
+        <p>In this series of blog articles, we are going to start from a basic <strong>dotnet core</strong> <code class="highlighter-rouge">MVC</code> application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-</p>
+
 <ol>
-  <li>Download and install OpenSSL from <a href="https://slproweb.com/products/Win32OpenSSL.html">here</a>. For our current task <strong>light</strong> version is more than enough. I have downloaded <a href="https://slproweb.com/download/Win64OpenSSL_Light-1_1_0f.exe">this</a> one</li>
-  <li>Add <code class="highlighter-rouge">C:\OpenSSL-Win64\bin</code> to your environment variable <code class="highlighter-rouge">PATH</code></li>
-  <li>If you face <strong>no configuration error</strong> when running OpenSSL, then you need to add a new <strong>Environment variable</strong>: <em><strong>Variable Name</strong></em> - <code class="highlighter-rouge">OPENSSL_CONF</code> and <em><strong>Variable Value</strong></em> - <code class="highlighter-rouge">C:\OpenSSL-Win64\bin\openssl.cfg</code></li>
+  <li><a href="https://visualstudio.microsoft.com/vs/">Visual Studio 2019</a> <strong>v16.3 or later</strong> or <a href="https://visualstudio.microsoft.com/vs/mac/">Visual Studio for Mac</a>, which will make our development process much faster and beginner friendly</li>
+  <li><a href="https://code.visualstudio.com">Visual Studio Code</a>, as this is my <em>favorite</em> test editor and I will use it most of the time</li>
+  <li><a href="https://dotnet.microsoft.com/download/dotnet-core/3.0">.NET Core SDK 3.0.101</a>, which is the latest stable version of .NET Core SDK.</li>
+  <li><a href="https://docs.docker.com/docker-for-windows/install/">Docker Desktop for Windows</a> or <a href="https://docs.docker.com/docker-for-mac/install/">Docker Desktop for Mac</a>, we are going to use docker to develop, run and deploy our microservices</li>
 </ol>
 
-<h1 id="generate-self-signed-root-ca">Generate self signed root CA</h1>
-<h3 id="generate-root-ca-key">Generate Root CA Key</h3>
-<p>Open <code class="highlighter-rouge">cmd</code> and <code class="highlighter-rouge">cd</code> to the directory you want to save the certificates <em><strong>or</strong></em> from the <strong>folder</strong> <code class="highlighter-rouge">SHITF</code>+<code class="highlighter-rouge">RMB</code> and select <code class="highlighter-rouge">Open Powershell Windows here</code>. then type -</p>
+<p>We will build an E-commerce Web Application.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl genrsa <span class="nt">-des3</span> <span class="nt">-out</span> myrootca.key 2048
-</code></pre></div></div>
-<p>and press <code class="highlighter-rouge">ENTER</code>. Type a new <strong>Password</strong> to protect the key file</p>
+<p>To jump throw the list of articles follow the links bellow -</p>
 
-<h3 id="request-for-certificate">Request for certificate</h3>
-<p>Then create a certificate request using the root CA key file</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-new</span> <span class="nt">-key</span> myrootca.key <span class="nt">-out</span> myrootca.req
-</code></pre></div></div>
-<p>When asked enter the <strong>Certificate Authority</strong> information that will be shown as <strong>Authority</strong> that verified the issued certificate.</p>
+<ol>
+  <li><a href="/microservices/part-1-mvc-application/">Part 1: MVC Application</a></li>
+</ol>
 
-<h3 id="self-signed-the-requested-certificate">Self signed the requested certificate</h3>
-<p>To self sign the request certificate run -</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 7305 <span class="nt">-extensions</span> v3_ca <span class="nt">-signkey</span> myrootca.key <span class="nt">-in</span> myrootca.req <span class="nt">-out</span> myrootca.crt
-</code></pre></div></div>
-<p>you need to install the <code class="highlighter-rouge">.crt</code> file to all of the <strong>computer</strong> that you want to use varify your issued certificates. When importing <code class="highlighter-rouge">.crt</code> certificate make sure you select <code class="highlighter-rouge">Place all certificates in the following store</code> and browse to <code class="highlighter-rouge">Trusted root certification authorities</code></p>
-
-<h2 id="issue-certificate-as-a-ca">Issue Certificate as a CA</h2>
-<p>We have created our own Certificate Authority in the previous step. Now its time to issue certificate.</p>
-
-<h3 id="generate-server-key">Generate Server Key</h3>
-<p>At first we need to create server key.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl genrsa <span class="nt">-out</span> myhost.key 2048
-</code></pre></div></div>
-<h3 id="request-for-certificate-1">Request for certificate</h3>
-<p>Fill the information for the Server. When asked for <code class="highlighter-rouge">CA</code>, give your web server’s <code class="highlighter-rouge">IP address</code> or <code class="highlighter-rouge">domain</code> name</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-new</span> <span class="nt">-key</span> myhost.key <span class="nt">-out</span> myhost.req
-</code></pre></div></div>
-<h3 id="issue-the-certificate">Issue the Certificate</h3>
-<p>Create a new file and name it <code class="highlighter-rouge">v3.ext</code> in the working directory with the contents. Change the <code class="highlighter-rouge">[alt_names]</code> portion as needed.</p>
-<pre><code class="language-ext">authorityKeyIdentifier=keyid,issuer
-basicConstraints=CA:FALSE
-keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
-subjectAltName = @alt_names
-
-[alt_names]
-DNS.1 = localhost
-IP.2 = 192.168.10.240
-</code></pre>
-<p>after making required changes to the <code class="highlighter-rouge">v3.ext</code> file run the command bellow in <code class="highlighter-rouge">cmd</code></p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 3650 <span class="nt">-CA</span> myrootca.crt <span class="nt">-CAkey</span> myrootca.key <span class="nt">-CAcreateserial</span> <span class="nt">-sha256</span> <span class="nt">-extfile</span> v3.ext <span class="nt">-out</span> myhost.crt <span class="nt">-in</span> myhost.req
-</code></pre></div></div>
-
-<h2 id="generate-pfx-file-for-iis-server">Generate <code class="highlighter-rouge">.pfx</code> file for <code class="highlighter-rouge">IIS</code> Server</h2>
-<p>To use the server certificate with <code class="highlighter-rouge">IIS</code> server we need <code class="highlighter-rouge">.pfx</code> file. To generate <code class="highlighter-rouge">.pfx</code> file we need to run-</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl pkcs12 -export -out myhost.pfx -inkey myhost.key -in myhost.crt
-</code></pre></div></div>
-
-<h3 id="verify-certificate-chain">*Verify Certificate Chain</h3>
-<p>You can verify certificate chain in <code class="highlighter-rouge">Windows</code> for debugging purpose by running</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>certutil -f -urlfetch -verify myhost.crt
-</code></pre></div></div>
-<p>Where <code class="highlighter-rouge">myhost.crt</code> is the server certificate</p>
 
         
       </section>
@@ -488,19 +424,11 @@ IP.2 = 192.168.10.240
     
       
       
-      <a href="https://www.ratanparai.com/tags/https" class="page__taxonomy-item" rel="tag">https</a><span class="sep">, </span>
+      <a href="https://www.ratanparai.com/tags/dotnet-core" class="page__taxonomy-item" rel="tag">dotnet core</a><span class="sep">, </span>
     
       
       
-      <a href="https://www.ratanparai.com/tags/intranet-ssl" class="page__taxonomy-item" rel="tag">intranet-ssl</a><span class="sep">, </span>
-    
-      
-      
-      <a href="https://www.ratanparai.com/tags/openssl" class="page__taxonomy-item" rel="tag">openssl</a><span class="sep">, </span>
-    
-      
-      
-      <a href="https://www.ratanparai.com/tags/ssl" class="page__taxonomy-item" rel="tag">ssl</a>
+      <a href="https://www.ratanparai.com/tags/microservices" class="page__taxonomy-item" rel="tag">microservices</a>
     
     </span>
   </p>
@@ -508,8 +436,27 @@ IP.2 = 192.168.10.240
 
 
 
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://www.ratanparai.com/categories/microservices" class="page__taxonomy-item" rel="tag">Microservices</a>
+    
+    </span>
+  </p>
+
+
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-08-18T06:44:00+00:00">August 18, 2017</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-27T02:30:00+00:00">November 27, 2019</time></p>
         
       </footer>
 
@@ -518,11 +465,11 @@ IP.2 = 192.168.10.240
       
   <nav class="pagination">
     
-      <a href="https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time/" class="pagination--pager" title="Setting up Jekyll for the first time
+      <a href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/" class="pagination--pager" title="Functional Testing of ASP.NET core 2.1 MVC Application
 ">Previous</a>
     
     
-      <a href="https://www.ratanparai.com/linux/change-centos7-ssh-port/" class="pagination--pager" title="Change ssh port of CentOS 7
+      <a href="https://www.ratanparai.com/microservices/part-1-mvc-application/" class="pagination--pager" title="Part one: Getting started with asp.net core MVC
 ">Next</a>
     
   </nav>
@@ -585,34 +532,6 @@ IP.2 = 192.168.10.240
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/" rel="permalink">Zero to Hero in Microservices with dotnet core - Introduction
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-        <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/#disqus_thread">~</a>
-      </p>
-    
-    <p class="archive__item-excerpt" itemprop="description">In this series of blog articles, we are going to start from a basic dotnet core MVC application and then improve it to full blown Microservices with state of...</p>
-  </article>
-</div>
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
         <a href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/" rel="permalink">Functional Testing of ASP.NET core 2.1 MVC Application
 </a>
       
@@ -658,6 +577,35 @@ IP.2 = 192.168.10.240
       </p>
     
     <p class="archive__item-excerpt" itemprop="description">On my journey to be a better programmer, I stated to learn C++. This is how I am using bazel to build my project with google test integration.
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/" rel="permalink">Compile TaskWarrior in Ubuntu
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+        <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/#disqus_thread">~</a>
+      </p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Although you can install TaskWarrior from Ubuntu package manager, but it doesn’t have latest version. So you have to download source code and compile it.
 </p>
   </article>
 </div>
@@ -725,8 +673,8 @@ IP.2 = 192.168.10.240
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://www.ratanparai.com/SSL-certificate-for-intranet-network/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/SSL-certificate-for-intranet-network"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/microservices/zero-to-hero-with-dotnet-core-microservice-introduction"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

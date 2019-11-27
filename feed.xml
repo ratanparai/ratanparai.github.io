@@ -1,4 +1,216 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2019-11-10T14:58:31+00:00</updated><id>https://www.ratanparai.com/feed.xml</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Functional Testing of ASP.NET core 2.1 MVC Application</title><link href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/" rel="alternate" type="text/html" title="Functional Testing of ASP.NET core 2.1 MVC Application" /><published>2018-05-22T15:00:00+00:00</published><updated>2018-05-22T15:00:00+00:00</updated><id>https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv</id><content type="html" xml:base="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/">&lt;p&gt;In ASP.NET core 2.1, setting up functional testing project got much easier with the release of &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/a&gt; nuget package. In this post we are going to setup a functional test project.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2019-11-27T02:49:05+00:00</updated><id>https://www.ratanparai.com/feed.xml</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Part one: Getting started with asp.net core MVC</title><link href="https://www.ratanparai.com/microservices/part-1-mvc-application/" rel="alternate" type="text/html" title="Part one: Getting started with asp.net core MVC" /><published>2019-11-27T02:41:00+00:00</published><updated>2019-11-27T02:41:00+00:00</updated><id>https://www.ratanparai.com/microservices/part-1-mvc-application</id><content type="html" xml:base="https://www.ratanparai.com/microservices/part-1-mvc-application/">&lt;p&gt;Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project&lt;/p&gt;
+
+&lt;h2 id=&quot;create--clone-github-repository&quot;&gt;Create &amp;amp; Clone GitHub repository&lt;/h2&gt;
+&lt;p&gt;At first lets create a GitHub repository. To create a GitHub repository you can use the new &lt;code class=&quot;highlighter-rouge&quot;&gt;.new&lt;/code&gt; domain &lt;a href=&quot;https://repo.new&quot;&gt;repo.new&lt;/a&gt;. Don’t forget to select &lt;code class=&quot;highlighter-rouge&quot;&gt;Visual Studio&lt;/code&gt; &lt;strong&gt;.gitignore&lt;/strong&gt;, because we don’t want to commit &lt;code class=&quot;highlighter-rouge&quot;&gt;Visual Studio&lt;/code&gt; generated build artifacts and user specific configurations into &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/create-github-repository.png&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/create-github-repository.png 20w,    /assets/images/resized/480/create-github-repository.png 480w,    /assets/images/resized/800/create-github-repository.png 800w,    /assets/images/resized/1400/create-github-repository.png 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then clone the repository into your local machine. Copy the repository remote URL -&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/clone-github.png&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/clone-github.png 20w,    /assets/images/resized/480/clone-github.png 480w,    /assets/images/resized/800/clone-github.png 800w,    /assets/images/resized/1400/clone-github.png 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;and then run the command -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone &amp;lt;your repository URL&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For my repository, the command is -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git@github.com:ratanparai/eCommerce-microservices-tutorial.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;setup-initial-project-structure&quot;&gt;Setup initial project structure&lt;/h2&gt;
+
+&lt;p&gt;Open the locally cloned repository folder in &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; and open the &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; (Check &lt;a href=&quot;https://code.visualstudio.com/docs/editor/integrated-terminal&quot;&gt;VSCode Integrated Terminal&lt;/a&gt; for more info) terminal window. The rest of today’s tutorial we will use the &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; terminal and &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet&lt;/code&gt; command line to tool to setup the initial structure and projects.&lt;/p&gt;
+
+&lt;p&gt;You should see similar to this window-&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/visual-studio.png&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/visual-studio.png 20w,    /assets/images/resized/480/visual-studio.png 480w,    /assets/images/resized/800/visual-studio.png 800w,    /assets/images/resized/1400/visual-studio.png 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;create-globaljson-file&quot;&gt;Create global.json file&lt;/h3&gt;
+
+&lt;p&gt;Global.json file is used to select the correct .NET Core SDK version to build and run .NET Core application if you have multiple SDK version. You can see the list of installed SKDs in your machine by running -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet &lt;span class=&quot;nt&quot;&gt;--list-sdks&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To work on .NET Core v 3.0, lets create a global.json file by running -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new globaljson &lt;span class=&quot;nt&quot;&gt;--sdk-version&lt;/span&gt; 3.0.100
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This also throw error if anyone try to build the code but do not have the specified version of SKD installed. It ensure the use of right SDK version.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-solution-file&quot;&gt;Create solution file&lt;/h3&gt;
+
+&lt;p&gt;A solution is a structure for organizing projects in Visual Studio. Solution file itself doesn’t do anything special. Although, you can build, run and deploy &lt;code class=&quot;highlighter-rouge&quot;&gt;.NET Core&lt;/code&gt; application without the solution file, but having one make your projects much organized and easy to maintain. We will only have one project at the beginning of this tutorial series, we will create and add more projects to the solution as we progress.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new sln
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;create-project&quot;&gt;Create Project&lt;/h3&gt;
+
+&lt;p&gt;Create folder for the project -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; src/Web/WebMVC
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This command will create three folder. Now create the &lt;code class=&quot;highlighter-rouge&quot;&gt;mvc&lt;/code&gt; project -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new mvc &lt;span class=&quot;nt&quot;&gt;--no-https&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; src/Web/WebMVC
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here, &lt;code class=&quot;highlighter-rouge&quot;&gt;--no-https&lt;/code&gt; tell the dotnet cli to generate scaffolding code without the &lt;strong&gt;https&lt;/strong&gt; support and the &lt;code class=&quot;highlighter-rouge&quot;&gt;-o src/Web/WebMVC&lt;/code&gt; argument set the output directory to &lt;code class=&quot;highlighter-rouge&quot;&gt;src&amp;gt;Web&amp;gt;WebMVC&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now lets add the project to the solution -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet sln add src/Web/WebMVC
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;run-the-mvc-application&quot;&gt;Run the MVC Application&lt;/h3&gt;
+
+&lt;p&gt;To configure &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; to run the application, go to debug tab and click the setting icon marked in the screenshot bellow, then select &lt;code class=&quot;highlighter-rouge&quot;&gt;.NET Core&lt;/code&gt;. Now you can run the application in &lt;strong&gt;debug&lt;/strong&gt; mode by clicking the &lt;strong&gt;run&lt;/strong&gt; button on pressing &lt;kbd&gt;F5&lt;/kbd&gt; in your keyboard.&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/vscode-debug-configure.png&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/vscode-debug-configure.png 20w,    /assets/images/resized/480/vscode-debug-configure.png 480w,    /assets/images/resized/800/vscode-debug-configure.png 800w,    /assets/images/resized/1400/vscode-debug-configure.png 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After running application, you should see a webpage with the content similar to this -&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/welcome-page.png&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/welcome-page.png 20w,    /assets/images/resized/480/welcome-page.png 480w,    /assets/images/resized/800/welcome-page.png 800w,    /assets/images/resized/1400/welcome-page.png 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Congratulation, you have successfully created a &lt;code class=&quot;highlighter-rouge&quot;&gt;.NET Core MVC&lt;/code&gt; web application. If you want to use &lt;strong&gt;Visual Studio&lt;/strong&gt;, you can open the solution file (*.sln. For this tutorial &lt;code class=&quot;highlighter-rouge&quot;&gt;eCommerce-microservices-tutorial.sln&lt;/code&gt; file) in Visual Studio and do the rest of the tutorial in Visual Studio too.&lt;/p&gt;
+
+&lt;h2 id=&quot;mvc-crud-web-application&quot;&gt;MVC CRUD Web Application&lt;/h2&gt;
+&lt;p&gt;In this part, we will create a MVC application that can &lt;code class=&quot;highlighter-rouge&quot;&gt;create&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;update&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;delete&lt;/code&gt; data into database. For database, we are going to use &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; is a file based lightweight database which doesn’t requires any special tools to be installed on your machine.&lt;/p&gt;
+
+&lt;h3 id=&quot;ef-core-with-sqlite&quot;&gt;EF Core with SQLite&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;EF Core&lt;/code&gt; is a powerful &lt;code class=&quot;highlighter-rouge&quot;&gt;ORM&lt;/code&gt;. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;ORM&lt;/code&gt; we can skip the database specific &lt;code class=&quot;highlighter-rouge&quot;&gt;query&lt;/code&gt; and change our &lt;code class=&quot;highlighter-rouge&quot;&gt;database&lt;/code&gt; provider from &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Microsoft SQL Server&lt;/code&gt; with almost no changes in our code. To know more about &lt;code class=&quot;highlighter-rouge&quot;&gt;EF Core&lt;/code&gt; please check &lt;a href=&quot;https://docs.microsoft.com/en-us/ef/core/&quot;&gt;Entity Framework Core
+&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Install EF Core by &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; into the &lt;code class=&quot;highlighter-rouge&quot;&gt;src/Web/WebMVC&lt;/code&gt; directory and running -&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now create a folder named &lt;code class=&quot;highlighter-rouge&quot;&gt;Infrastructure&lt;/code&gt; and inside the folder create a &lt;code class=&quot;highlighter-rouge&quot;&gt;Class&lt;/code&gt; named &lt;code class=&quot;highlighter-rouge&quot;&gt;CatalogContext&lt;/code&gt; with the code -&lt;/p&gt;
+
+&lt;div class=&quot;language-cs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Microsoft.EntityFrameworkCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;WebMVC.Models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;WebMVC.Infrastructure&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CatalogContext&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DbContext&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CatalogContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DbContextOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CatalogContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DbSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CatalogItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CatalogItems&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Our DbContext class need to extend the &lt;code class=&quot;highlighter-rouge&quot;&gt;DbContext&lt;/code&gt; class and in &lt;code class=&quot;highlighter-rouge&quot;&gt;constructor&lt;/code&gt; parameter need to pass the &lt;code class=&quot;highlighter-rouge&quot;&gt;DbContextOptions&amp;lt;{Our_Class_Name}&amp;gt;&lt;/code&gt; to the base class.&lt;/p&gt;
+
+&lt;p&gt;Now we need to inject our &lt;code class=&quot;highlighter-rouge&quot;&gt;CatalogContext&lt;/code&gt; class in &lt;code class=&quot;highlighter-rouge&quot;&gt;startup.cs&lt;/code&gt; file -&lt;/p&gt;
+
+&lt;div class=&quot;language-cs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ConfigureServices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IServiceCollection&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AddDbContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CatalogContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;UseSqlite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Data Source=catalog.db&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;AddControllersWithViews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We also need to add the &lt;code class=&quot;highlighter-rouge&quot;&gt;catalog.db&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; as this file will hold our &lt;em&gt;database&lt;/em&gt; and we do not need to commit this file. Please add those two line in your &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file as bellow -&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Ignoring all user generated DB files&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.db
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The first line is a comment, so that we understand what we are trying to do here and the second line is telling &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; to ignore any file with the file &lt;strong&gt;extension&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;.db&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; To know how dependency injection works in ASP.NET Core please read &lt;a href=&quot;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0&quot;&gt;Dependency injection in ASP.NET Core&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;scaffolding-controller-with-views&quot;&gt;Scaffolding Controller with Views&lt;/h3&gt;
+
+&lt;p&gt;Now lets scaffold a CRUD controller with view. To add scaffolding support we need to install -&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Please make sure the global scaffolding tool is installed -&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet tool &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; dotnet-aspnet-codegenerator
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and then run -&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet aspnet-codegenerator controller &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; CatalogController &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; CatalogItem &lt;span class=&quot;nt&quot;&gt;-dc&lt;/span&gt; CatalogContext &lt;span class=&quot;nt&quot;&gt;--relativeFolderPath&lt;/span&gt; Controllers &lt;span class=&quot;nt&quot;&gt;--useDefaultLayout&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--referenceScriptLibraries&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;database-migrations&quot;&gt;Database Migrations&lt;/h3&gt;
+
+&lt;p&gt;To run migration, please make sure you have the &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet-ef&lt;/code&gt; global tool installed. If now then install it by running -&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet tool &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; dotnet-ef
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now create and apply migration -&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet ef migrations add InitialCreate
+dotnet ef database update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;update-navigation-bar&quot;&gt;Update Navigation bar&lt;/h3&gt;
+
+&lt;p&gt;And then add the new Controller in Navigation bar. To do this, please modfity the &lt;code class=&quot;highlighter-rouge&quot;&gt;Views&amp;gt;Shared&amp;gt;_Layout.cshtml&lt;/code&gt; file and add another &lt;code class=&quot;highlighter-rouge&quot;&gt;nav-item&lt;/code&gt; like -&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navbar-nav flex-grow-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-link text-dark&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-area=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-controller=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Home&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Index&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Home&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-link text-dark&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-area=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-controller=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Catalog&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Index&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Catalog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;nav-link text-dark&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-area=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-controller=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Home&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;asp-action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Privacy&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Privacy&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Now run the application by pressing &lt;kbd&gt;F5&lt;/kbd&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; running the command &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet run&lt;/code&gt; from &lt;em&gt;terminal&lt;/em&gt;. Then go the Catalog page by clicking Catalog navbar and test our new Catalog &lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Congratulation, you have successfully created a &lt;code class=&quot;highlighter-rouge&quot;&gt;ASP.NET Core MVC&lt;/code&gt; Web Application.&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><summary type="html">Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project</summary></entry><entry><title type="html">Zero to Hero in Microservices with dotnet core - Introduction</title><link href="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/" rel="alternate" type="text/html" title="Zero to Hero in Microservices with dotnet core - Introduction" /><published>2019-11-27T02:30:00+00:00</published><updated>2019-11-27T02:30:00+00:00</updated><id>https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction</id><content type="html" xml:base="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/">&lt;p&gt;In this series of blog articles, we are going to start from a basic &lt;strong&gt;dotnet core&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;MVC&lt;/code&gt; application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://visualstudio.microsoft.com/vs/&quot;&gt;Visual Studio 2019&lt;/a&gt; &lt;strong&gt;v16.3 or later&lt;/strong&gt; or &lt;a href=&quot;https://visualstudio.microsoft.com/vs/mac/&quot;&gt;Visual Studio for Mac&lt;/a&gt;, which will make our development process much faster and beginner friendly&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com&quot;&gt;Visual Studio Code&lt;/a&gt;, as this is my &lt;em&gt;favorite&lt;/em&gt; test editor and I will use it most of the time&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dotnet.microsoft.com/download/dotnet-core/3.0&quot;&gt;.NET Core SDK 3.0.101&lt;/a&gt;, which is the latest stable version of .NET Core SDK.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/docker-for-windows/install/&quot;&gt;Docker Desktop for Windows&lt;/a&gt; or &lt;a href=&quot;https://docs.docker.com/docker-for-mac/install/&quot;&gt;Docker Desktop for Mac&lt;/a&gt;, we are going to use docker to develop, run and deploy our microservices&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We will build an E-commerce Web Application.&lt;/p&gt;
+
+&lt;p&gt;To jump throw the list of articles follow the links bellow -&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;/microservices/part-1-mvc-application/&quot;&gt;Part 1: MVC Application&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="microservices" /><category term="dotnet core" /><summary type="html">In this series of blog articles, we are going to start from a basic dotnet core MVC application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-</summary></entry><entry><title type="html">Functional Testing of ASP.NET core 2.1 MVC Application</title><link href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/" rel="alternate" type="text/html" title="Functional Testing of ASP.NET core 2.1 MVC Application" /><published>2018-05-22T15:00:00+00:00</published><updated>2018-05-22T15:00:00+00:00</updated><id>https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv</id><content type="html" xml:base="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/">&lt;p&gt;In ASP.NET core 2.1, setting up functional testing project got much easier with the release of &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/a&gt; nuget package. In this post we are going to setup a functional test project.&lt;/p&gt;
 
 &lt;h2 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;/h2&gt;
 
