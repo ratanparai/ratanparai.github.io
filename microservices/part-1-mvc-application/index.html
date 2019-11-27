@@ -465,17 +465,17 @@
 
 <h3 id="create-project">Create Project</h3>
 
-<p>Create folder for the project -</p>
+<p>Create folder for the project. This command will create three folders with the structure <code class="highlighter-rouge">src&gt;Web&gt;WebMVC</code> -</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/Web/WebMVC
 </code></pre></div></div>
 
-<p>This command will create three folder. Now create the <code class="highlighter-rouge">mvc</code> project -</p>
+<p>Now create the <code class="highlighter-rouge">mvc</code> project -</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet new mvc <span class="nt">--no-https</span> <span class="nt">-o</span> src/Web/WebMVC
 </code></pre></div></div>
 
-<p>Here, <code class="highlighter-rouge">--no-https</code> tell the dotnet cli to generate scaffolding code without the <strong>https</strong> support and the <code class="highlighter-rouge">-o src/Web/WebMVC</code> argument set the output directory to <code class="highlighter-rouge">src&gt;Web&gt;WebMVC</code>.</p>
+<p>Here, <code class="highlighter-rouge">--no-https</code> tell the dotnet cli to generate scaffolding code without the <strong>https</strong> support so our web application will only be served in <code class="highlighter-rouge">http</code>. This will make our life easier to create and run our application from <strong>Docker</strong> container later.  And the <code class="highlighter-rouge">-o src/Web/WebMVC</code> argument set the output directory to <code class="highlighter-rouge">src&gt;Web&gt;WebMVC</code>.</p>
 
 <p>Now lets add the project to the solution -</p>
 
