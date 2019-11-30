@@ -24,7 +24,7 @@
 
 
 
-<meta name="description" content="Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project">
+<meta name="description" content="This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.">
 
 
 
@@ -41,7 +41,7 @@
 
 
 
-  <meta property="og:description" content="Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project">
+  <meta property="og:description" content="This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.">
 
 
 
@@ -59,7 +59,7 @@
 
   <meta name="twitter:site" content="@ratanparai">
   <meta name="twitter:title" content="Part one: Getting started with asp.net core MVC">
-  <meta name="twitter:description" content="Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project">
+  <meta name="twitter:description" content="This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.">
   <meta name="twitter:url" content="https://www.ratanparai.com/microservices/part-1-mvc-application/">
 
   
@@ -362,7 +362,7 @@
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     <meta itemprop="headline" content="Part one: Getting started with asp.net core MVC">
-    <meta itemprop="description" content="Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project">
+    <meta itemprop="description" content="This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.">
     <meta itemprop="datePublished" content="November 27, 2019">
     
 
@@ -413,7 +413,9 @@
             </nav>
           </aside>
         
-        <p>Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project</p>
+        <p>This is part one of the tutorial series <a href="/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/">Zero to Hero in Microservices with dotnet core</a>.</p>
+
+<p>Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project</p>
 
 <h2 id="create--clone-github-repository">Create &amp; Clone GitHub repository</h2>
 <p>At first lets create a GitHub repository. To create a GitHub repository you can use the new <code class="highlighter-rouge">.new</code> domain <a href="https://repo.new">repo.new</a>. Don’t forget to select <code class="highlighter-rouge">Visual Studio</code> <strong>.gitignore</strong>, because we don’t want to commit <code class="highlighter-rouge">Visual Studio</code> generated build artifacts and user specific configurations into <code class="highlighter-rouge">git</code>.</p>
@@ -526,7 +528,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Our DbContext class need to extend the <code class="highlighter-rouge">DbContext</code> class and in <code class="highlighter-rouge">constructor</code> parameter need to pass the <code class="highlighter-rouge">DbContextOptions&lt;{Our_Class_Name}&gt;</code> to the base class.</p>
+<p>Our DbContext class need to extend the <code class="highlighter-rouge">DbContext</code> class and in <code class="highlighter-rouge">constructor</code> parameter need to pass the instance of <code class="highlighter-rouge">DbContextOptions&lt;{Our_Class_Name}&gt;</code> to the base class.</p>
 
 <p>Now we need to inject our <code class="highlighter-rouge">CatalogContext</code> class in <code class="highlighter-rouge">startup.cs</code> file -</p>
 
@@ -557,6 +559,8 @@
 
 <h3 id="scaffolding-controller-with-views">Scaffolding Controller with Views</h3>
 
+<p>The term <strong>Scaffolding</strong> is used by many software technologies to mean <em>“quickly generating a basic outline of your software that you can then edit and customize”</em>.</p>
+
 <p>Now lets scaffold a CRUD controller with view. To add scaffolding support we need to install -</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
@@ -573,6 +577,8 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet aspnet-codegenerator controller <span class="nt">-name</span> CatalogController <span class="nt">-m</span> CatalogItem <span class="nt">-dc</span> CatalogContext <span class="nt">--relativeFolderPath</span> Controllers <span class="nt">--useDefaultLayout</span> <span class="nt">--referenceScriptLibraries</span>
 </code></pre></div></div>
+
+<p>Here, in <code class="highlighter-rouge">-name</code> argument we need to pass the <code class="highlighter-rouge">Controller</code> name we want to generate, in <code class="highlighter-rouge">-m</code> pass the previously created <code class="highlighter-rouge">Model</code> class name and in <code class="highlighter-rouge">-dc</code> argument pass the name of our <code class="highlighter-rouge">DBContext</code> class name.</p>
 
 <h3 id="database-migrations">Database Migrations</h3>
 
@@ -610,7 +616,7 @@ dotnet ef database update
 
 <p>Now run the application by pressing <kbd>F5</kbd> on <code class="highlighter-rouge">VSCode</code> <em>or</em> running the command <code class="highlighter-rouge">dotnet run</code> from <em>terminal</em>. Then go the Catalog page by clicking Catalog navbar and test our new Catalog <code class="highlighter-rouge">CRUD</code>.</p>
 
-<p>Congratulation, you have successfully created a <code class="highlighter-rouge">ASP.NET Core MVC</code> Web Application.</p>
+<p>Congratulation, you have successfully created a <code class="highlighter-rouge">ASP.NET Core MVC</code> Web Application. The source code for today’s tutorial can be found in <a href="https://github.com/ratanparai/eCommerce-microservices-tutorial/tree/part-1">GitHub - eCommerce-microservices-tutorial: part-1</a></p>
 
         
       </section>
@@ -618,6 +624,29 @@ dotnet ef database update
       <footer class="page__meta">
         
         
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://www.ratanparai.com/tags/dotnet-core" class="page__taxonomy-item" rel="tag">dotnet core</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://www.ratanparai.com/tags/microservices" class="page__taxonomy-item" rel="tag">microservices</a>
+    
+    </span>
+  </p>
+
+
 
 
   

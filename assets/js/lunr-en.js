@@ -93,9 +93,9 @@ var idx = lunr(function () {
   
     idx.add({
       title: "Part one: Getting started with asp.net core MVC",
-      excerpt: "Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for...",
+      excerpt: "This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.\n\n",
       categories: ["Microservices"],
-      tags: [],
+      tags: ["microservices","dotnet core"],
       id: 9
     });
     
@@ -212,7 +212,7 @@ var store = [
       {
         "title": "Part one: Getting started with asp.net core MVC",
         "url": "https://www.ratanparai.com/microservices/part-1-mvc-application/",
-        "excerpt": "Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for...",
+        "excerpt": "This is part one of the tutorial series Zero to Hero in Microservices with dotnet core. Today, we will create...",
         "teaser":
           
             null
