@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2019-12-13T06:27:26+00:00</updated><id>https://www.ratanparai.com/feed.xml</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Part one: Getting started with asp.net core MVC</title><link href="https://www.ratanparai.com/microservices/part-1-mvc-application/" rel="alternate" type="text/html" title="Part one: Getting started with asp.net core MVC" /><published>2019-11-27T02:41:00+00:00</published><updated>2019-11-27T02:41:00+00:00</updated><id>https://www.ratanparai.com/microservices/part-1-mvc-application</id><content type="html" xml:base="https://www.ratanparai.com/microservices/part-1-mvc-application/">&lt;p&gt;This is part one of the tutorial series &lt;a href=&quot;/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/&quot;&gt;Zero to Hero in Microservices with dotnet core&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2019-12-13T06:59:18+00:00</updated><id>https://www.ratanparai.com/feed.xml</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Part one: Getting started with asp.net core MVC</title><link href="https://www.ratanparai.com/microservices/part-1-mvc-application/" rel="alternate" type="text/html" title="Part one: Getting started with asp.net core MVC" /><published>2019-11-27T02:41:00+00:00</published><updated>2019-12-13T06:57:15+00:00</updated><id>https://www.ratanparai.com/microservices/part-1-mvc-application</id><content type="html" xml:base="https://www.ratanparai.com/microservices/part-1-mvc-application/">&lt;p&gt;This is part one of the tutorial series &lt;a href=&quot;/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/&quot;&gt;Zero to Hero in Microservices with dotnet core&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project&lt;/p&gt;
 
@@ -36,9 +36,9 @@
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet &lt;span class=&quot;nt&quot;&gt;--list-sdks&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;To work on .NET Core v 3.0, lets create a global.json file by running -&lt;/p&gt;
+&lt;p&gt;To work on .NET Core v 3.1, lets create a global.json file by running -&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new globaljson &lt;span class=&quot;nt&quot;&gt;--sdk-version&lt;/span&gt; 3.0.100
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new globaljson &lt;span class=&quot;nt&quot;&gt;--sdk-version&lt;/span&gt; 3.1.100
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This also throw error if anyone try to build the code but do not have the specified version of SKD installed. It ensure the use of right SDK version.&lt;/p&gt;
@@ -83,6 +83,24 @@
 
 &lt;h2 id=&quot;mvc-crud-web-application&quot;&gt;MVC CRUD Web Application&lt;/h2&gt;
 &lt;p&gt;In this part, we will create a MVC application that can &lt;code class=&quot;highlighter-rouge&quot;&gt;create&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;update&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;delete&lt;/code&gt; data into database. For database, we are going to use &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; is a file based lightweight database which doesn’t requires any special tools to be installed on your machine.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-domain-models&quot;&gt;Create Domain Models&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A domain model is a conceptual model of the domain that incorporates both behavior and data&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;Models&lt;/code&gt; folder create a new class named &lt;code class=&quot;highlighter-rouge&quot;&gt;CatalogItem&lt;/code&gt; and add some &lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties&quot;&gt;Auto-Implemented Properties&lt;/a&gt;. We will improve this domain model in future tutorials, but for now, lets keep it simple -&lt;/p&gt;
+
+&lt;div class=&quot;language-cs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CatalogItem&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Description&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;decimal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AvailableStock&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;ef-core-with-sqlite&quot;&gt;EF Core with SQLite&lt;/h3&gt;
 
@@ -144,7 +162,9 @@
 
 &lt;h3 id=&quot;scaffolding-controller-with-views&quot;&gt;Scaffolding Controller with Views&lt;/h3&gt;
 
-&lt;p&gt;The term &lt;strong&gt;Scaffolding&lt;/strong&gt; is used by many software technologies to mean &lt;em&gt;“quickly generating a basic outline of your software that you can then edit and customize”&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The term &lt;strong&gt;Scaffolding&lt;/strong&gt; is used by many software technologies to mean &lt;em&gt;“quickly generating a basic outline of your software that you can then edit and customize”&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;Now lets scaffold a CRUD controller with view. To add scaffolding support we need to install -&lt;/p&gt;
 
@@ -157,6 +177,8 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet tool &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; dotnet-aspnet-codegenerator
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; If you have already installed any of the global tools before, please run &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet tool update --global &amp;lt;package-name&amp;gt;&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet tool install --global &amp;lt;package-name&amp;gt;&lt;/code&gt; to ensure you global tools is up-to-date.&lt;/p&gt;
 
 &lt;p&gt;and then run -&lt;/p&gt;
 
@@ -199,7 +221,7 @@ dotnet ef database update
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;Now run the application by pressing &lt;kbd&gt;F5&lt;/kbd&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; running the command &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet run&lt;/code&gt; from &lt;em&gt;terminal&lt;/em&gt;. Then go the Catalog page by clicking Catalog navbar and test our new Catalog &lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now run the application by pressing &lt;kbd&gt;F5&lt;/kbd&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; running the command &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet run&lt;/code&gt; from &lt;em&gt;terminal&lt;/em&gt;. Then go the Catalog page by clicking Catalog navbar and test our new Catalog &lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt;. In this page, you can create, read, update and delete catalog items! Explore them!&lt;/p&gt;
 
 &lt;p&gt;Congratulation, you have successfully created a &lt;code class=&quot;highlighter-rouge&quot;&gt;ASP.NET Core MVC&lt;/code&gt; Web Application. The source code for today’s tutorial can be found in &lt;a href=&quot;https://github.com/ratanparai/eCommerce-microservices-tutorial/tree/part-1&quot;&gt;GitHub - eCommerce-microservices-tutorial: part-1&lt;/a&gt;&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="microservices" /><category term="dotnet core" /><summary type="html">This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.</summary></entry><entry><title type="html">Zero to Hero in Microservices with dotnet core - Introduction</title><link href="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/" rel="alternate" type="text/html" title="Zero to Hero in Microservices with dotnet core - Introduction" /><published>2019-11-27T02:30:00+00:00</published><updated>2019-12-13T06:24:05+00:00</updated><id>https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction</id><content type="html" xml:base="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/">&lt;p&gt;In this series of blog articles, we are going to start from a basic &lt;strong&gt;dotnet core&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;MVC&lt;/code&gt; application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-&lt;/p&gt;
 

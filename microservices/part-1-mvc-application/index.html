@@ -364,7 +364,7 @@
     <meta itemprop="headline" content="Part one: Getting started with asp.net core MVC">
     <meta itemprop="description" content="This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.">
     <meta itemprop="datePublished" content="November 27, 2019">
-    
+    <meta itemprop="dateModified" content="December 13, 2019">
 
     <div class="page__inner-wrap">
       
@@ -377,7 +377,7 @@
 
 
 
-  5 minute read
+  6 minute read
 
               <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="#disqus_thread">~</a>
             </p>
@@ -402,6 +402,7 @@
   </li>
   <li><a href="#mvc-crud-web-application">MVC CRUD Web Application</a>
     <ul>
+      <li><a href="#create-domain-models">Create Domain Models</a></li>
       <li><a href="#ef-core-with-sqlite">EF Core with SQLite</a></li>
       <li><a href="#scaffolding-controller-with-views">Scaffolding Controller with Views</a></li>
       <li><a href="#database-migrations">Database Migrations</a></li>
@@ -451,9 +452,9 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet <span class="nt">--list-sdks</span>
 </code></pre></div></div>
 
-<p>To work on .NET Core v 3.0, lets create a global.json file by running -</p>
+<p>To work on .NET Core v 3.1, lets create a global.json file by running -</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet new globaljson <span class="nt">--sdk-version</span> 3.0.100
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet new globaljson <span class="nt">--sdk-version</span> 3.1.100
 </code></pre></div></div>
 
 <p>This also throw error if anyone try to build the code but do not have the specified version of SKD installed. It ensure the use of right SDK version.</p>
@@ -498,6 +499,24 @@
 
 <h2 id="mvc-crud-web-application">MVC CRUD Web Application</h2>
 <p>In this part, we will create a MVC application that can <code class="highlighter-rouge">create</code>, <code class="highlighter-rouge">read</code>, <code class="highlighter-rouge">update</code> and <code class="highlighter-rouge">delete</code> data into database. For database, we are going to use <code class="highlighter-rouge">SQLite</code>. <code class="highlighter-rouge">SQLite</code> is a file based lightweight database which doesn’t requires any special tools to be installed on your machine.</p>
+
+<h3 id="create-domain-models">Create Domain Models</h3>
+
+<blockquote>
+  <p>A domain model is a conceptual model of the domain that incorporates both behavior and data</p>
+</blockquote>
+
+<p>Inside the <code class="highlighter-rouge">Models</code> folder create a new class named <code class="highlighter-rouge">CatalogItem</code> and add some <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties">Auto-Implemented Properties</a>. We will improve this domain model in future tutorials, but for now, lets keep it simple -</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">CatalogItem</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">decimal</span> <span class="n">Price</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">AvailableStock</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="ef-core-with-sqlite">EF Core with SQLite</h3>
 
@@ -559,7 +578,9 @@
 
 <h3 id="scaffolding-controller-with-views">Scaffolding Controller with Views</h3>
 
-<p>The term <strong>Scaffolding</strong> is used by many software technologies to mean <em>“quickly generating a basic outline of your software that you can then edit and customize”</em>.</p>
+<blockquote>
+  <p>The term <strong>Scaffolding</strong> is used by many software technologies to mean <em>“quickly generating a basic outline of your software that you can then edit and customize”</em>.</p>
+</blockquote>
 
 <p>Now lets scaffold a CRUD controller with view. To add scaffolding support we need to install -</p>
 
@@ -572,6 +593,8 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet tool <span class="nb">install</span> <span class="nt">--global</span> dotnet-aspnet-codegenerator
 </code></pre></div></div>
+
+<p class="notice--danger"><strong>Please Note:</strong> If you have already installed any of the global tools before, please run <code class="highlighter-rouge">dotnet tool update --global &lt;package-name&gt;</code> instead of <code class="highlighter-rouge">dotnet tool install --global &lt;package-name&gt;</code> to ensure you global tools is up-to-date.</p>
 
 <p>and then run -</p>
 
@@ -614,7 +637,7 @@ dotnet ef database update
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Now run the application by pressing <kbd>F5</kbd> on <code class="highlighter-rouge">VSCode</code> <em>or</em> running the command <code class="highlighter-rouge">dotnet run</code> from <em>terminal</em>. Then go the Catalog page by clicking Catalog navbar and test our new Catalog <code class="highlighter-rouge">CRUD</code>.</p>
+<p>Now run the application by pressing <kbd>F5</kbd> on <code class="highlighter-rouge">VSCode</code> <em>or</em> running the command <code class="highlighter-rouge">dotnet run</code> from <em>terminal</em>. Then go the Catalog page by clicking Catalog navbar and test our new Catalog <code class="highlighter-rouge">CRUD</code>. In this page, you can create, read, update and delete catalog items! Explore them!</p>
 
 <p>Congratulation, you have successfully created a <code class="highlighter-rouge">ASP.NET Core MVC</code> Web Application. The source code for today’s tutorial can be found in <a href="https://github.com/ratanparai/eCommerce-microservices-tutorial/tree/part-1">GitHub - eCommerce-microservices-tutorial: part-1</a></p>
 
@@ -669,7 +692,7 @@ dotnet ef database update
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-27T02:41:00+00:00">November 27, 2019</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-12-13">December 13, 2019</time></p>
         
       </footer>
 
