@@ -422,7 +422,7 @@
 <p>Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project</p>
 
 <h2 id="create--clone-github-repository">Create &amp; Clone GitHub repository</h2>
-<p>At first lets create a GitHub repository. To create a GitHub repository you can use the new <code class="highlighter-rouge">.new</code> domain <a href="https://repo.new">repo.new</a>. Don’t forget to select <code class="highlighter-rouge">Visual Studio</code> <strong>.gitignore</strong>, because we don’t want to commit <code class="highlighter-rouge">Visual Studio</code> generated build artifacts and user specific configurations into <code class="highlighter-rouge">git</code>.</p>
+<p>At first lets create a GitHub repository. To create a GitHub repository you can use the new <code class="language-plaintext highlighter-rouge">.new</code> domain <a href="https://repo.new">repo.new</a>. Don’t forget to select <code class="language-plaintext highlighter-rouge">Visual Studio</code> <strong>.gitignore</strong>, because we don’t want to commit <code class="language-plaintext highlighter-rouge">Visual Studio</code> generated build artifacts and user specific configurations into <code class="language-plaintext highlighter-rouge">git</code>.</p>
 
 <p><img width="100%" src="/assets/images/resized/20/create-github-repository.png" alt="" data-srcset="    /assets/images/resized/20/create-github-repository.png 20w,    /assets/images/resized/480/create-github-repository.png 480w,    /assets/images/resized/800/create-github-repository.png 800w,    /assets/images/resized/1400/create-github-repository.png 1400w," class="blur-up lazyautosizes lazyload " /></p>
 
@@ -442,7 +442,7 @@
 
 <h2 id="setup-initial-project-structure">Setup initial project structure</h2>
 
-<p>Open the locally cloned repository folder in <code class="highlighter-rouge">VSCode</code> and open the <code class="highlighter-rouge">VSCode</code> (Check <a href="https://code.visualstudio.com/docs/editor/integrated-terminal">VSCode Integrated Terminal</a> for more info) terminal window. The rest of today’s tutorial we will use the <code class="highlighter-rouge">VSCode</code> terminal and <code class="highlighter-rouge">dotnet</code> command line to tool to setup the initial structure and projects.</p>
+<p>Open the locally cloned repository folder in <code class="language-plaintext highlighter-rouge">VSCode</code> and open the <code class="language-plaintext highlighter-rouge">VSCode</code> (Check <a href="https://code.visualstudio.com/docs/editor/integrated-terminal">VSCode Integrated Terminal</a> for more info) terminal window. The rest of today’s tutorial we will use the <code class="language-plaintext highlighter-rouge">VSCode</code> terminal and <code class="language-plaintext highlighter-rouge">dotnet</code> command line to tool to setup the initial structure and projects.</p>
 
 <p>You should see similar to this window-</p>
 
@@ -464,24 +464,24 @@
 
 <h3 id="create-solution-file">Create solution file</h3>
 
-<p>A solution is a structure for organizing projects in Visual Studio. Solution file itself doesn’t do anything special. Although, you can build, run and deploy <code class="highlighter-rouge">.NET Core</code> application without the solution file, but having one make your projects much organized and easy to maintain. We will only have one project at the beginning of this tutorial series, we will create and add more projects to the solution as we progress.</p>
+<p>A solution is a structure for organizing projects in Visual Studio. Solution file itself doesn’t do anything special. Although, you can build, run and deploy <code class="language-plaintext highlighter-rouge">.NET Core</code> application without the solution file, but having one make your projects much organized and easy to maintain. We will only have one project at the beginning of this tutorial series, we will create and add more projects to the solution as we progress.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet new sln
 </code></pre></div></div>
 
 <h3 id="create-project">Create Project</h3>
 
-<p>Create folder for the project. This command will create three folders with the structure <code class="highlighter-rouge">src&gt;Web&gt;WebMVC</code> -</p>
+<p>Create folder for the project. This command will create three folders with the structure <code class="language-plaintext highlighter-rouge">src&gt;Web&gt;WebMVC</code> -</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/Web/WebMVC
 </code></pre></div></div>
 
-<p>Now create the <code class="highlighter-rouge">mvc</code> project -</p>
+<p>Now create the <code class="language-plaintext highlighter-rouge">mvc</code> project -</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet new mvc <span class="nt">--no-https</span> <span class="nt">-o</span> src/Web/WebMVC
 </code></pre></div></div>
 
-<p>Here, <code class="highlighter-rouge">--no-https</code> tell the dotnet cli to generate scaffolding code without the <strong>https</strong> support so our web application will only be served in <code class="highlighter-rouge">http</code>. This will make our life easier to create and run our application from <strong>Docker</strong> container later.  And the <code class="highlighter-rouge">-o src/Web/WebMVC</code> argument set the output directory to <code class="highlighter-rouge">src&gt;Web&gt;WebMVC</code>.</p>
+<p>Here, <code class="language-plaintext highlighter-rouge">--no-https</code> tell the dotnet cli to generate scaffolding code without the <strong>https</strong> support so our web application will only be served in <code class="language-plaintext highlighter-rouge">http</code>. This will make our life easier to create and run our application from <strong>Docker</strong> container later.  And the <code class="language-plaintext highlighter-rouge">-o src/Web/WebMVC</code> argument set the output directory to <code class="language-plaintext highlighter-rouge">src&gt;Web&gt;WebMVC</code>.</p>
 
 <p>Now lets add the project to the solution -</p>
 
@@ -490,7 +490,7 @@
 
 <h3 id="run-the-mvc-application">Run the MVC Application</h3>
 
-<p>To configure <code class="highlighter-rouge">VSCode</code> to run the application, go to debug tab and click the setting icon marked in the screenshot bellow, then select <code class="highlighter-rouge">.NET Core</code>. Now you can run the application in <strong>debug</strong> mode by clicking the <strong>run</strong> button on pressing <kbd>F5</kbd> in your keyboard.</p>
+<p>To configure <code class="language-plaintext highlighter-rouge">VSCode</code> to run the application, go to debug tab and click the setting icon marked in the screenshot bellow, then select <code class="language-plaintext highlighter-rouge">.NET Core</code>. Now you can run the application in <strong>debug</strong> mode by clicking the <strong>run</strong> button on pressing <kbd>F5</kbd> in your keyboard.</p>
 
 <p><img width="100%" src="/assets/images/resized/20/vscode-debug-configure.png" alt="" data-srcset="    /assets/images/resized/20/vscode-debug-configure.png 20w,    /assets/images/resized/480/vscode-debug-configure.png 480w,    /assets/images/resized/800/vscode-debug-configure.png 800w,    /assets/images/resized/1400/vscode-debug-configure.png 1400w," class="blur-up lazyautosizes lazyload " /></p>
 
@@ -498,10 +498,10 @@
 
 <p><img width="100%" src="/assets/images/resized/20/welcome-page.png" alt="" data-srcset="    /assets/images/resized/20/welcome-page.png 20w,    /assets/images/resized/480/welcome-page.png 480w,    /assets/images/resized/800/welcome-page.png 800w,    /assets/images/resized/1400/welcome-page.png 1400w," class="blur-up lazyautosizes lazyload " /></p>
 
-<p>Congratulation, you have successfully created a <code class="highlighter-rouge">.NET Core MVC</code> web application. If you want to use <strong>Visual Studio</strong>, you can open the solution file (*.sln. For this tutorial <code class="highlighter-rouge">eCommerce-microservices-tutorial.sln</code> file) in Visual Studio and do the rest of the tutorial in Visual Studio too.</p>
+<p>Congratulation, you have successfully created a <code class="language-plaintext highlighter-rouge">.NET Core MVC</code> web application. If you want to use <strong>Visual Studio</strong>, you can open the solution file (*.sln. For this tutorial <code class="language-plaintext highlighter-rouge">eCommerce-microservices-tutorial.sln</code> file) in Visual Studio and do the rest of the tutorial in Visual Studio too.</p>
 
 <h2 id="mvc-crud-web-application">MVC CRUD Web Application</h2>
-<p>In this part, we will create a MVC application that can <code class="highlighter-rouge">create</code>, <code class="highlighter-rouge">read</code>, <code class="highlighter-rouge">update</code> and <code class="highlighter-rouge">delete</code> data into database. For database, we are going to use <code class="highlighter-rouge">SQLite</code>. <code class="highlighter-rouge">SQLite</code> is a file based lightweight database which doesn’t requires any special tools to be installed on your machine.</p>
+<p>In this part, we will create a MVC application that can <code class="language-plaintext highlighter-rouge">create</code>, <code class="language-plaintext highlighter-rouge">read</code>, <code class="language-plaintext highlighter-rouge">update</code> and <code class="language-plaintext highlighter-rouge">delete</code> data into database. For database, we are going to use <code class="language-plaintext highlighter-rouge">SQLite</code>. <code class="language-plaintext highlighter-rouge">SQLite</code> is a file based lightweight database which doesn’t requires any special tools to be installed on your machine.</p>
 
 <h3 id="create-domain-models">Create Domain Models</h3>
 
@@ -509,7 +509,7 @@
   <p>A domain model is a conceptual model of the domain that incorporates both behavior and data</p>
 </blockquote>
 
-<p>Inside the <code class="highlighter-rouge">Models</code> folder create a new class named <code class="highlighter-rouge">CatalogItem</code> and add some <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties">Auto-Implemented Properties</a>. We will improve this domain model in future tutorials, but for now, lets keep it simple -</p>
+<p>Inside the <code class="language-plaintext highlighter-rouge">Models</code> folder create a new class named <code class="language-plaintext highlighter-rouge">CatalogItem</code> and add some <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties">Auto-Implemented Properties</a>. We will improve this domain model in future tutorials, but for now, lets keep it simple -</p>
 
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">CatalogItem</span>
 <span class="p">{</span>
@@ -523,15 +523,15 @@
 
 <h3 id="ef-core-with-sqlite">EF Core with SQLite</h3>
 
-<p><code class="highlighter-rouge">EF Core</code> is a powerful <code class="highlighter-rouge">ORM</code>. Using <code class="highlighter-rouge">ORM</code> we can skip the database specific <code class="highlighter-rouge">query</code> and change our <code class="highlighter-rouge">database</code> provider from <code class="highlighter-rouge">SQLite</code> to <code class="highlighter-rouge">Microsoft SQL Server</code> with almost no changes in our code. To know more about <code class="highlighter-rouge">EF Core</code> please check <a href="https://docs.microsoft.com/en-us/ef/core/">Entity Framework Core
+<p><code class="language-plaintext highlighter-rouge">EF Core</code> is a powerful <code class="language-plaintext highlighter-rouge">ORM</code>. Using <code class="language-plaintext highlighter-rouge">ORM</code> we can skip the database specific <code class="language-plaintext highlighter-rouge">query</code> and change our <code class="language-plaintext highlighter-rouge">database</code> provider from <code class="language-plaintext highlighter-rouge">SQLite</code> to <code class="language-plaintext highlighter-rouge">Microsoft SQL Server</code> with almost no changes in our code. To know more about <code class="language-plaintext highlighter-rouge">EF Core</code> please check <a href="https://docs.microsoft.com/en-us/ef/core/">Entity Framework Core
 </a>.</p>
 
-<p>Install EF Core by <code class="highlighter-rouge">cd</code> into the <code class="highlighter-rouge">src/Web/WebMVC</code> directory and running -</p>
+<p>Install EF Core by <code class="language-plaintext highlighter-rouge">cd</code> into the <code class="language-plaintext highlighter-rouge">src/Web/WebMVC</code> directory and running -</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 </code></pre></div></div>
 
-<p>Now create a folder named <code class="highlighter-rouge">Infrastructure</code> and inside the folder create a <code class="highlighter-rouge">Class</code> named <code class="highlighter-rouge">CatalogContext</code> with the code -</p>
+<p>Now create a folder named <code class="language-plaintext highlighter-rouge">Infrastructure</code> and inside the folder create a <code class="language-plaintext highlighter-rouge">Class</code> named <code class="language-plaintext highlighter-rouge">CatalogContext</code> with the code -</p>
 
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.EntityFrameworkCore</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">WebMVC.Models</span><span class="p">;</span>
@@ -550,9 +550,9 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Our DbContext class need to extend the <code class="highlighter-rouge">DbContext</code> class and in <code class="highlighter-rouge">constructor</code> parameter need to pass the instance of <code class="highlighter-rouge">DbContextOptions&lt;{Our_Class_Name}&gt;</code> to the base class.</p>
+<p>Our DbContext class need to extend the <code class="language-plaintext highlighter-rouge">DbContext</code> class and in <code class="language-plaintext highlighter-rouge">constructor</code> parameter need to pass the instance of <code class="language-plaintext highlighter-rouge">DbContextOptions&lt;{Our_Class_Name}&gt;</code> to the base class.</p>
 
-<p>Now we need to inject our <code class="highlighter-rouge">CatalogContext</code> class in <code class="highlighter-rouge">startup.cs</code> file -</p>
+<p>Now we need to inject our <code class="language-plaintext highlighter-rouge">CatalogContext</code> class in <code class="language-plaintext highlighter-rouge">startup.cs</code> file -</p>
 
 <div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
 
@@ -569,13 +569,13 @@
 <span class="p">...</span>
 </code></pre></div></div>
 
-<p>We also need to add the <code class="highlighter-rouge">catalog.db</code> file to <code class="highlighter-rouge">.gitignore</code> as this file will hold our <em>database</em> and we do not need to commit this file. Please add those two line in your <code class="highlighter-rouge">.gitignore</code> file as bellow -</p>
+<p>We also need to add the <code class="language-plaintext highlighter-rouge">catalog.db</code> file to <code class="language-plaintext highlighter-rouge">.gitignore</code> as this file will hold our <em>database</em> and we do not need to commit this file. Please add those two line in your <code class="language-plaintext highlighter-rouge">.gitignore</code> file as bellow -</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ignoring all user generated DB files</span>
 <span class="k">*</span>.db
 </code></pre></div></div>
 
-<p>The first line is a comment, so that we understand what we are trying to do here and the second line is telling <code class="highlighter-rouge">git</code> to ignore any file with the file <strong>extension</strong> <code class="highlighter-rouge">.db</code>.</p>
+<p>The first line is a comment, so that we understand what we are trying to do here and the second line is telling <code class="language-plaintext highlighter-rouge">git</code> to ignore any file with the file <strong>extension</strong> <code class="language-plaintext highlighter-rouge">.db</code>.</p>
 
 <p class="notice--danger"><strong>Please Note:</strong> To know how dependency injection works in ASP.NET Core please read <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0">Dependency injection in ASP.NET Core</a></p>
 
@@ -597,18 +597,18 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet tool <span class="nb">install</span> <span class="nt">--global</span> dotnet-aspnet-codegenerator
 </code></pre></div></div>
 
-<p class="notice--danger"><strong>Please Note:</strong> If you have already installed any of the global tools before, please run <code class="highlighter-rouge">dotnet tool update --global &lt;package-name&gt;</code> instead of <code class="highlighter-rouge">dotnet tool install --global &lt;package-name&gt;</code> to ensure you global tools is up-to-date.</p>
+<p class="notice--danger"><strong>Please Note:</strong> If you have already installed any of the global tools before, please run <code class="language-plaintext highlighter-rouge">dotnet tool update --global &lt;package-name&gt;</code> instead of <code class="language-plaintext highlighter-rouge">dotnet tool install --global &lt;package-name&gt;</code> to ensure you global tools is up-to-date.</p>
 
 <p>and then run -</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet aspnet-codegenerator controller <span class="nt">-name</span> CatalogController <span class="nt">-m</span> CatalogItem <span class="nt">-dc</span> CatalogContext <span class="nt">--relativeFolderPath</span> Controllers <span class="nt">--useDefaultLayout</span> <span class="nt">--referenceScriptLibraries</span>
 </code></pre></div></div>
 
-<p>Here, in <code class="highlighter-rouge">-name</code> argument we need to pass the <code class="highlighter-rouge">Controller</code> name we want to generate, in <code class="highlighter-rouge">-m</code> pass the previously created <code class="highlighter-rouge">Model</code> class name and in <code class="highlighter-rouge">-dc</code> argument pass the name of our <code class="highlighter-rouge">DBContext</code> class name.</p>
+<p>Here, in <code class="language-plaintext highlighter-rouge">-name</code> argument we need to pass the <code class="language-plaintext highlighter-rouge">Controller</code> name we want to generate, in <code class="language-plaintext highlighter-rouge">-m</code> pass the previously created <code class="language-plaintext highlighter-rouge">Model</code> class name and in <code class="language-plaintext highlighter-rouge">-dc</code> argument pass the name of our <code class="language-plaintext highlighter-rouge">DBContext</code> class name.</p>
 
 <h3 id="database-migrations">Database Migrations</h3>
 
-<p>To run migration, please make sure you have the <code class="highlighter-rouge">dotnet-ef</code> global tool installed. If now then install it by running -</p>
+<p>To run migration, please make sure you have the <code class="language-plaintext highlighter-rouge">dotnet-ef</code> global tool installed. If now then install it by running -</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet tool <span class="nb">install</span> <span class="nt">--global</span> dotnet-ef
 </code></pre></div></div>
@@ -621,7 +621,7 @@ dotnet ef database update
 
 <h3 id="update-navigation-bar">Update Navigation bar</h3>
 
-<p>And then add the new Controller in Navigation bar. To do this, please modfity the <code class="highlighter-rouge">Views&gt;Shared&gt;_Layout.cshtml</code> file and add another <code class="highlighter-rouge">nav-item</code> like -</p>
+<p>And then add the new Controller in Navigation bar. To do this, please modfity the <code class="language-plaintext highlighter-rouge">Views&gt;Shared&gt;_Layout.cshtml</code> file and add another <code class="language-plaintext highlighter-rouge">nav-item</code> like -</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav flex-grow-1"</span><span class="nt">&gt;</span>
@@ -640,9 +640,9 @@ dotnet ef database update
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Now run the application by pressing <kbd>F5</kbd> on <code class="highlighter-rouge">VSCode</code> <em>or</em> running the command <code class="highlighter-rouge">dotnet run</code> from <em>terminal</em>. Then go the Catalog page by clicking Catalog navbar and test our new Catalog <code class="highlighter-rouge">CRUD</code>. In this page, you can create, read, update and delete catalog items! Explore them!</p>
+<p>Now run the application by pressing <kbd>F5</kbd> on <code class="language-plaintext highlighter-rouge">VSCode</code> <em>or</em> running the command <code class="language-plaintext highlighter-rouge">dotnet run</code> from <em>terminal</em>. Then go the Catalog page by clicking Catalog navbar and test our new Catalog <code class="language-plaintext highlighter-rouge">CRUD</code>. In this page, you can create, read, update and delete catalog items! Explore them!</p>
 
-<p>Congratulation, you have successfully created a <code class="highlighter-rouge">ASP.NET Core MVC</code> Web Application. The source code for today’s tutorial can be found in <a href="https://github.com/ratanparai/eCommerce-microservices-tutorial/tree/part-1">GitHub - eCommerce-microservices-tutorial: part-1</a></p>
+<p>Congratulation, you have successfully created a <code class="language-plaintext highlighter-rouge">ASP.NET Core MVC</code> Web Application. The source code for today’s tutorial can be found in <a href="https://github.com/ratanparai/eCommerce-microservices-tutorial/tree/part-1">GitHub - eCommerce-microservices-tutorial: part-1</a></p>
 
         
       </section>
@@ -876,7 +876,7 @@ dotnet ef database update
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Ratan Sunder Parai.</div>
+<div class="page__footer-copyright">&copy; 2020 Ratan Sunder Parai.</div>
 
       </footer>
     </div>

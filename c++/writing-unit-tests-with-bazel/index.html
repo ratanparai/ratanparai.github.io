@@ -400,7 +400,7 @@
 
 <p>At first lets look at the folder structure-</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>│   gmock.BUILD
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>│   gmock.BUILD
 │   WORKSPACE
 │
 ├───src
@@ -418,11 +418,11 @@
         Greeting_test.cc
 </code></pre></div></div>
 
-<p>There should be a <code class="highlighter-rouge">WORKSPACE</code> file in the <strong>root</strong> of your source code. It contains <strong>external dependencies</strong>. If you don’t have any external dependencies in your project, your <code class="highlighter-rouge">WORKSPACE</code> file should be empty, But you must have this file.</p>
+<p>There should be a <code class="language-plaintext highlighter-rouge">WORKSPACE</code> file in the <strong>root</strong> of your source code. It contains <strong>external dependencies</strong>. If you don’t have any external dependencies in your project, your <code class="language-plaintext highlighter-rouge">WORKSPACE</code> file should be empty, But you must have this file.</p>
 
-<p>We are using <strong>GoogleTest</strong> as external dependency. Lets look inside our <code class="highlighter-rouge">WORKSPACE</code> file-</p>
+<p>We are using <strong>GoogleTest</strong> as external dependency. Lets look inside our <code class="language-plaintext highlighter-rouge">WORKSPACE</code> file-</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new_git_repository(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new_git_repository(
     name = "googletest",
     build_file = "gmock.BUILD",
     remote = "https://github.com/google/googletest",
@@ -430,9 +430,9 @@
 )
 </code></pre></div></div>
 
-<p>Here, the dependency is added as a git repository. As a result, when we build the project, it will download the <strong>git</strong> repository and run the <code class="highlighter-rouge">build_file</code> <strong>gmock.BUILD</strong> to build the <strong>GoogleTest</strong> library, which we will import in our <strong>tests</strong>. The content of the <strong>gmock.BUILD</strong> file is-</p>
+<p>Here, the dependency is added as a git repository. As a result, when we build the project, it will download the <strong>git</strong> repository and run the <code class="language-plaintext highlighter-rouge">build_file</code> <strong>gmock.BUILD</strong> to build the <strong>GoogleTest</strong> library, which we will import in our <strong>tests</strong>. The content of the <strong>gmock.BUILD</strong> file is-</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cc_library(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cc_library(
     name = "gtest",
     srcs = [
         "googletest/src/gtest-all.cc",
@@ -462,9 +462,9 @@ cc_library(
 )
 </code></pre></div></div>
 
-<p>This concludes our initial setup of <strong>GoogleTest</strong> with <strong>Bazel</strong>. Now we need to add <code class="highlighter-rouge">@googletest//:gtest_main</code> as a dependency of our test library, <code class="highlighter-rouge">cc_test</code> and import <code class="highlighter-rouge">gtest/gtest.h</code> to our <strong>unit test</strong> file. Example <strong>BUILD</strong> file <code class="highlighter-rouge">tests</code> -</p>
+<p>This concludes our initial setup of <strong>GoogleTest</strong> with <strong>Bazel</strong>. Now we need to add <code class="language-plaintext highlighter-rouge">@googletest//:gtest_main</code> as a dependency of our test library, <code class="language-plaintext highlighter-rouge">cc_test</code> and import <code class="language-plaintext highlighter-rouge">gtest/gtest.h</code> to our <strong>unit test</strong> file. Example <strong>BUILD</strong> file <code class="language-plaintext highlighter-rouge">tests</code> -</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cc_test(
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cc_test(
     name = "tests",
     srcs = glob(["**/*.cc"]),
     deps = [
@@ -475,10 +475,10 @@ cc_library(
 </code></pre></div></div>
 
 <blockquote>
-  <p>Here the first dependency is <code class="highlighter-rouge">cc_library</code> dependency, where we have a <code class="highlighter-rouge">Greeting</code> class that have a <strong>public</strong> method, <code class="highlighter-rouge">getGreetingMessage()</code> that return <code class="highlighter-rouge">Hello World!</code>.</p>
+  <p>Here the first dependency is <code class="language-plaintext highlighter-rouge">cc_library</code> dependency, where we have a <code class="language-plaintext highlighter-rouge">Greeting</code> class that have a <strong>public</strong> method, <code class="language-plaintext highlighter-rouge">getGreetingMessage()</code> that return <code class="language-plaintext highlighter-rouge">Hello World!</code>.</p>
 </blockquote>
 
-<p>And content of the <code class="highlighter-rouge">greeting_test.cc</code>-</p>
+<p>And content of the <code class="language-plaintext highlighter-rouge">greeting_test.cc</code>-</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "gtest/gtest.h"
 #include "src/lib/Greeting.h"
 </span>
@@ -739,7 +739,7 @@ cc_library(
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Ratan Sunder Parai.</div>
+<div class="page__footer-copyright">&copy; 2020 Ratan Sunder Parai.</div>
 
       </footer>
     </div>

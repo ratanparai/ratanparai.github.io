@@ -410,17 +410,17 @@
         <h2 id="setup-openssl">Setup OpenSSL</h2>
 <ol>
   <li>Download and install OpenSSL from <a href="https://slproweb.com/products/Win32OpenSSL.html">here</a>. For our current task <strong>light</strong> version is more than enough. I have downloaded <a href="https://slproweb.com/download/Win64OpenSSL_Light-1_1_0f.exe">this</a> one</li>
-  <li>Add <code class="highlighter-rouge">C:\OpenSSL-Win64\bin</code> to your environment variable <code class="highlighter-rouge">PATH</code></li>
-  <li>If you face <strong>no configuration error</strong> when running OpenSSL, then you need to add a new <strong>Environment variable</strong>: <em><strong>Variable Name</strong></em> - <code class="highlighter-rouge">OPENSSL_CONF</code> and <em><strong>Variable Value</strong></em> - <code class="highlighter-rouge">C:\OpenSSL-Win64\bin\openssl.cfg</code></li>
+  <li>Add <code class="language-plaintext highlighter-rouge">C:\OpenSSL-Win64\bin</code> to your environment variable <code class="language-plaintext highlighter-rouge">PATH</code></li>
+  <li>If you face <strong>no configuration error</strong> when running OpenSSL, then you need to add a new <strong>Environment variable</strong>: <em><strong>Variable Name</strong></em> - <code class="language-plaintext highlighter-rouge">OPENSSL_CONF</code> and <em><strong>Variable Value</strong></em> - <code class="language-plaintext highlighter-rouge">C:\OpenSSL-Win64\bin\openssl.cfg</code></li>
 </ol>
 
 <h1 id="generate-self-signed-root-ca">Generate self signed root CA</h1>
 <h3 id="generate-root-ca-key">Generate Root CA Key</h3>
-<p>Open <code class="highlighter-rouge">cmd</code> and <code class="highlighter-rouge">cd</code> to the directory you want to save the certificates <em><strong>or</strong></em> from the <strong>folder</strong> <code class="highlighter-rouge">SHITF</code>+<code class="highlighter-rouge">RMB</code> and select <code class="highlighter-rouge">Open Powershell Windows here</code>. then type -</p>
+<p>Open <code class="language-plaintext highlighter-rouge">cmd</code> and <code class="language-plaintext highlighter-rouge">cd</code> to the directory you want to save the certificates <em><strong>or</strong></em> from the <strong>folder</strong> <code class="language-plaintext highlighter-rouge">SHITF</code>+<code class="language-plaintext highlighter-rouge">RMB</code> and select <code class="language-plaintext highlighter-rouge">Open Powershell Windows here</code>. then type -</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl genrsa <span class="nt">-des3</span> <span class="nt">-out</span> myrootca.key 2048
 </code></pre></div></div>
-<p>and press <code class="highlighter-rouge">ENTER</code>. Type a new <strong>Password</strong> to protect the key file</p>
+<p>and press <code class="language-plaintext highlighter-rouge">ENTER</code>. Type a new <strong>Password</strong> to protect the key file</p>
 
 <h3 id="request-for-certificate">Request for certificate</h3>
 <p>Then create a certificate request using the root CA key file</p>
@@ -432,7 +432,7 @@
 <p>To self sign the request certificate run -</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 7305 <span class="nt">-extensions</span> v3_ca <span class="nt">-signkey</span> myrootca.key <span class="nt">-in</span> myrootca.req <span class="nt">-out</span> myrootca.crt
 </code></pre></div></div>
-<p>you need to install the <code class="highlighter-rouge">.crt</code> file to all of the <strong>computer</strong> that you want to use varify your issued certificates. When importing <code class="highlighter-rouge">.crt</code> certificate make sure you select <code class="highlighter-rouge">Place all certificates in the following store</code> and browse to <code class="highlighter-rouge">Trusted root certification authorities</code></p>
+<p>you need to install the <code class="language-plaintext highlighter-rouge">.crt</code> file to all of the <strong>computer</strong> that you want to use varify your issued certificates. When importing <code class="language-plaintext highlighter-rouge">.crt</code> certificate make sure you select <code class="language-plaintext highlighter-rouge">Place all certificates in the following store</code> and browse to <code class="language-plaintext highlighter-rouge">Trusted root certification authorities</code></p>
 
 <h2 id="issue-certificate-as-a-ca">Issue Certificate as a CA</h2>
 <p>We have created our own Certificate Authority in the previous step. Now its time to issue certificate.</p>
@@ -442,11 +442,11 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl genrsa <span class="nt">-out</span> myhost.key 2048
 </code></pre></div></div>
 <h3 id="request-for-certificate-1">Request for certificate</h3>
-<p>Fill the information for the Server. When asked for <code class="highlighter-rouge">CA</code>, give your web server’s <code class="highlighter-rouge">IP address</code> or <code class="highlighter-rouge">domain</code> name</p>
+<p>Fill the information for the Server. When asked for <code class="language-plaintext highlighter-rouge">CA</code>, give your web server’s <code class="language-plaintext highlighter-rouge">IP address</code> or <code class="language-plaintext highlighter-rouge">domain</code> name</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-new</span> <span class="nt">-key</span> myhost.key <span class="nt">-out</span> myhost.req
 </code></pre></div></div>
 <h3 id="issue-the-certificate">Issue the Certificate</h3>
-<p>Create a new file and name it <code class="highlighter-rouge">v3.ext</code> in the working directory with the contents. Change the <code class="highlighter-rouge">[alt_names]</code> portion as needed.</p>
+<p>Create a new file and name it <code class="language-plaintext highlighter-rouge">v3.ext</code> in the working directory with the contents. Change the <code class="language-plaintext highlighter-rouge">[alt_names]</code> portion as needed.</p>
 <pre><code class="language-ext">authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
@@ -456,21 +456,21 @@ subjectAltName = @alt_names
 DNS.1 = localhost
 IP.2 = 192.168.10.240
 </code></pre>
-<p>after making required changes to the <code class="highlighter-rouge">v3.ext</code> file run the command bellow in <code class="highlighter-rouge">cmd</code></p>
+<p>after making required changes to the <code class="language-plaintext highlighter-rouge">v3.ext</code> file run the command bellow in <code class="language-plaintext highlighter-rouge">cmd</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl x509 <span class="nt">-req</span> <span class="nt">-days</span> 3650 <span class="nt">-CA</span> myrootca.crt <span class="nt">-CAkey</span> myrootca.key <span class="nt">-CAcreateserial</span> <span class="nt">-sha256</span> <span class="nt">-extfile</span> v3.ext <span class="nt">-out</span> myhost.crt <span class="nt">-in</span> myhost.req
 </code></pre></div></div>
 
-<h2 id="generate-pfx-file-for-iis-server">Generate <code class="highlighter-rouge">.pfx</code> file for <code class="highlighter-rouge">IIS</code> Server</h2>
-<p>To use the server certificate with <code class="highlighter-rouge">IIS</code> server we need <code class="highlighter-rouge">.pfx</code> file. To generate <code class="highlighter-rouge">.pfx</code> file we need to run-</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl pkcs12 -export -out myhost.pfx -inkey myhost.key -in myhost.crt
+<h2 id="generate-pfx-file-for-iis-server">Generate <code class="language-plaintext highlighter-rouge">.pfx</code> file for <code class="language-plaintext highlighter-rouge">IIS</code> Server</h2>
+<p>To use the server certificate with <code class="language-plaintext highlighter-rouge">IIS</code> server we need <code class="language-plaintext highlighter-rouge">.pfx</code> file. To generate <code class="language-plaintext highlighter-rouge">.pfx</code> file we need to run-</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl pkcs12 -export -out myhost.pfx -inkey myhost.key -in myhost.crt
 </code></pre></div></div>
 
 <h3 id="verify-certificate-chain">*Verify Certificate Chain</h3>
-<p>You can verify certificate chain in <code class="highlighter-rouge">Windows</code> for debugging purpose by running</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>certutil -f -urlfetch -verify myhost.crt
+<p>You can verify certificate chain in <code class="language-plaintext highlighter-rouge">Windows</code> for debugging purpose by running</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>certutil -f -urlfetch -verify myhost.crt
 </code></pre></div></div>
-<p>Where <code class="highlighter-rouge">myhost.crt</code> is the server certificate</p>
+<p>Where <code class="language-plaintext highlighter-rouge">myhost.crt</code> is the server certificate</p>
 
         
       </section>
@@ -695,7 +695,7 @@ IP.2 = 192.168.10.240
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Ratan Sunder Parai.</div>
+<div class="page__footer-copyright">&copy; 2020 Ratan Sunder Parai.</div>
 
       </footer>
     </div>

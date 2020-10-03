@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2019-12-14T05:39:28+00:00</updated><id>https://www.ratanparai.com/feed.xml</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Part one: Getting started with asp.net core MVC</title><link href="https://www.ratanparai.com/microservices/part-1-mvc-application/" rel="alternate" type="text/html" title="Part one: Getting started with asp.net core MVC" /><published>2019-11-27T02:41:00+00:00</published><updated>2019-12-13T06:57:15+00:00</updated><id>https://www.ratanparai.com/microservices/part-1-mvc-application</id><content type="html" xml:base="https://www.ratanparai.com/microservices/part-1-mvc-application/">&lt;p&gt;This is part one of the tutorial series &lt;a href=&quot;/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/&quot;&gt;Zero to Hero in Microservices with dotnet core&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://www.ratanparai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.ratanparai.com/" rel="alternate" type="text/html" /><updated>2020-10-03T11:15:35+00:00</updated><id>https://www.ratanparai.com/feed.xml</id><title type="html">Ratan Parai</title><subtitle>An open notebook of stranger things that I encounter in my everyday life.</subtitle><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><entry><title type="html">Part one: Getting started with asp.net core MVC</title><link href="https://www.ratanparai.com/microservices/part-1-mvc-application/" rel="alternate" type="text/html" title="Part one: Getting started with asp.net core MVC" /><published>2019-11-27T02:41:00+00:00</published><updated>2019-12-13T06:57:15+00:00</updated><id>https://www.ratanparai.com/microservices/part-1-mvc-application</id><content type="html" xml:base="https://www.ratanparai.com/microservices/part-1-mvc-application/">&lt;p&gt;This is part one of the tutorial series &lt;a href=&quot;/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/&quot;&gt;Zero to Hero in Microservices with dotnet core&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Today, we will create a basic ASP.NET Core MVC web application. But before that lets create a github repository for our project&lt;/p&gt;
 
 &lt;h2 id=&quot;create--clone-github-repository&quot;&gt;Create &amp;amp; Clone GitHub repository&lt;/h2&gt;
-&lt;p&gt;At first lets create a GitHub repository. To create a GitHub repository you can use the new &lt;code class=&quot;highlighter-rouge&quot;&gt;.new&lt;/code&gt; domain &lt;a href=&quot;https://repo.new&quot;&gt;repo.new&lt;/a&gt;. Don’t forget to select &lt;code class=&quot;highlighter-rouge&quot;&gt;Visual Studio&lt;/code&gt; &lt;strong&gt;.gitignore&lt;/strong&gt;, because we don’t want to commit &lt;code class=&quot;highlighter-rouge&quot;&gt;Visual Studio&lt;/code&gt; generated build artifacts and user specific configurations into &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;At first lets create a GitHub repository. To create a GitHub repository you can use the new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.new&lt;/code&gt; domain &lt;a href=&quot;https://repo.new&quot;&gt;repo.new&lt;/a&gt;. Don’t forget to select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Visual Studio&lt;/code&gt; &lt;strong&gt;.gitignore&lt;/strong&gt;, because we don’t want to commit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Visual Studio&lt;/code&gt; generated build artifacts and user specific configurations into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/create-github-repository.png&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/create-github-repository.png 20w,    /assets/images/resized/480/create-github-repository.png 480w,    /assets/images/resized/800/create-github-repository.png 800w,    /assets/images/resized/1400/create-github-repository.png 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
 
@@ -23,7 +23,7 @@
 
 &lt;h2 id=&quot;setup-initial-project-structure&quot;&gt;Setup initial project structure&lt;/h2&gt;
 
-&lt;p&gt;Open the locally cloned repository folder in &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; and open the &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; (Check &lt;a href=&quot;https://code.visualstudio.com/docs/editor/integrated-terminal&quot;&gt;VSCode Integrated Terminal&lt;/a&gt; for more info) terminal window. The rest of today’s tutorial we will use the &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; terminal and &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet&lt;/code&gt; command line to tool to setup the initial structure and projects.&lt;/p&gt;
+&lt;p&gt;Open the locally cloned repository folder in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; and open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; (Check &lt;a href=&quot;https://code.visualstudio.com/docs/editor/integrated-terminal&quot;&gt;VSCode Integrated Terminal&lt;/a&gt; for more info) terminal window. The rest of today’s tutorial we will use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; terminal and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet&lt;/code&gt; command line to tool to setup the initial structure and projects.&lt;/p&gt;
 
 &lt;p&gt;You should see similar to this window-&lt;/p&gt;
 
@@ -45,24 +45,24 @@
 
 &lt;h3 id=&quot;create-solution-file&quot;&gt;Create solution file&lt;/h3&gt;
 
-&lt;p&gt;A solution is a structure for organizing projects in Visual Studio. Solution file itself doesn’t do anything special. Although, you can build, run and deploy &lt;code class=&quot;highlighter-rouge&quot;&gt;.NET Core&lt;/code&gt; application without the solution file, but having one make your projects much organized and easy to maintain. We will only have one project at the beginning of this tutorial series, we will create and add more projects to the solution as we progress.&lt;/p&gt;
+&lt;p&gt;A solution is a structure for organizing projects in Visual Studio. Solution file itself doesn’t do anything special. Although, you can build, run and deploy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET Core&lt;/code&gt; application without the solution file, but having one make your projects much organized and easy to maintain. We will only have one project at the beginning of this tutorial series, we will create and add more projects to the solution as we progress.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new sln
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;create-project&quot;&gt;Create Project&lt;/h3&gt;
 
-&lt;p&gt;Create folder for the project. This command will create three folders with the structure &lt;code class=&quot;highlighter-rouge&quot;&gt;src&amp;gt;Web&amp;gt;WebMVC&lt;/code&gt; -&lt;/p&gt;
+&lt;p&gt;Create folder for the project. This command will create three folders with the structure &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&amp;gt;Web&amp;gt;WebMVC&lt;/code&gt; -&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; src/Web/WebMVC
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now create the &lt;code class=&quot;highlighter-rouge&quot;&gt;mvc&lt;/code&gt; project -&lt;/p&gt;
+&lt;p&gt;Now create the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mvc&lt;/code&gt; project -&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new mvc &lt;span class=&quot;nt&quot;&gt;--no-https&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; src/Web/WebMVC
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here, &lt;code class=&quot;highlighter-rouge&quot;&gt;--no-https&lt;/code&gt; tell the dotnet cli to generate scaffolding code without the &lt;strong&gt;https&lt;/strong&gt; support so our web application will only be served in &lt;code class=&quot;highlighter-rouge&quot;&gt;http&lt;/code&gt;. This will make our life easier to create and run our application from &lt;strong&gt;Docker&lt;/strong&gt; container later.  And the &lt;code class=&quot;highlighter-rouge&quot;&gt;-o src/Web/WebMVC&lt;/code&gt; argument set the output directory to &lt;code class=&quot;highlighter-rouge&quot;&gt;src&amp;gt;Web&amp;gt;WebMVC&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--no-https&lt;/code&gt; tell the dotnet cli to generate scaffolding code without the &lt;strong&gt;https&lt;/strong&gt; support so our web application will only be served in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http&lt;/code&gt;. This will make our life easier to create and run our application from &lt;strong&gt;Docker&lt;/strong&gt; container later.  And the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-o src/Web/WebMVC&lt;/code&gt; argument set the output directory to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&amp;gt;Web&amp;gt;WebMVC&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Now lets add the project to the solution -&lt;/p&gt;
 
@@ -71,7 +71,7 @@
 
 &lt;h3 id=&quot;run-the-mvc-application&quot;&gt;Run the MVC Application&lt;/h3&gt;
 
-&lt;p&gt;To configure &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; to run the application, go to debug tab and click the setting icon marked in the screenshot bellow, then select &lt;code class=&quot;highlighter-rouge&quot;&gt;.NET Core&lt;/code&gt;. Now you can run the application in &lt;strong&gt;debug&lt;/strong&gt; mode by clicking the &lt;strong&gt;run&lt;/strong&gt; button on pressing &lt;kbd&gt;F5&lt;/kbd&gt; in your keyboard.&lt;/p&gt;
+&lt;p&gt;To configure &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; to run the application, go to debug tab and click the setting icon marked in the screenshot bellow, then select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET Core&lt;/code&gt;. Now you can run the application in &lt;strong&gt;debug&lt;/strong&gt; mode by clicking the &lt;strong&gt;run&lt;/strong&gt; button on pressing &lt;kbd&gt;F5&lt;/kbd&gt; in your keyboard.&lt;/p&gt;
 
 &lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/vscode-debug-configure.png&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/vscode-debug-configure.png 20w,    /assets/images/resized/480/vscode-debug-configure.png 480w,    /assets/images/resized/800/vscode-debug-configure.png 800w,    /assets/images/resized/1400/vscode-debug-configure.png 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
 
@@ -79,10 +79,10 @@
 
 &lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/welcome-page.png&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/welcome-page.png 20w,    /assets/images/resized/480/welcome-page.png 480w,    /assets/images/resized/800/welcome-page.png 800w,    /assets/images/resized/1400/welcome-page.png 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Congratulation, you have successfully created a &lt;code class=&quot;highlighter-rouge&quot;&gt;.NET Core MVC&lt;/code&gt; web application. If you want to use &lt;strong&gt;Visual Studio&lt;/strong&gt;, you can open the solution file (*.sln. For this tutorial &lt;code class=&quot;highlighter-rouge&quot;&gt;eCommerce-microservices-tutorial.sln&lt;/code&gt; file) in Visual Studio and do the rest of the tutorial in Visual Studio too.&lt;/p&gt;
+&lt;p&gt;Congratulation, you have successfully created a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET Core MVC&lt;/code&gt; web application. If you want to use &lt;strong&gt;Visual Studio&lt;/strong&gt;, you can open the solution file (*.sln. For this tutorial &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eCommerce-microservices-tutorial.sln&lt;/code&gt; file) in Visual Studio and do the rest of the tutorial in Visual Studio too.&lt;/p&gt;
 
 &lt;h2 id=&quot;mvc-crud-web-application&quot;&gt;MVC CRUD Web Application&lt;/h2&gt;
-&lt;p&gt;In this part, we will create a MVC application that can &lt;code class=&quot;highlighter-rouge&quot;&gt;create&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;update&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;delete&lt;/code&gt; data into database. For database, we are going to use &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; is a file based lightweight database which doesn’t requires any special tools to be installed on your machine.&lt;/p&gt;
+&lt;p&gt;In this part, we will create a MVC application that can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;create&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;read&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;update&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;delete&lt;/code&gt; data into database. For database, we are going to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; is a file based lightweight database which doesn’t requires any special tools to be installed on your machine.&lt;/p&gt;
 
 &lt;h3 id=&quot;create-domain-models&quot;&gt;Create Domain Models&lt;/h3&gt;
 
@@ -90,7 +90,7 @@
   &lt;p&gt;A domain model is a conceptual model of the domain that incorporates both behavior and data&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;Models&lt;/code&gt; folder create a new class named &lt;code class=&quot;highlighter-rouge&quot;&gt;CatalogItem&lt;/code&gt; and add some &lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties&quot;&gt;Auto-Implemented Properties&lt;/a&gt;. We will improve this domain model in future tutorials, but for now, lets keep it simple -&lt;/p&gt;
+&lt;p&gt;Inside the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Models&lt;/code&gt; folder create a new class named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CatalogItem&lt;/code&gt; and add some &lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties&quot;&gt;Auto-Implemented Properties&lt;/a&gt;. We will improve this domain model in future tutorials, but for now, lets keep it simple -&lt;/p&gt;
 
 &lt;div class=&quot;language-cs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CatalogItem&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -104,15 +104,15 @@
 
 &lt;h3 id=&quot;ef-core-with-sqlite&quot;&gt;EF Core with SQLite&lt;/h3&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;EF Core&lt;/code&gt; is a powerful &lt;code class=&quot;highlighter-rouge&quot;&gt;ORM&lt;/code&gt;. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;ORM&lt;/code&gt; we can skip the database specific &lt;code class=&quot;highlighter-rouge&quot;&gt;query&lt;/code&gt; and change our &lt;code class=&quot;highlighter-rouge&quot;&gt;database&lt;/code&gt; provider from &lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Microsoft SQL Server&lt;/code&gt; with almost no changes in our code. To know more about &lt;code class=&quot;highlighter-rouge&quot;&gt;EF Core&lt;/code&gt; please check &lt;a href=&quot;https://docs.microsoft.com/en-us/ef/core/&quot;&gt;Entity Framework Core
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EF Core&lt;/code&gt; is a powerful &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ORM&lt;/code&gt;. Using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ORM&lt;/code&gt; we can skip the database specific &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;query&lt;/code&gt; and change our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;database&lt;/code&gt; provider from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SQLite&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Microsoft SQL Server&lt;/code&gt; with almost no changes in our code. To know more about &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EF Core&lt;/code&gt; please check &lt;a href=&quot;https://docs.microsoft.com/en-us/ef/core/&quot;&gt;Entity Framework Core
 &lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Install EF Core by &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; into the &lt;code class=&quot;highlighter-rouge&quot;&gt;src/Web/WebMVC&lt;/code&gt; directory and running -&lt;/p&gt;
+&lt;p&gt;Install EF Core by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src/Web/WebMVC&lt;/code&gt; directory and running -&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now create a folder named &lt;code class=&quot;highlighter-rouge&quot;&gt;Infrastructure&lt;/code&gt; and inside the folder create a &lt;code class=&quot;highlighter-rouge&quot;&gt;Class&lt;/code&gt; named &lt;code class=&quot;highlighter-rouge&quot;&gt;CatalogContext&lt;/code&gt; with the code -&lt;/p&gt;
+&lt;p&gt;Now create a folder named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Infrastructure&lt;/code&gt; and inside the folder create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Class&lt;/code&gt; named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CatalogContext&lt;/code&gt; with the code -&lt;/p&gt;
 
 &lt;div class=&quot;language-cs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Microsoft.EntityFrameworkCore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;WebMVC.Models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -131,9 +131,9 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Our DbContext class need to extend the &lt;code class=&quot;highlighter-rouge&quot;&gt;DbContext&lt;/code&gt; class and in &lt;code class=&quot;highlighter-rouge&quot;&gt;constructor&lt;/code&gt; parameter need to pass the instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;DbContextOptions&amp;lt;{Our_Class_Name}&amp;gt;&lt;/code&gt; to the base class.&lt;/p&gt;
+&lt;p&gt;Our DbContext class need to extend the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DbContext&lt;/code&gt; class and in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;constructor&lt;/code&gt; parameter need to pass the instance of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DbContextOptions&amp;lt;{Our_Class_Name}&amp;gt;&lt;/code&gt; to the base class.&lt;/p&gt;
 
-&lt;p&gt;Now we need to inject our &lt;code class=&quot;highlighter-rouge&quot;&gt;CatalogContext&lt;/code&gt; class in &lt;code class=&quot;highlighter-rouge&quot;&gt;startup.cs&lt;/code&gt; file -&lt;/p&gt;
+&lt;p&gt;Now we need to inject our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CatalogContext&lt;/code&gt; class in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;startup.cs&lt;/code&gt; file -&lt;/p&gt;
 
 &lt;div class=&quot;language-cs highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
 
@@ -150,13 +150,13 @@
 &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;We also need to add the &lt;code class=&quot;highlighter-rouge&quot;&gt;catalog.db&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; as this file will hold our &lt;em&gt;database&lt;/em&gt; and we do not need to commit this file. Please add those two line in your &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file as bellow -&lt;/p&gt;
+&lt;p&gt;We also need to add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;catalog.db&lt;/code&gt; file to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; as this file will hold our &lt;em&gt;database&lt;/em&gt; and we do not need to commit this file. Please add those two line in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file as bellow -&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Ignoring all user generated DB files&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.db
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The first line is a comment, so that we understand what we are trying to do here and the second line is telling &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; to ignore any file with the file &lt;strong&gt;extension&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;.db&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The first line is a comment, so that we understand what we are trying to do here and the second line is telling &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; to ignore any file with the file &lt;strong&gt;extension&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.db&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; To know how dependency injection works in ASP.NET Core please read &lt;a href=&quot;https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0&quot;&gt;Dependency injection in ASP.NET Core&lt;/a&gt;&lt;/p&gt;
 
@@ -178,18 +178,18 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet tool &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; dotnet-aspnet-codegenerator
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; If you have already installed any of the global tools before, please run &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet tool update --global &amp;lt;package-name&amp;gt;&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet tool install --global &amp;lt;package-name&amp;gt;&lt;/code&gt; to ensure you global tools is up-to-date.&lt;/p&gt;
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; If you have already installed any of the global tools before, please run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet tool update --global &amp;lt;package-name&amp;gt;&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet tool install --global &amp;lt;package-name&amp;gt;&lt;/code&gt; to ensure you global tools is up-to-date.&lt;/p&gt;
 
 &lt;p&gt;and then run -&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet aspnet-codegenerator controller &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; CatalogController &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; CatalogItem &lt;span class=&quot;nt&quot;&gt;-dc&lt;/span&gt; CatalogContext &lt;span class=&quot;nt&quot;&gt;--relativeFolderPath&lt;/span&gt; Controllers &lt;span class=&quot;nt&quot;&gt;--useDefaultLayout&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--referenceScriptLibraries&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here, in &lt;code class=&quot;highlighter-rouge&quot;&gt;-name&lt;/code&gt; argument we need to pass the &lt;code class=&quot;highlighter-rouge&quot;&gt;Controller&lt;/code&gt; name we want to generate, in &lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; pass the previously created &lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt; class name and in &lt;code class=&quot;highlighter-rouge&quot;&gt;-dc&lt;/code&gt; argument pass the name of our &lt;code class=&quot;highlighter-rouge&quot;&gt;DBContext&lt;/code&gt; class name.&lt;/p&gt;
+&lt;p&gt;Here, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-name&lt;/code&gt; argument we need to pass the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Controller&lt;/code&gt; name we want to generate, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-m&lt;/code&gt; pass the previously created &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Model&lt;/code&gt; class name and in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-dc&lt;/code&gt; argument pass the name of our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DBContext&lt;/code&gt; class name.&lt;/p&gt;
 
 &lt;h3 id=&quot;database-migrations&quot;&gt;Database Migrations&lt;/h3&gt;
 
-&lt;p&gt;To run migration, please make sure you have the &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet-ef&lt;/code&gt; global tool installed. If now then install it by running -&lt;/p&gt;
+&lt;p&gt;To run migration, please make sure you have the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet-ef&lt;/code&gt; global tool installed. If now then install it by running -&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet tool &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; dotnet-ef
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -202,7 +202,7 @@ dotnet ef database update
 
 &lt;h3 id=&quot;update-navigation-bar&quot;&gt;Update Navigation bar&lt;/h3&gt;
 
-&lt;p&gt;And then add the new Controller in Navigation bar. To do this, please modfity the &lt;code class=&quot;highlighter-rouge&quot;&gt;Views&amp;gt;Shared&amp;gt;_Layout.cshtml&lt;/code&gt; file and add another &lt;code class=&quot;highlighter-rouge&quot;&gt;nav-item&lt;/code&gt; like -&lt;/p&gt;
+&lt;p&gt;And then add the new Controller in Navigation bar. To do this, please modfity the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Views&amp;gt;Shared&amp;gt;_Layout.cshtml&lt;/code&gt; file and add another &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nav-item&lt;/code&gt; like -&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navbar-nav flex-grow-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -221,9 +221,9 @@ dotnet ef database update
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;Now run the application by pressing &lt;kbd&gt;F5&lt;/kbd&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; running the command &lt;code class=&quot;highlighter-rouge&quot;&gt;dotnet run&lt;/code&gt; from &lt;em&gt;terminal&lt;/em&gt;. Then go the Catalog page by clicking Catalog navbar and test our new Catalog &lt;code class=&quot;highlighter-rouge&quot;&gt;CRUD&lt;/code&gt;. In this page, you can create, read, update and delete catalog items! Explore them!&lt;/p&gt;
+&lt;p&gt;Now run the application by pressing &lt;kbd&gt;F5&lt;/kbd&gt; on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VSCode&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; running the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet run&lt;/code&gt; from &lt;em&gt;terminal&lt;/em&gt;. Then go the Catalog page by clicking Catalog navbar and test our new Catalog &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CRUD&lt;/code&gt;. In this page, you can create, read, update and delete catalog items! Explore them!&lt;/p&gt;
 
-&lt;p&gt;Congratulation, you have successfully created a &lt;code class=&quot;highlighter-rouge&quot;&gt;ASP.NET Core MVC&lt;/code&gt; Web Application. The source code for today’s tutorial can be found in &lt;a href=&quot;https://github.com/ratanparai/eCommerce-microservices-tutorial/tree/part-1&quot;&gt;GitHub - eCommerce-microservices-tutorial: part-1&lt;/a&gt;&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="microservices" /><category term="dotnet core" /><summary type="html">This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.</summary></entry><entry><title type="html">Zero to Hero in Microservices with dotnet core - Introduction</title><link href="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/" rel="alternate" type="text/html" title="Zero to Hero in Microservices with dotnet core - Introduction" /><published>2019-11-27T02:30:00+00:00</published><updated>2019-12-13T06:24:05+00:00</updated><id>https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction</id><content type="html" xml:base="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/">&lt;p&gt;In this series of blog articles, we are going to start from a basic &lt;strong&gt;dotnet core&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;MVC&lt;/code&gt; application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-&lt;/p&gt;
+&lt;p&gt;Congratulation, you have successfully created a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ASP.NET Core MVC&lt;/code&gt; Web Application. The source code for today’s tutorial can be found in &lt;a href=&quot;https://github.com/ratanparai/eCommerce-microservices-tutorial/tree/part-1&quot;&gt;GitHub - eCommerce-microservices-tutorial: part-1&lt;/a&gt;&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Microservices" /><category term="microservices" /><category term="dotnet core" /><summary type="html">This is part one of the tutorial series Zero to Hero in Microservices with dotnet core.</summary></entry><entry><title type="html">Zero to Hero in Microservices with dotnet core - Introduction</title><link href="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/" rel="alternate" type="text/html" title="Zero to Hero in Microservices with dotnet core - Introduction" /><published>2019-11-27T02:30:00+00:00</published><updated>2019-12-13T06:24:05+00:00</updated><id>https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction</id><content type="html" xml:base="https://www.ratanparai.com/microservices/zero-to-hero-with-dotnet-core-microservice-introduction/">&lt;p&gt;In this series of blog articles, we are going to start from a basic &lt;strong&gt;dotnet core&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MVC&lt;/code&gt; application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://visualstudio.microsoft.com/vs/&quot;&gt;Visual Studio 2019&lt;/a&gt; &lt;strong&gt;v16.4 or later&lt;/strong&gt; or &lt;a href=&quot;https://visualstudio.microsoft.com/vs/mac/&quot;&gt;Visual Studio for Mac&lt;/a&gt;, which will make our development process much faster and beginner friendly&lt;/li&gt;
@@ -238,7 +238,7 @@ dotnet ef database update
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;/microservices/part-1-mvc-application/&quot;&gt;Part 1: MVC Application&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="microservices" /><category term="dotnet core" /><summary type="html">In this series of blog articles, we are going to start from a basic dotnet core MVC application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-</summary></entry><entry><title type="html">Functional Testing of ASP.NET core 2.1 MVC Application</title><link href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/" rel="alternate" type="text/html" title="Functional Testing of ASP.NET core 2.1 MVC Application" /><published>2018-05-22T15:00:00+00:00</published><updated>2018-05-22T15:00:00+00:00</updated><id>https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv</id><content type="html" xml:base="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/">&lt;p&gt;In ASP.NET core 2.1, setting up functional testing project got much easier with the release of &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/a&gt; nuget package. In this post we are going to setup a functional test project.&lt;/p&gt;
+&lt;/ol&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Microservices" /><category term="microservices" /><category term="dotnet core" /><summary type="html">In this series of blog articles, we are going to start from a basic dotnet core MVC application and then improve it to full blown Microservices with state of the art Microservices patterns and practices. To follow this blog service, you will need those tools-</summary></entry><entry><title type="html">Functional Testing of ASP.NET core 2.1 MVC Application</title><link href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/" rel="alternate" type="text/html" title="Functional Testing of ASP.NET core 2.1 MVC Application" /><published>2018-05-22T15:00:00+00:00</published><updated>2018-05-22T15:00:00+00:00</updated><id>https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv</id><content type="html" xml:base="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/">&lt;p&gt;In ASP.NET core 2.1, setting up functional testing project got much easier with the release of &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/a&gt; nuget package. In this post we are going to setup a functional test project.&lt;/p&gt;
 
 &lt;h2 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;/h2&gt;
 
@@ -250,36 +250,36 @@ dotnet ef database update
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;create-test-project&quot;&gt;Create test project&lt;/h2&gt;
-&lt;p&gt;Create a folder and name it &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloWorld&lt;/code&gt;, because why not :stuck_out_tongue_winking_eye:. Open &lt;strong&gt;PowerShell&lt;/strong&gt; window inside the folder (&lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;code class=&quot;highlighter-rouge&quot;&gt;right click&lt;/code&gt; anywhere inside the folder and select &lt;code class=&quot;highlighter-rouge&quot;&gt;Open PowerShell window here&lt;/code&gt;) and create a solution:&lt;/p&gt;
+&lt;p&gt;Create a folder and name it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HelloWorld&lt;/code&gt;, because why not :stuck_out_tongue_winking_eye:. Open &lt;strong&gt;PowerShell&lt;/strong&gt; window inside the folder (&lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;right click&lt;/code&gt; anywhere inside the folder and select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Open PowerShell window here&lt;/code&gt;) and create a solution:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new sln
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new sln
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now create a basic &lt;strong&gt;MVC&lt;/strong&gt; project inside &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; directory and &lt;strong&gt;xunit&lt;/strong&gt; project inside &lt;code class=&quot;highlighter-rouge&quot;&gt;tests&lt;/code&gt; directory:&lt;/p&gt;
+&lt;p&gt;Now create a basic &lt;strong&gt;MVC&lt;/strong&gt; project inside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&lt;/code&gt; directory and &lt;strong&gt;xunit&lt;/strong&gt; project inside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tests&lt;/code&gt; directory:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new mvc -o .\src\HelloWorld.Mvc
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet new mvc -o .\src\HelloWorld.Mvc
 dotnet new xunit -o .\tests\HelloWorld.FunctionalTests
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Add those two project to the &lt;strong&gt;solution&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet sln add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet sln add .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj
 dotnet sln add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Reference the &lt;strong&gt;MVC&lt;/strong&gt; project form the &lt;strong&gt;FunctionalTests&lt;/strong&gt; project:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj reference .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj reference .\src\HelloWorld.Mvc\HelloWorld.Mvc.csproj
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;write-functional-test&quot;&gt;Write functional Test&lt;/h2&gt;
 
 &lt;p&gt;Add &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/a&gt; to the functional test project:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj package Microsoft.AspNetCore.Mvc.Testing -v 2.1.0-rc1-final
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj package Microsoft.AspNetCore.Mvc.Testing -v 2.1.0-rc1-final
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now open the project in &lt;strong&gt;VS Code&lt;/strong&gt; or &lt;strong&gt;Visual Studio 2017 15.7 Preview 1 or newer&lt;/strong&gt; and create a new class inside &lt;strong&gt;HelloWorld.FunctionalTests&lt;/strong&gt; project and name it &lt;code class=&quot;highlighter-rouge&quot;&gt;HomePageShould.cs&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now open the project in &lt;strong&gt;VS Code&lt;/strong&gt; or &lt;strong&gt;Visual Studio 2017 15.7 Preview 1 or newer&lt;/strong&gt; and create a new class inside &lt;strong&gt;HelloWorld.FunctionalTests&lt;/strong&gt; project and name it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HomePageShould.cs&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;HelloWorld.Mvc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Microsoft.AspNetCore.Mvc.Testing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -320,15 +320,15 @@ dotnet sln add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csp
 
 &lt;p&gt;To resolve it, add &lt;a href=&quot;https://www.nuget.org/packages/Microsoft.AspNetCore.App/&quot;&gt;Microsoft.AspNetCore.App&lt;/a&gt; nuget package to the &lt;strong&gt;test&lt;/strong&gt; project&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj package Microsoft.AspNetCore.App -v 2.1.0-rc1-final
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj package Microsoft.AspNetCore.App -v 2.1.0-rc1-final
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now run the test from &lt;code class=&quot;highlighter-rouge&quot;&gt;Test&lt;/code&gt;&amp;gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Run&lt;/code&gt;&amp;gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;All Tests&lt;/code&gt; (Visual Studio 2017) or from &lt;strong&gt;PowerShell&lt;/strong&gt;-&lt;/p&gt;
+&lt;p&gt;Now run the test from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Test&lt;/code&gt;&amp;gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Run&lt;/code&gt;&amp;gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;All Tests&lt;/code&gt; (Visual Studio 2017) or from &lt;strong&gt;PowerShell&lt;/strong&gt;-&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet test .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dotnet test .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csproj
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;You should see green tick of happiness.&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="asp.net core" /><category term="functional testing" /><category term="dotnet core" /><summary type="html">In ASP.NET core 2.1, setting up functional testing project got much easier with the release of [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing) nuget package.</summary></entry><entry><title type="html">Writing unit tests for C++ with Bazel and GoogleTest</title><link href="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/" rel="alternate" type="text/html" title="Writing unit tests for C++ with Bazel and GoogleTest" /><published>2018-04-28T21:05:00+00:00</published><updated>2018-04-28T21:05:00+00:00</updated><id>https://www.ratanparai.com/c++/writing-unit-tests-with-bazel</id><content type="html" xml:base="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/">&lt;p&gt;For last couple of months I am in love with writing &lt;strong&gt;Unit Tests&lt;/strong&gt;. I wasn’t like that. You may say I was adventurous, hardcore and love living dangerous life! But that wasn’t the case, believe me. I was just plain dumb. So how was my life before I started writing &lt;strong&gt;Unit Tests&lt;/strong&gt;?&lt;/p&gt;
+&lt;p&gt;You should see green tick of happiness.&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="dotnet" /><category term="asp.net core" /><category term="functional testing" /><category term="dotnet core" /><summary type="html">In ASP.NET core 2.1, setting up functional testing project got much easier with the release of [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing) nuget package.</summary></entry><entry><title type="html">Writing unit tests for C++ with Bazel and GoogleTest</title><link href="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/" rel="alternate" type="text/html" title="Writing unit tests for C++ with Bazel and GoogleTest" /><published>2018-04-28T21:05:00+00:00</published><updated>2018-04-28T21:05:00+00:00</updated><id>https://www.ratanparai.com/c++/writing-unit-tests-with-bazel</id><content type="html" xml:base="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/">&lt;p&gt;For last couple of months I am in love with writing &lt;strong&gt;Unit Tests&lt;/strong&gt;. I wasn’t like that. You may say I was adventurous, hardcore and love living dangerous life! But that wasn’t the case, believe me. I was just plain dumb. So how was my life before I started writing &lt;strong&gt;Unit Tests&lt;/strong&gt;?&lt;/p&gt;
 
 &lt;p&gt;I was so afraid to refactor my codes. There is a high possibility it may break something else in somewhere that I will not be able to detect soon. But eventually when I will do, it will be very hard to trace why it is broken and fix it. Nobody around me told me to write &lt;strong&gt;Unit Tests&lt;/strong&gt; and few who did, didn’t even write Unit Tests for themselves! It was like &lt;a href=&quot;https://en.wikipedia.org/wiki/Aesop&quot;&gt;Aesob&lt;/a&gt;’s &lt;a href=&quot;https://fablesofaesop.com/the-two-crabs.html&quot;&gt;The Two Crabs&lt;/a&gt; story I read at my childhood.&lt;/p&gt;
 
@@ -338,7 +338,7 @@ dotnet sln add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csp
 
 &lt;p&gt;At first lets look at the folder structure-&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;│   gmock.BUILD
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;│   gmock.BUILD
 │   WORKSPACE
 │
 ├───src
@@ -356,11 +356,11 @@ dotnet sln add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csp
         Greeting_test.cc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;There should be a &lt;code class=&quot;highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file in the &lt;strong&gt;root&lt;/strong&gt; of your source code. It contains &lt;strong&gt;external dependencies&lt;/strong&gt;. If you don’t have any external dependencies in your project, your &lt;code class=&quot;highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file should be empty, But you must have this file.&lt;/p&gt;
+&lt;p&gt;There should be a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file in the &lt;strong&gt;root&lt;/strong&gt; of your source code. It contains &lt;strong&gt;external dependencies&lt;/strong&gt;. If you don’t have any external dependencies in your project, your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file should be empty, But you must have this file.&lt;/p&gt;
 
-&lt;p&gt;We are using &lt;strong&gt;GoogleTest&lt;/strong&gt; as external dependency. Lets look inside our &lt;code class=&quot;highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file-&lt;/p&gt;
+&lt;p&gt;We are using &lt;strong&gt;GoogleTest&lt;/strong&gt; as external dependency. Lets look inside our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WORKSPACE&lt;/code&gt; file-&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;new_git_repository(
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;new_git_repository(
     name = &quot;googletest&quot;,
     build_file = &quot;gmock.BUILD&quot;,
     remote = &quot;https://github.com/google/googletest&quot;,
@@ -368,9 +368,9 @@ dotnet sln add .\tests\HelloWorld.FunctionalTests\HelloWorld.FunctionalTests.csp
 )
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here, the dependency is added as a git repository. As a result, when we build the project, it will download the &lt;strong&gt;git&lt;/strong&gt; repository and run the &lt;code class=&quot;highlighter-rouge&quot;&gt;build_file&lt;/code&gt; &lt;strong&gt;gmock.BUILD&lt;/strong&gt; to build the &lt;strong&gt;GoogleTest&lt;/strong&gt; library, which we will import in our &lt;strong&gt;tests&lt;/strong&gt;. The content of the &lt;strong&gt;gmock.BUILD&lt;/strong&gt; file is-&lt;/p&gt;
+&lt;p&gt;Here, the dependency is added as a git repository. As a result, when we build the project, it will download the &lt;strong&gt;git&lt;/strong&gt; repository and run the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build_file&lt;/code&gt; &lt;strong&gt;gmock.BUILD&lt;/strong&gt; to build the &lt;strong&gt;GoogleTest&lt;/strong&gt; library, which we will import in our &lt;strong&gt;tests&lt;/strong&gt;. The content of the &lt;strong&gt;gmock.BUILD&lt;/strong&gt; file is-&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cc_library(
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cc_library(
     name = &quot;gtest&quot;,
     srcs = [
         &quot;googletest/src/gtest-all.cc&quot;,
@@ -400,9 +400,9 @@ cc_library(
 )
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This concludes our initial setup of &lt;strong&gt;GoogleTest&lt;/strong&gt; with &lt;strong&gt;Bazel&lt;/strong&gt;. Now we need to add &lt;code class=&quot;highlighter-rouge&quot;&gt;@googletest//:gtest_main&lt;/code&gt; as a dependency of our test library, &lt;code class=&quot;highlighter-rouge&quot;&gt;cc_test&lt;/code&gt; and import &lt;code class=&quot;highlighter-rouge&quot;&gt;gtest/gtest.h&lt;/code&gt; to our &lt;strong&gt;unit test&lt;/strong&gt; file. Example &lt;strong&gt;BUILD&lt;/strong&gt; file &lt;code class=&quot;highlighter-rouge&quot;&gt;tests&lt;/code&gt; -&lt;/p&gt;
+&lt;p&gt;This concludes our initial setup of &lt;strong&gt;GoogleTest&lt;/strong&gt; with &lt;strong&gt;Bazel&lt;/strong&gt;. Now we need to add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@googletest//:gtest_main&lt;/code&gt; as a dependency of our test library, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cc_test&lt;/code&gt; and import &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gtest/gtest.h&lt;/code&gt; to our &lt;strong&gt;unit test&lt;/strong&gt; file. Example &lt;strong&gt;BUILD&lt;/strong&gt; file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tests&lt;/code&gt; -&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cc_test(
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cc_test(
     name = &quot;tests&quot;,
     srcs = glob([&quot;**/*.cc&quot;]),
     deps = [
@@ -413,10 +413,10 @@ cc_library(
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Here the first dependency is &lt;code class=&quot;highlighter-rouge&quot;&gt;cc_library&lt;/code&gt; dependency, where we have a &lt;code class=&quot;highlighter-rouge&quot;&gt;Greeting&lt;/code&gt; class that have a &lt;strong&gt;public&lt;/strong&gt; method, &lt;code class=&quot;highlighter-rouge&quot;&gt;getGreetingMessage()&lt;/code&gt; that return &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello World!&lt;/code&gt;.&lt;/p&gt;
+  &lt;p&gt;Here the first dependency is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cc_library&lt;/code&gt; dependency, where we have a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Greeting&lt;/code&gt; class that have a &lt;strong&gt;public&lt;/strong&gt; method, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getGreetingMessage()&lt;/code&gt; that return &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hello World!&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;And content of the &lt;code class=&quot;highlighter-rouge&quot;&gt;greeting_test.cc&lt;/code&gt;-&lt;/p&gt;
+&lt;p&gt;And content of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;greeting_test.cc&lt;/code&gt;-&lt;/p&gt;
 &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;gtest/gtest.h&quot;
 #include &quot;src/lib/Greeting.h&quot;
 &lt;/span&gt;
@@ -441,9 +441,9 @@ cc_library(
 
 &lt;p&gt;I have created a &lt;strong&gt;git&lt;/strong&gt; repository , which you can clone and use as your starting point. Please feel free to &lt;strong&gt;star&lt;/strong&gt; it if you think my repository helps you.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/ratanparai/cpp-template&quot;&gt;CPP-Template&lt;/a&gt;&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="bazel" /><category term="googletest" /><summary type="html">On my journey to be a better programmer, I stated to learn C++. This is how I am using bazel to build my project with google test integration.</summary></entry><entry><title type="html">Compile TaskWarrior in Ubuntu</title><link href="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/" rel="alternate" type="text/html" title="Compile TaskWarrior in Ubuntu" /><published>2018-04-05T15:50:00+00:00</published><updated>2018-04-05T15:50:00+00:00</updated><id>https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu</id><content type="html" xml:base="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/">&lt;p&gt;&lt;a href=&quot;https://taskwarrior.org/&quot;&gt;Taskwarrior&lt;/a&gt; is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast, and unobtrusive. It does its job then gets out of your way.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ratanparai/cpp-template&quot;&gt;CPP-Template&lt;/a&gt;&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="C++" /><category term="bazel" /><category term="googletest" /><summary type="html">On my journey to be a better programmer, I stated to learn C++. This is how I am using bazel to build my project with google test integration.</summary></entry><entry><title type="html">Compile TaskWarrior in Ubuntu</title><link href="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/" rel="alternate" type="text/html" title="Compile TaskWarrior in Ubuntu" /><published>2018-04-05T15:50:00+00:00</published><updated>2018-04-05T15:50:00+00:00</updated><id>https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu</id><content type="html" xml:base="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/">&lt;p&gt;&lt;a href=&quot;https://taskwarrior.org/&quot;&gt;Taskwarrior&lt;/a&gt; is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast, and unobtrusive. It does its job then gets out of your way.&lt;/p&gt;
 
-&lt;p&gt;Although you can install &lt;code class=&quot;highlighter-rouge&quot;&gt;TaskWarrior&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;Ubuntu&lt;/code&gt; package manager, but it doesn’t have latest version. So to get the latest version of &lt;code class=&quot;highlighter-rouge&quot;&gt;TaskWarrior&lt;/code&gt;, you have to download source code and compile it.&lt;/p&gt;
+&lt;p&gt;Although you can install &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TaskWarrior&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ubuntu&lt;/code&gt; package manager, but it doesn’t have latest version. So to get the latest version of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TaskWarrior&lt;/code&gt;, you have to download source code and compile it.&lt;/p&gt;
 
 &lt;p&gt;Install required package in ubuntu&lt;/p&gt;
 
@@ -468,22 +468,22 @@ cc_library(
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Change the &lt;code class=&quot;highlighter-rouge&quot;&gt;x's&lt;/code&gt; with the correct version number from the &lt;a href=&quot;https://taskwarrior.org/download/&quot;&gt;TaskWarrior Download&lt;/a&gt; page.&lt;/p&gt;
+&lt;p&gt;Change the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x's&lt;/code&gt; with the correct version number from the &lt;a href=&quot;https://taskwarrior.org/download/&quot;&gt;TaskWarrior Download&lt;/a&gt; page.&lt;/p&gt;
 
-&lt;p&gt;Now run &lt;code class=&quot;highlighter-rouge&quot;&gt;Taskwarrior&lt;/code&gt; from terminal by the command -&lt;/p&gt;
+&lt;p&gt;Now run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Taskwarrior&lt;/code&gt; from terminal by the command -&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;task
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Ubuntu" /><summary type="html">Although you can install `TaskWarrior` from `Ubuntu` package manager, but it doesn't have latest version. So you have to download source code and compile it.</summary></entry><entry><title type="html">Java application with code coverage report using gradle</title><link href="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/" rel="alternate" type="text/html" title="Java application with code coverage report using gradle" /><published>2017-12-13T06:13:00+00:00</published><updated>2017-12-13T06:13:00+00:00</updated><id>https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage</id><content type="html" xml:base="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/">&lt;p&gt;Although we can use IDE for creating new java projects, if we use a build tool like &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle&lt;/code&gt; and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Taskwarrior" /><category term="Ubuntu" /><summary type="html">Although you can install `TaskWarrior` from `Ubuntu` package manager, but it doesn't have latest version. So you have to download source code and compile it.</summary></entry><entry><title type="html">Java application with code coverage report using gradle</title><link href="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/" rel="alternate" type="text/html" title="Java application with code coverage report using gradle" /><published>2017-12-13T06:13:00+00:00</published><updated>2017-12-13T06:13:00+00:00</updated><id>https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage</id><content type="html" xml:base="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/">&lt;p&gt;Although we can use IDE for creating new java projects, if we use a build tool like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gradle&lt;/code&gt; and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.&lt;/p&gt;
 &lt;h2 id=&quot;create-new-application&quot;&gt;Create new application&lt;/h2&gt;
 
-&lt;p&gt;Create new &lt;code class=&quot;highlighter-rouge&quot;&gt;java-application&lt;/code&gt; type &lt;code class=&quot;highlighter-rouge&quot;&gt;Java&lt;/code&gt; project using &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle&lt;/code&gt; -&lt;/p&gt;
+&lt;p&gt;Create new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;java-application&lt;/code&gt; type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Java&lt;/code&gt; project using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gradle&lt;/code&gt; -&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gradle init &lt;span class=&quot;nt&quot;&gt;--type&lt;/span&gt; java-application
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please note:&lt;/strong&gt; The Build Init plugin is currently &lt;a href=&quot;https://docs.gradle.org/current/userguide/feature_lifecycle.html&quot;&gt;incubating&lt;/a&gt;. Please be aware that the DSL and other configuration may change in later Gradle versions. To know more about gradle supported java projects read &lt;a href=&quot;https://docs.gradle.org/current/userguide/build_init_plugin.html&quot;&gt;Gradle Build Init plugin&lt;/a&gt; documentation.&lt;/p&gt;
 
-&lt;p&gt;This command create a &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle.build&lt;/code&gt; file with the contents&lt;/p&gt;
+&lt;p&gt;This command create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gradle.build&lt;/code&gt; file with the contents&lt;/p&gt;
 
 &lt;div class=&quot;language-gradle highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/*
  * This build file was generated by the Gradle 'init' task.
@@ -530,12 +530,12 @@ cc_library(
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gradle &amp;lt;task name&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;where &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;task name&amp;gt;&lt;/code&gt; is the task from the previous command. For example If you run -&lt;/p&gt;
+&lt;p&gt;where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;task name&amp;gt;&lt;/code&gt; is the task from the previous command. For example If you run -&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gradle build
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;then the &lt;code class=&quot;highlighter-rouge&quot;&gt;distribution&lt;/code&gt;(&lt;strong&gt;compressed executable&lt;/strong&gt;) file will be found in  &lt;code class=&quot;highlighter-rouge&quot;&gt;buld&amp;gt;distributions&lt;/code&gt; folder. There is &lt;code class=&quot;highlighter-rouge&quot;&gt;tar&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;zip&lt;/code&gt; archive. You can extract and use either of them.&lt;/p&gt;
+&lt;p&gt;then the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;distribution&lt;/code&gt;(&lt;strong&gt;compressed executable&lt;/strong&gt;) file will be found in  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;buld&amp;gt;distributions&lt;/code&gt; folder. There is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tar&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zip&lt;/code&gt; archive. You can extract and use either of them.&lt;/p&gt;
 
 &lt;p&gt;You can create new custom tasks or add plugin that have prebuilt task that you can use.&lt;/p&gt;
 
@@ -547,7 +547,7 @@ cc_library(
   &lt;p&gt;In computer science, test coverage is a measure used to describe the degree to which the source code of a program is executed when a particular test suite runs. A program with high test coverage, measured as a percentage, has had more of its source code executed during testing which suggests it has a lower chance of containing undetected software bugs compared to a program with low test coverage.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;We are going to use &lt;code class=&quot;highlighter-rouge&quot;&gt;JaCoCo&lt;/code&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; for test coverage. At first we need to add &lt;code class=&quot;highlighter-rouge&quot;&gt;JaCoCo&lt;/code&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;dependencies&lt;/code&gt; -&lt;/p&gt;
+&lt;p&gt;We are going to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JaCoCo&lt;/code&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; for test coverage. At first we need to add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JaCoCo&lt;/code&gt; as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dependencies&lt;/code&gt; -&lt;/p&gt;
 
 &lt;div class=&quot;language-gradle highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// Apply the jacoco plugin to add support for test coverage&lt;/span&gt;
@@ -560,7 +560,7 @@ cc_library(
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gradle task &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;we will see that there is two new task available under &lt;code class=&quot;highlighter-rouge&quot;&gt;Verification tasks&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;we will see that there is two new task available under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Verification tasks&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;Verification tasks
 ------------------
@@ -570,12 +570,12 @@ jacocoTestReport - Generates code coverage report for the test task.
 test - Runs the unit tests.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;now we can &lt;code class=&quot;highlighter-rouge&quot;&gt;create code coverage&lt;/code&gt; report by running -&lt;/p&gt;
+&lt;p&gt;now we can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;create code coverage&lt;/code&gt; report by running -&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gradle jacocoTestReport
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;but I want to create &lt;strong&gt;code coverage report&lt;/strong&gt; when I run &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle test&lt;/code&gt; command which run all &lt;code class=&quot;highlighter-rouge&quot;&gt;tests&lt;/code&gt; for the project. To do so edit your &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle.build&lt;/code&gt; file -&lt;/p&gt;
+&lt;p&gt;but I want to create &lt;strong&gt;code coverage report&lt;/strong&gt; when I run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gradle test&lt;/code&gt; command which run all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tests&lt;/code&gt; for the project. To do so edit your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gradle.build&lt;/code&gt; file -&lt;/p&gt;
 
 &lt;div class=&quot;language-gradle highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// create test coverage every time the test task is performed&lt;/span&gt;
@@ -583,23 +583,23 @@ test - Runs the unit tests.
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now run &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle build&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle test&lt;/code&gt; to generate the &lt;strong&gt;Code Coverage Report&lt;/strong&gt;. The &lt;strong&gt;Code Coverage Report&lt;/strong&gt; can be found in &lt;strong&gt;build&amp;gt;reports&amp;gt;jacoco&amp;gt;test&amp;gt;html&lt;/strong&gt;. Open the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file here to view the &lt;strong&gt;Coverage Report&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gradle build&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gradle test&lt;/code&gt; to generate the &lt;strong&gt;Code Coverage Report&lt;/strong&gt;. The &lt;strong&gt;Code Coverage Report&lt;/strong&gt; can be found in &lt;strong&gt;build&amp;gt;reports&amp;gt;jacoco&amp;gt;test&amp;gt;html&lt;/strong&gt;. Open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; file here to view the &lt;strong&gt;Coverage Report&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/jacocoReport.jpg&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/jacocoReport.jpg 20w,    /assets/images/resized/480/jacocoReport.jpg 480w,    /assets/images/resized/800/jacocoReport.jpg 800w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; We can use &lt;code class=&quot;highlighter-rouge&quot;&gt;JaCoCo&lt;/code&gt; to generate &lt;code class=&quot;highlighter-rouge&quot;&gt;Code Coverage Report&lt;/code&gt; for &lt;strong&gt;Continuous Code Quality&lt;/strong&gt; tools like &lt;strong&gt;SonarQube&lt;/strong&gt;&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. I will discuss about it in future articles.&lt;/p&gt;
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; We can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JaCoCo&lt;/code&gt; to generate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Code Coverage Report&lt;/code&gt; for &lt;strong&gt;Continuous Code Quality&lt;/strong&gt; tools like &lt;strong&gt;SonarQube&lt;/strong&gt;&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. I will discuss about it in future articles.&lt;/p&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References:&lt;/h2&gt;
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;http://www.eclemma.org/jacoco/&quot;&gt;JaCoCo&lt;/a&gt; is a free code coverage library for Java, which has been created by the EclEmma team based on the lessons learned from using and integration existing libraries for many years. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.eclemma.org/jacoco/&quot;&gt;JaCoCo&lt;/a&gt; is a free code coverage library for Java, which has been created by the EclEmma team based on the lessons learned from using and integration existing libraries for many years. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.sonarqube.org/&quot;&gt;SonarQube&lt;/a&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;SonarQube&lt;/code&gt; is an open source platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells and security vulnerabilities on 20+ Programming languages. SonarQube offers reports on duplicated code, coding standards, unit tests, code coverage, code complexity, comments, bugs, and security vulnerabilities. SonarQube can record metrics history and provides evolution graphs. SonarQube’s greatest asset is that it provides fully automated analysis and integration with Maven, Ant, Gradle, MSBuild and continuous integration tools. SonarQube also integrates with Eclipse, Visual Studio and IntelliJ IDEA development environments through the SonarLint plugins and integrates with external tools like LDAP, Active Directory, GitHub, etc. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.sonarqube.org/&quot;&gt;SonarQube&lt;/a&gt; - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SonarQube&lt;/code&gt; is an open source platform for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells and security vulnerabilities on 20+ Programming languages. SonarQube offers reports on duplicated code, coding standards, unit tests, code coverage, code complexity, comments, bugs, and security vulnerabilities. SonarQube can record metrics history and provides evolution graphs. SonarQube’s greatest asset is that it provides fully automated analysis and integration with Maven, Ant, Gradle, MSBuild and continuous integration tools. SonarQube also integrates with Eclipse, Visual Studio and IntelliJ IDEA development environments through the SonarLint plugins and integrates with external tools like LDAP, Active Directory, GitHub, etc. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="gradle" /><category term="junit" /><category term="code coverage" /><category term="jacoco" /><category term="unit test" /><summary type="html">Although we can use IDE for creating new java projects, if we use a build tool like `gradle` and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.</summary></entry><entry><title type="html">Responsive image on jekyll</title><link href="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/" rel="alternate" type="text/html" title="Responsive image on jekyll" /><published>2017-11-24T04:52:00+00:00</published><updated>2017-11-24T04:52:00+00:00</updated><id>https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll</id><content type="html" xml:base="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/">&lt;p&gt;Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image in every screen size is not optimal. Also showing a low quality blur version of the image while the real image is loading also improve the readability.&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Java" /><category term="gradle" /><category term="junit" /><category term="code coverage" /><category term="jacoco" /><category term="unit test" /><summary type="html">Although we can use IDE for creating new java projects, if we use a build tool like `gradle` and create the project from ground up then not only we have more control, we can also change between IDEs as we feel the need.</summary></entry><entry><title type="html">Responsive image on jekyll</title><link href="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/" rel="alternate" type="text/html" title="Responsive image on jekyll" /><published>2017-11-24T04:52:00+00:00</published><updated>2017-11-24T04:52:00+00:00</updated><id>https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll</id><content type="html" xml:base="https://www.ratanparai.com/jekyll/Responsive-image-on-jekyll/">&lt;p&gt;Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image in every screen size is not optimal. Also showing a low quality blur version of the image while the real image is loading also improve the readability.&lt;/p&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 &lt;h3 id=&quot;jekyll-responsive-image-plugin&quot;&gt;jekyll-responsive-image plugin&lt;/h3&gt;
 &lt;p&gt;First, add -&lt;/p&gt;
@@ -607,9 +607,9 @@ test - Runs the unit tests.
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'jekyll-responsive-image'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;to your &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Then add it to the &lt;code class=&quot;highlighter-rouge&quot;&gt;plugins&lt;/code&gt; section of your &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Then add it to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugins&lt;/code&gt; section of your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;ss&quot;&gt;plugins:
@@ -628,11 +628,11 @@ test - Runs the unit tests.
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; If there is an error while installing the plugin plese run &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install libmagickwand-dev&lt;/code&gt; to install required library and try again. And if you are on windows follow this step &lt;a href=&quot;https://medium.com/ruby-on-rails-web-application-development/install-rmagick-gem-on-windows-7-8-10-imagemagick-6-9-4-q16-hdri-5492c3fef202&quot;&gt;How To Install The RMagick #RubyOnRails Gem on Windows 7 / 8 / 10 (ImageMagick 6.9.4 Q16-HDRI)&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; If there is an error while installing the plugin plese run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt-get install libmagickwand-dev&lt;/code&gt; to install required library and try again. And if you are on windows follow this step &lt;a href=&quot;https://medium.com/ruby-on-rails-web-application-development/install-rmagick-gem-on-windows-7-8-10-imagemagick-6-9-4-q16-hdri-5492c3fef202&quot;&gt;How To Install The RMagick #RubyOnRails Gem on Windows 7 / 8 / 10 (ImageMagick 6.9.4 Q16-HDRI)&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;configuration&quot;&gt;Configuration&lt;/h2&gt;
 &lt;h3 id=&quot;_configyml-file&quot;&gt;_config.yml file&lt;/h3&gt;
-&lt;p&gt;Add those lines to the end of your &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file-&lt;/p&gt;
+&lt;p&gt;Add those lines to the end of your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file-&lt;/p&gt;
 
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Responsive images&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;responsive_image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
@@ -700,7 +700,7 @@ test - Runs the unit tests.
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h3 id=&quot;create-image-template&quot;&gt;Create image template&lt;/h3&gt;
-&lt;p&gt;Now create a &lt;code class=&quot;highlighter-rouge&quot;&gt;responsive-image.html&lt;/code&gt; template file and paste the contents there-&lt;/p&gt;
+&lt;p&gt;Now create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;responsive-image.html&lt;/code&gt; template file and paste the contents there-&lt;/p&gt;
 
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% capture srcset %}
 {% for i in resized %}
@@ -714,11 +714,11 @@ test - Runs the unit tests.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;add-lazysizes&quot;&gt;Add lazysizes&lt;/h3&gt;
-&lt;p&gt;You need to add lazysizes js file to your website. To do this, download the &lt;code class=&quot;highlighter-rouge&quot;&gt;min&lt;/code&gt; version from &lt;a href=&quot;https://github.com/aFarkas/lazysizes&quot;&gt;here&lt;/a&gt; and put it to your &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/js&lt;/code&gt; folder and add those line to your &lt;code class=&quot;highlighter-rouge&quot;&gt;script&lt;/code&gt; section depending on your theme.&lt;/p&gt;
+&lt;p&gt;You need to add lazysizes js file to your website. To do this, download the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min&lt;/code&gt; version from &lt;a href=&quot;https://github.com/aFarkas/lazysizes&quot;&gt;here&lt;/a&gt; and put it to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/js&lt;/code&gt; folder and add those line to your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;script&lt;/code&gt; section depending on your theme.&lt;/p&gt;
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ '/assets/js/lazysizes.min.js'| absolute_url }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; I am using &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minimal mistake&lt;/code&gt;&lt;/a&gt; theme. So I added the &lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt; file in &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&amp;gt;scripts.html&lt;/code&gt; after the &lt;code class=&quot;highlighter-rouge&quot;&gt;main.min.js&lt;/code&gt; include code&lt;/p&gt;
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; I am using &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal mistake&lt;/code&gt;&lt;/a&gt; theme. So I added the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;js&lt;/code&gt; file in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&amp;gt;scripts.html&lt;/code&gt; after the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.min.js&lt;/code&gt; include code&lt;/p&gt;
 
 &lt;h3 id=&quot;css-modification&quot;&gt;CSS modification&lt;/h3&gt;
 &lt;p&gt;Now add those line to your css file for blur effect for smoth image pixel&lt;/p&gt;
@@ -752,7 +752,7 @@ test - Runs the unit tests.
 &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; {% responsive_image path: assets/images/Rio.jpg %} 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;where  &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/images/Rio.jpg&lt;/code&gt; is your image path. This will take care of everything. Now you can enjoy responsive image in your blog.&lt;/p&gt;
+&lt;p&gt;where  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/images/Rio.jpg&lt;/code&gt; is your image path. This will take care of everything. Now you can enjoy responsive image in your blog.&lt;/p&gt;
 
 &lt;h2 id=&quot;testing&quot;&gt;Testing&lt;/h2&gt;
 &lt;p&gt;Here is a normal image-
@@ -762,14 +762,14 @@ test - Runs the unit tests.
 
 &lt;p&gt;&lt;img width=&quot;100%&quot; src=&quot;/assets/images/resized/20/Rio.jpg&quot; alt=&quot;&quot; data-srcset=&quot;    /assets/images/resized/20/Rio.jpg 20w,    /assets/images/resized/480/Rio.jpg 480w,    /assets/images/resized/800/Rio.jpg 800w,    /assets/images/resized/1400/Rio.jpg 1400w,&quot; class=&quot;blur-up lazyautosizes lazyload &quot; /&gt;&lt;/p&gt;
 
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; This may not work with &lt;code class=&quot;highlighter-rouge&quot;&gt;Github Pages&lt;/code&gt; directly. You need to host your own jekyll site or use third party CI tool to build the site. I am using &lt;a href=&quot;https://travis-ci.com/&quot;&gt;Travis ci&lt;/a&gt; for my blog. If you have any question feel free to ask me.&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="responsive image" /><category term="jekyll plugin" /><category term="lazysizes" /><summary type="html">Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image in every screen size is not optimal. Also showing a low quality blur version of the image while the real image is loading also improve the readability. Installation jekyll-responsive-image plugin First, add -</summary></entry><entry><title type="html">Change ssh port of CentOS 7</title><link href="https://www.ratanparai.com/linux/change-centos7-ssh-port/" rel="alternate" type="text/html" title="Change ssh port of CentOS 7" /><published>2017-11-07T18:32:00+00:00</published><updated>2017-11-07T18:32:00+00:00</updated><id>https://www.ratanparai.com/linux/change-centos7-ssh-port</id><content type="html" xml:base="https://www.ratanparai.com/linux/change-centos7-ssh-port/">&lt;p&gt;To change SSH port of CentOS 7 please follow those steps-&lt;/p&gt;
+&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Please Note:&lt;/strong&gt; This may not work with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github Pages&lt;/code&gt; directly. You need to host your own jekyll site or use third party CI tool to build the site. I am using &lt;a href=&quot;https://travis-ci.com/&quot;&gt;Travis ci&lt;/a&gt; for my blog. If you have any question feel free to ask me.&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Jekyll" /><category term="responsive image" /><category term="jekyll plugin" /><category term="lazysizes" /><summary type="html">Responsive image make your website faster by loading the image that is required for the screen. Loading high quality image in every screen size is not optimal. Also showing a low quality blur version of the image while the real image is loading also improve the readability. Installation jekyll-responsive-image plugin First, add -</summary></entry><entry><title type="html">Change ssh port of CentOS 7</title><link href="https://www.ratanparai.com/linux/change-centos7-ssh-port/" rel="alternate" type="text/html" title="Change ssh port of CentOS 7" /><published>2017-11-07T18:32:00+00:00</published><updated>2017-11-07T18:32:00+00:00</updated><id>https://www.ratanparai.com/linux/change-centos7-ssh-port</id><content type="html" xml:base="https://www.ratanparai.com/linux/change-centos7-ssh-port/">&lt;p&gt;To change SSH port of CentOS 7 please follow those steps-&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;At first backup the default configuration file. It is always a best practice to backup files before modification, so that we can restore it if anything unwanted happends.
     &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo cp&lt;/span&gt; /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;Then open the &lt;code class=&quot;highlighter-rouge&quot;&gt;sshd_config&lt;/code&gt; file -
+  &lt;li&gt;Then open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sshd_config&lt;/code&gt; file -
     &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi /etc/ssh/sshd_config
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;and change the port number(ex. 2122) -&lt;/p&gt;
@@ -801,20 +801,20 @@ test - Runs the unit tests.
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Enjoy&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="CentOS 7" /><category term="SSH" /><summary type="html">Change ssh port of CentOS 7</summary></entry><entry><title type="html">SSL certificate for Intranet network</title><link href="https://www.ratanparai.com/SSL-certificate-for-intranet-network/" rel="alternate" type="text/html" title="SSL certificate for Intranet network" /><published>2017-08-18T06:44:00+00:00</published><updated>2017-08-18T06:44:00+00:00</updated><id>https://www.ratanparai.com/SSL-certificate-for-intranet-network</id><content type="html" xml:base="https://www.ratanparai.com/SSL-certificate-for-intranet-network/">&lt;h2 id=&quot;setup-openssl&quot;&gt;Setup OpenSSL&lt;/h2&gt;
+&lt;p&gt;Enjoy&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Linux" /><category term="CentOS 7" /><category term="SSH" /><summary type="html">Change ssh port of CentOS 7</summary></entry><entry><title type="html">SSL certificate for Intranet network</title><link href="https://www.ratanparai.com/SSL-certificate-for-intranet-network/" rel="alternate" type="text/html" title="SSL certificate for Intranet network" /><published>2017-08-18T06:44:00+00:00</published><updated>2017-08-18T06:44:00+00:00</updated><id>https://www.ratanparai.com/SSL-certificate-for-intranet-network</id><content type="html" xml:base="https://www.ratanparai.com/SSL-certificate-for-intranet-network/">&lt;h2 id=&quot;setup-openssl&quot;&gt;Setup OpenSSL&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;Download and install OpenSSL from &lt;a href=&quot;https://slproweb.com/products/Win32OpenSSL.html&quot;&gt;here&lt;/a&gt;. For our current task &lt;strong&gt;light&lt;/strong&gt; version is more than enough. I have downloaded &lt;a href=&quot;https://slproweb.com/download/Win64OpenSSL_Light-1_1_0f.exe&quot;&gt;this&lt;/a&gt; one&lt;/li&gt;
-  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\OpenSSL-Win64\bin&lt;/code&gt; to your environment variable &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;If you face &lt;strong&gt;no configuration error&lt;/strong&gt; when running OpenSSL, then you need to add a new &lt;strong&gt;Environment variable&lt;/strong&gt;: &lt;em&gt;&lt;strong&gt;Variable Name&lt;/strong&gt;&lt;/em&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;OPENSSL_CONF&lt;/code&gt; and &lt;em&gt;&lt;strong&gt;Variable Value&lt;/strong&gt;&lt;/em&gt; - &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\OpenSSL-Win64\bin\openssl.cfg&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C:\OpenSSL-Win64\bin&lt;/code&gt; to your environment variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PATH&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;If you face &lt;strong&gt;no configuration error&lt;/strong&gt; when running OpenSSL, then you need to add a new &lt;strong&gt;Environment variable&lt;/strong&gt;: &lt;em&gt;&lt;strong&gt;Variable Name&lt;/strong&gt;&lt;/em&gt; - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OPENSSL_CONF&lt;/code&gt; and &lt;em&gt;&lt;strong&gt;Variable Value&lt;/strong&gt;&lt;/em&gt; - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C:\OpenSSL-Win64\bin\openssl.cfg&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;generate-self-signed-root-ca&quot;&gt;Generate self signed root CA&lt;/h1&gt;
 &lt;h3 id=&quot;generate-root-ca-key&quot;&gt;Generate Root CA Key&lt;/h3&gt;
-&lt;p&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;cmd&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; to the directory you want to save the certificates &lt;em&gt;&lt;strong&gt;or&lt;/strong&gt;&lt;/em&gt; from the &lt;strong&gt;folder&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;SHITF&lt;/code&gt;+&lt;code class=&quot;highlighter-rouge&quot;&gt;RMB&lt;/code&gt; and select &lt;code class=&quot;highlighter-rouge&quot;&gt;Open Powershell Windows here&lt;/code&gt;. then type -&lt;/p&gt;
+&lt;p&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; to the directory you want to save the certificates &lt;em&gt;&lt;strong&gt;or&lt;/strong&gt;&lt;/em&gt; from the &lt;strong&gt;folder&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SHITF&lt;/code&gt;+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RMB&lt;/code&gt; and select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Open Powershell Windows here&lt;/code&gt;. then type -&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl genrsa &lt;span class=&quot;nt&quot;&gt;-des3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myrootca.key 2048
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;and press &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;. Type a new &lt;strong&gt;Password&lt;/strong&gt; to protect the key file&lt;/p&gt;
+&lt;p&gt;and press &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;. Type a new &lt;strong&gt;Password&lt;/strong&gt; to protect the key file&lt;/p&gt;
 
 &lt;h3 id=&quot;request-for-certificate&quot;&gt;Request for certificate&lt;/h3&gt;
 &lt;p&gt;Then create a certificate request using the root CA key file&lt;/p&gt;
@@ -826,7 +826,7 @@ test - Runs the unit tests.
 &lt;p&gt;To self sign the request certificate run -&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl x509 &lt;span class=&quot;nt&quot;&gt;-req&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-days&lt;/span&gt; 7305 &lt;span class=&quot;nt&quot;&gt;-extensions&lt;/span&gt; v3_ca &lt;span class=&quot;nt&quot;&gt;-signkey&lt;/span&gt; myrootca.key &lt;span class=&quot;nt&quot;&gt;-in&lt;/span&gt; myrootca.req &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myrootca.crt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;you need to install the &lt;code class=&quot;highlighter-rouge&quot;&gt;.crt&lt;/code&gt; file to all of the &lt;strong&gt;computer&lt;/strong&gt; that you want to use varify your issued certificates. When importing &lt;code class=&quot;highlighter-rouge&quot;&gt;.crt&lt;/code&gt; certificate make sure you select &lt;code class=&quot;highlighter-rouge&quot;&gt;Place all certificates in the following store&lt;/code&gt; and browse to &lt;code class=&quot;highlighter-rouge&quot;&gt;Trusted root certification authorities&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;you need to install the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.crt&lt;/code&gt; file to all of the &lt;strong&gt;computer&lt;/strong&gt; that you want to use varify your issued certificates. When importing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.crt&lt;/code&gt; certificate make sure you select &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Place all certificates in the following store&lt;/code&gt; and browse to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Trusted root certification authorities&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;issue-certificate-as-a-ca&quot;&gt;Issue Certificate as a CA&lt;/h2&gt;
 &lt;p&gt;We have created our own Certificate Authority in the previous step. Now its time to issue certificate.&lt;/p&gt;
@@ -836,11 +836,11 @@ test - Runs the unit tests.
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl genrsa &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myhost.key 2048
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h3 id=&quot;request-for-certificate-1&quot;&gt;Request for certificate&lt;/h3&gt;
-&lt;p&gt;Fill the information for the Server. When asked for &lt;code class=&quot;highlighter-rouge&quot;&gt;CA&lt;/code&gt;, give your web server’s &lt;code class=&quot;highlighter-rouge&quot;&gt;IP address&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;domain&lt;/code&gt; name&lt;/p&gt;
+&lt;p&gt;Fill the information for the Server. When asked for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CA&lt;/code&gt;, give your web server’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IP address&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;domain&lt;/code&gt; name&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl req &lt;span class=&quot;nt&quot;&gt;-new&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-key&lt;/span&gt; myhost.key &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myhost.req
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h3 id=&quot;issue-the-certificate&quot;&gt;Issue the Certificate&lt;/h3&gt;
-&lt;p&gt;Create a new file and name it &lt;code class=&quot;highlighter-rouge&quot;&gt;v3.ext&lt;/code&gt; in the working directory with the contents. Change the &lt;code class=&quot;highlighter-rouge&quot;&gt;[alt_names]&lt;/code&gt; portion as needed.&lt;/p&gt;
+&lt;p&gt;Create a new file and name it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v3.ext&lt;/code&gt; in the working directory with the contents. Change the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[alt_names]&lt;/code&gt; portion as needed.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-ext&quot;&gt;authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
@@ -850,25 +850,25 @@ subjectAltName = @alt_names
 DNS.1 = localhost
 IP.2 = 192.168.10.240
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;after making required changes to the &lt;code class=&quot;highlighter-rouge&quot;&gt;v3.ext&lt;/code&gt; file run the command bellow in &lt;code class=&quot;highlighter-rouge&quot;&gt;cmd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;after making required changes to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v3.ext&lt;/code&gt; file run the command bellow in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cmd&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl x509 &lt;span class=&quot;nt&quot;&gt;-req&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-days&lt;/span&gt; 3650 &lt;span class=&quot;nt&quot;&gt;-CA&lt;/span&gt; myrootca.crt &lt;span class=&quot;nt&quot;&gt;-CAkey&lt;/span&gt; myrootca.key &lt;span class=&quot;nt&quot;&gt;-CAcreateserial&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sha256&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-extfile&lt;/span&gt; v3.ext &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; myhost.crt &lt;span class=&quot;nt&quot;&gt;-in&lt;/span&gt; myhost.req
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;generate-pfx-file-for-iis-server&quot;&gt;Generate &lt;code class=&quot;highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file for &lt;code class=&quot;highlighter-rouge&quot;&gt;IIS&lt;/code&gt; Server&lt;/h2&gt;
-&lt;p&gt;To use the server certificate with &lt;code class=&quot;highlighter-rouge&quot;&gt;IIS&lt;/code&gt; server we need &lt;code class=&quot;highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file. To generate &lt;code class=&quot;highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file we need to run-&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl pkcs12 -export -out myhost.pfx -inkey myhost.key -in myhost.crt
+&lt;h2 id=&quot;generate-pfx-file-for-iis-server&quot;&gt;Generate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IIS&lt;/code&gt; Server&lt;/h2&gt;
+&lt;p&gt;To use the server certificate with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IIS&lt;/code&gt; server we need &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file. To generate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pfx&lt;/code&gt; file we need to run-&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl pkcs12 -export -out myhost.pfx -inkey myhost.key -in myhost.crt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;verify-certificate-chain&quot;&gt;*Verify Certificate Chain&lt;/h3&gt;
-&lt;p&gt;You can verify certificate chain in &lt;code class=&quot;highlighter-rouge&quot;&gt;Windows&lt;/code&gt; for debugging purpose by running&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;certutil -f -urlfetch -verify myhost.crt
+&lt;p&gt;You can verify certificate chain in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows&lt;/code&gt; for debugging purpose by running&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;certutil -f -urlfetch -verify myhost.crt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Where &lt;code class=&quot;highlighter-rouge&quot;&gt;myhost.crt&lt;/code&gt; is the server certificate&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="https" /><category term="intranet-ssl" /><category term="ssl" /><category term="openssl" /><summary type="html">SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem.</summary></entry><entry><title type="html">Setting up Jekyll for the first time</title><link href="https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time/" rel="alternate" type="text/html" title="Setting up Jekyll for the first time" /><published>2017-08-17T18:32:00+00:00</published><updated>2017-08-17T18:32:00+00:00</updated><id>https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time</id><content type="html" xml:base="https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time/">&lt;p&gt;This is my first &lt;strong&gt;Jekyll&lt;/strong&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; post and I am testing this thing out. So far looking good and fantastic.&lt;/p&gt;
+&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;myhost.crt&lt;/code&gt; is the server certificate&lt;/p&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="https" /><category term="intranet-ssl" /><category term="ssl" /><category term="openssl" /><summary type="html">SSL (read HTTPS) encrypted internal website for security is must for banking solution. This is how I solved the problem.</summary></entry><entry><title type="html">Setting up Jekyll for the first time</title><link href="https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time/" rel="alternate" type="text/html" title="Setting up Jekyll for the first time" /><published>2017-08-17T18:32:00+00:00</published><updated>2017-08-17T18:32:00+00:00</updated><id>https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time</id><content type="html" xml:base="https://www.ratanparai.com/jekyll/setting-up-jekyll-for-the-first-time/">&lt;p&gt;This is my first &lt;strong&gt;Jekyll&lt;/strong&gt;&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; post and I am testing this thing out. So far looking good and fantastic.&lt;/p&gt;
 
-&lt;p&gt;At first I tried vanilla Jekyll theme. It was good but not my type. Then tried &lt;strong&gt;The Plain&lt;/strong&gt;&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Jekyll theme. It is what I was thinking of but also not perfect for me. So I am going to use this theme as a base and develop my own from it as I see fit.&lt;/p&gt;
+&lt;p&gt;At first I tried vanilla Jekyll theme. It was good but not my type. Then tried &lt;strong&gt;The Plain&lt;/strong&gt;&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Jekyll theme. It is what I was thinking of but also not perfect for me. So I am going to use this theme as a base and develop my own from it as I see fit.&lt;/p&gt;
 
-&lt;p&gt;This website has only one page and it is my portfolio page. Anyone can visit the page by clicking my &lt;code class=&quot;highlighter-rouge&quot;&gt;profile picture&lt;/code&gt; from home page or clicking &lt;a href=&quot;/about&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This website has only one page and it is my portfolio page. Anyone can visit the page by clicking my &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;profile picture&lt;/code&gt; from home page or clicking &lt;a href=&quot;/about&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;All though my first reason to setup simple &lt;strong&gt;&lt;em&gt;Jekyll&lt;/em&gt;&lt;/strong&gt; blog is to focus on writing rather than focusing on useless stuffs, but my hacker mind is firing up and here is the list of task I think I should complete to make this blog useful.&lt;/p&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
@@ -881,13 +881,13 @@ IP.2 = 192.168.10.240
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; I was sick (Cold Fever) and having trouble concentrating while setting up this blog. So keeping this as simple as possible for the time being.&lt;/p&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References:&lt;/h2&gt;
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Jekyll is a tool for transforming your plain text into static websites and blogs. It is simple, static, and blog-aware. Jekyll uses the Liquid templating language and has builtin Markdown and Textile support. - &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Jekyll is a tool for transforming your plain text into static websites and blogs. It is simple, static, and blog-aware. Jekyll uses the Liquid templating language and has builtin Markdown and Textile support. - &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;A minimalist Jekyll theme - &lt;a href=&quot;https://github.com/heiswayi/the-plain&quot;&gt;The Plain&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;A minimalist Jekyll theme - &lt;a href=&quot;https://github.com/heiswayi/the-plain&quot;&gt;The Plain&lt;/a&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><summary type="html">My first experience with Jekyll and how I am stating to love it</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Ratan Sunder Parai</name><email>contact@ratanparai.com</email></author><category term="Jekyll" /><summary type="html">My first experience with Jekyll and how I am stating to love it</summary></entry></feed>

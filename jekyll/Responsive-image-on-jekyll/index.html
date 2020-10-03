@@ -450,9 +450,9 @@
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'jekyll-responsive-image'</span>
 </code></pre></div></div>
 
-<p>to your <code class="highlighter-rouge">Gemfile</code>.</p>
+<p>to your <code class="language-plaintext highlighter-rouge">Gemfile</code>.</p>
 
-<p>Then add it to the <code class="highlighter-rouge">plugins</code> section of your <code class="highlighter-rouge">_config.yml</code>:</p>
+<p>Then add it to the <code class="language-plaintext highlighter-rouge">plugins</code> section of your <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
 <span class="ss">plugins:
@@ -471,11 +471,11 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span>
 </code></pre></div></div>
 
-<p class="notice--danger"><strong>Please Note:</strong> If there is an error while installing the plugin plese run <code class="highlighter-rouge">sudo apt-get install libmagickwand-dev</code> to install required library and try again. And if you are on windows follow this step <a href="https://medium.com/ruby-on-rails-web-application-development/install-rmagick-gem-on-windows-7-8-10-imagemagick-6-9-4-q16-hdri-5492c3fef202">How To Install The RMagick #RubyOnRails Gem on Windows 7 / 8 / 10 (ImageMagick 6.9.4 Q16-HDRI)</a></p>
+<p class="notice--danger"><strong>Please Note:</strong> If there is an error while installing the plugin plese run <code class="language-plaintext highlighter-rouge">sudo apt-get install libmagickwand-dev</code> to install required library and try again. And if you are on windows follow this step <a href="https://medium.com/ruby-on-rails-web-application-development/install-rmagick-gem-on-windows-7-8-10-imagemagick-6-9-4-q16-hdri-5492c3fef202">How To Install The RMagick #RubyOnRails Gem on Windows 7 / 8 / 10 (ImageMagick 6.9.4 Q16-HDRI)</a></p>
 
 <h2 id="configuration">Configuration</h2>
 <h3 id="_configyml-file">_config.yml file</h3>
-<p>Add those lines to the end of your <code class="highlighter-rouge">_config.yml</code> file-</p>
+<p>Add those lines to the end of your <code class="language-plaintext highlighter-rouge">_config.yml</code> file-</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Responsive images</span>
 <span class="na">responsive_image</span><span class="pi">:</span>
@@ -543,7 +543,7 @@
 
 </code></pre></div></div>
 <h3 id="create-image-template">Create image template</h3>
-<p>Now create a <code class="highlighter-rouge">responsive-image.html</code> template file and paste the contents there-</p>
+<p>Now create a <code class="language-plaintext highlighter-rouge">responsive-image.html</code> template file and paste the contents there-</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% capture srcset %}
 {% for i in resized %}
@@ -557,11 +557,11 @@
 </code></pre></div></div>
 
 <h3 id="add-lazysizes">Add lazysizes</h3>
-<p>You need to add lazysizes js file to your website. To do this, download the <code class="highlighter-rouge">min</code> version from <a href="https://github.com/aFarkas/lazysizes">here</a> and put it to your <code class="highlighter-rouge">assets/js</code> folder and add those line to your <code class="highlighter-rouge">script</code> section depending on your theme.</p>
+<p>You need to add lazysizes js file to your website. To do this, download the <code class="language-plaintext highlighter-rouge">min</code> version from <a href="https://github.com/aFarkas/lazysizes">here</a> and put it to your <code class="language-plaintext highlighter-rouge">assets/js</code> folder and add those line to your <code class="language-plaintext highlighter-rouge">script</code> section depending on your theme.</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"{{ '/assets/js/lazysizes.min.js'| absolute_url }}"</span><span class="nt">&gt;&lt;/script&gt;</span> 
 </code></pre></div></div>
 
-<p class="notice--danger"><strong>Please Note:</strong> I am using <a href="https://github.com/mmistakes/minimal-mistakes"><code class="highlighter-rouge">minimal mistake</code></a> theme. So I added the <code class="highlighter-rouge">js</code> file in <code class="highlighter-rouge">_includes&gt;scripts.html</code> after the <code class="highlighter-rouge">main.min.js</code> include code</p>
+<p class="notice--danger"><strong>Please Note:</strong> I am using <a href="https://github.com/mmistakes/minimal-mistakes"><code class="language-plaintext highlighter-rouge">minimal mistake</code></a> theme. So I added the <code class="language-plaintext highlighter-rouge">js</code> file in <code class="language-plaintext highlighter-rouge">_includes&gt;scripts.html</code> after the <code class="language-plaintext highlighter-rouge">main.min.js</code> include code</p>
 
 <h3 id="css-modification">CSS modification</h3>
 <p>Now add those line to your css file for blur effect for smoth image pixel</p>
@@ -595,7 +595,7 @@
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {% responsive_image path: assets/images/Rio.jpg %} 
 </code></pre></div></div>
 
-<p>where  <code class="highlighter-rouge">assets/images/Rio.jpg</code> is your image path. This will take care of everything. Now you can enjoy responsive image in your blog.</p>
+<p>where  <code class="language-plaintext highlighter-rouge">assets/images/Rio.jpg</code> is your image path. This will take care of everything. Now you can enjoy responsive image in your blog.</p>
 
 <h2 id="testing">Testing</h2>
 <p>Here is a normal image-
@@ -605,7 +605,7 @@
 
 <p><img width="100%" src="/assets/images/resized/20/Rio.jpg" alt="" data-srcset="    /assets/images/resized/20/Rio.jpg 20w,    /assets/images/resized/480/Rio.jpg 480w,    /assets/images/resized/800/Rio.jpg 800w,    /assets/images/resized/1400/Rio.jpg 1400w," class="blur-up lazyautosizes lazyload " /></p>
 
-<p class="notice--danger"><strong>Please Note:</strong> This may not work with <code class="highlighter-rouge">Github Pages</code> directly. You need to host your own jekyll site or use third party CI tool to build the site. I am using <a href="https://travis-ci.com/">Travis ci</a> for my blog. If you have any question feel free to ask me.</p>
+<p class="notice--danger"><strong>Please Note:</strong> This may not work with <code class="language-plaintext highlighter-rouge">Github Pages</code> directly. You need to host your own jekyll site or use third party CI tool to build the site. I am using <a href="https://travis-ci.com/">Travis ci</a> for my blog. If you have any question feel free to ask me.</p>
 
         
       </section>
@@ -845,7 +845,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Ratan Sunder Parai.</div>
+<div class="page__footer-copyright">&copy; 2020 Ratan Sunder Parai.</div>
 
       </footer>
     </div>
