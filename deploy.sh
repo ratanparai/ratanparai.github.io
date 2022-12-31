@@ -9,6 +9,7 @@ function main {
 	get_current_site
 	build_site
     deploy
+	clean
 }
 
 function clean { 
