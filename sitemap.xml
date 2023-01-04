@@ -41,6 +41,10 @@
 <lastmod>2019-12-13T12:57:15+06:00</lastmod>
 </url>
 <url>
+<loc>https://www.ratanparai.com/dotnet/add-request-id-to-every-response/</loc>
+<lastmod>2023-01-04T10:11:00+06:00</lastmod>
+</url>
+<url>
 <loc>https://www.ratanparai.com/about/</loc>
 <lastmod>2020-10-04T11:44:27+06:00</lastmod>
 </url>
@@ -121,6 +125,9 @@
 <loc>https://www.ratanparai.com/tags/microservices/</loc>
 </url>
 <url>
+<loc>https://www.ratanparai.com/tags/dotnet/</loc>
+</url>
+<url>
 <loc>https://www.ratanparai.com/categories/jekyll/</loc>
 </url>
 <url>
@@ -143,5 +150,8 @@
 </url>
 <url>
 <loc>https://www.ratanparai.com/page2/</loc>
+</url>
+<url>
+<loc>https://www.ratanparai.com/page3/</loc>
 </url>
 </urlset>

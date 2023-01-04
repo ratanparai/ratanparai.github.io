@@ -100,6 +100,15 @@ var idx = lunr(function () {
     });
     
   
+    idx.add({
+      title: "Add request id to all asp.net core MVC response",
+      excerpt: "In REST API, most of the time we only send request ID when the calls fails with 4XXX or 5XXX...",
+      categories: ["dotnet"],
+      tags: ["dotnet","dotnet core","asp.net core"],
+      id: 10
+    });
+    
+  
 
 
 console.log( jQuery.type(idx) );
@@ -213,6 +222,17 @@ var store = [
         "title": "Part one: Getting started with asp.net core MVC",
         "url": "https://www.ratanparai.com/microservices/part-1-mvc-application/",
         "excerpt": "This is part one of the tutorial series Zero to Hero in Microservices with dotnet core. Today, we will create...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "Add request id to all asp.net core MVC response",
+        "url": "https://www.ratanparai.com/dotnet/add-request-id-to-every-response/",
+        "excerpt": "In REST API, most of the time we only send request ID when the calls fails with 4XXX or 5XXX...",
         "teaser":
           
             null
