@@ -101,7 +101,7 @@ var idx = lunr(function () {
     
   
     idx.add({
-      title: "Add request id to all asp.net core MVC response",
+      title: "Add request id to all asp.net core MVC REST API response",
       excerpt: "In REST API, most of the time we only send request ID when the calls fails with 4XXX or 5XXX...",
       categories: ["dotnet"],
       tags: ["dotnet","dotnet core","asp.net core"],
@@ -230,7 +230,7 @@ var store = [
     
       
       {
-        "title": "Add request id to all asp.net core MVC response",
+        "title": "Add request id to all asp.net core MVC REST API response",
         "url": "https://www.ratanparai.com/dotnet/add-request-id-to-every-response/",
         "excerpt": "In REST API, most of the time we only send request ID when the calls fails with 4XXX or 5XXX...",
         "teaser":
