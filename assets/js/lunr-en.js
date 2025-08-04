@@ -109,6 +109,15 @@ var idx = lunr(function () {
     });
     
   
+    idx.add({
+      title: "How to limit only one thread for network operation for update cached data",
+      excerpt: "Learn how to use Interlocked.Exchange to ensure only one thread performs network operations for updating cached data.",
+      categories: ["dotnet"],
+      tags: [],
+      id: 11
+    });
+    
+  
 
 
 console.log( jQuery.type(idx) );
@@ -233,6 +242,17 @@ var store = [
         "title": "Add request id to all asp.net core MVC REST API response",
         "url": "https://www.ratanparai.com/dotnet/add-request-id-to-every-response/",
         "excerpt": "In REST API, most of the time we only send request ID when the calls fails with 4XXX or 5XXX...",
+        "teaser":
+          
+            null
+          
+      },
+    
+      
+      {
+        "title": "How to limit only one thread for network operation for update cached data",
+        "url": "https://www.ratanparai.com/dotnet/limit-one-thread-for-network-operation/",
+        "excerpt": "Managing concurrent network operations is crucial when updating cached data to avoid race conditions and unnecessary load. In .NET, you...",
         "teaser":
           
             null

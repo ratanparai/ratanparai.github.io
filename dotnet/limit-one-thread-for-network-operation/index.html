@@ -19,12 +19,12 @@
 
 
 
-<title>Compile TaskWarrior in Ubuntu - Ratan Parai</title>
+<title>How to limit only one thread for network operation for update cached data - Ratan Parai</title>
 
 
 
 
-<meta name="description" content="Although you can install TaskWarrior from Ubuntu package manager, but it doesn’t have latest version. So you have to download source code and compile it.">
+<meta name="description" content="Learn how to use Interlocked.Exchange to ensure only one thread performs network operations for updating cached data.">
 
 
 
@@ -33,15 +33,15 @@
 
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="Ratan Parai">
-<meta property="og:title" content="Compile TaskWarrior in Ubuntu">
+<meta property="og:title" content="How to limit only one thread for network operation for update cached data">
 
 
-  <link rel="canonical" href="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/">
-  <meta property="og:url" content="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/">
+  <link rel="canonical" href="https://www.ratanparai.com/dotnet/limit-one-thread-for-network-operation/">
+  <meta property="og:url" content="https://www.ratanparai.com/dotnet/limit-one-thread-for-network-operation/">
 
 
 
-  <meta property="og:description" content="Although you can install TaskWarrior from Ubuntu package manager, but it doesn’t have latest version. So you have to download source code and compile it.">
+  <meta property="og:description" content="Learn how to use Interlocked.Exchange to ensure only one thread performs network operations for updating cached data.">
 
 
 
@@ -58,9 +58,9 @@
 
 
   <meta name="twitter:site" content="@ratanparai">
-  <meta name="twitter:title" content="Compile TaskWarrior in Ubuntu">
-  <meta name="twitter:description" content="Although you can install TaskWarrior from Ubuntu package manager, but it doesn’t have latest version. So you have to download source code and compile it.">
-  <meta name="twitter:url" content="https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/">
+  <meta name="twitter:title" content="How to limit only one thread for network operation for update cached data">
+  <meta name="twitter:description" content="Learn how to use Interlocked.Exchange to ensure only one thread performs network operations for updating cached data.">
+  <meta name="twitter:url" content="https://www.ratanparai.com/dotnet/limit-one-thread-for-network-operation/">
 
   
     <meta name="twitter:card" content="summary">
@@ -82,7 +82,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2018-04-05T15:50:00+00:00">
+  <meta property="article:published_time" content="2025-08-02T00:00:00+00:00">
 
 
 
@@ -215,7 +215,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="https://www.ratanparai.com/categories/taskwarrior" itemprop="item"><span itemprop="name">Taskwarrior</span></a>
+          <a href="https://www.ratanparai.com/categories/dotnet" itemprop="item"><span itemprop="name">Dotnet</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">></span>
@@ -223,7 +223,7 @@
     
       
       
-        <li class="current">Compile TaskWarrior in Ubuntu</li>
+        <li class="current">How to limit only one thread for network operation for update cached data</li>
       
     
   </ol>
@@ -378,15 +378,15 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Compile TaskWarrior in Ubuntu">
-    <meta itemprop="description" content="Although you can install TaskWarrior from Ubuntu package manager, but it doesn’t have latest version. So you have to download source code and compile it.">
-    <meta itemprop="datePublished" content="April 05, 2018">
+    <meta itemprop="headline" content="How to limit only one thread for network operation for update cached data">
+    <meta itemprop="description" content="Learn how to use Interlocked.Exchange to ensure only one thread performs network operations for updating cached data.">
+    <meta itemprop="datePublished" content="August 02, 2025">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Compile TaskWarrior in Ubuntu
+          <h1 class="page__title" itemprop="headline">How to limit only one thread for network operation for update cached data
 </h1>
           
             <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
@@ -394,7 +394,7 @@
 
 
 
-  less than 1 minute read
+  1 minute read
 
               <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="#disqus_thread">~</a>
             </p>
@@ -404,39 +404,56 @@
 
       <section class="page__content" itemprop="text">
         
-        <p><a href="https://taskwarrior.org/">Taskwarrior</a> is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast, and unobtrusive. It does its job then gets out of your way.</p>
+        <p>Managing concurrent network operations is crucial when updating cached data to avoid race conditions and unnecessary load. In .NET, you can achieve this using the <code class="language-plaintext highlighter-rouge">Interlocked.Exchange</code> method.</p>
 
-<p>Although you can install <code class="language-plaintext highlighter-rouge">TaskWarrior</code> from <code class="language-plaintext highlighter-rouge">Ubuntu</code> package manager, but it doesn’t have latest version. So to get the latest version of <code class="language-plaintext highlighter-rouge">TaskWarrior</code>, you have to download source code and compile it.</p>
+<h2 id="how-it-works">How It Works</h2>
 
-<p>Install required package in ubuntu</p>
+<p><code class="language-plaintext highlighter-rouge">Interlocked.Exchange</code> sets a variable to a specified value and returns its original value as an atomic operation. This is useful for synchronizing access between multiple threads.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> build-essential cmake git uuid-dev libgnutls28-dev
+<p>Consider the following condition:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">Interlocked</span><span class="p">.</span><span class="nf">Exchange</span><span class="p">(</span><span class="k">ref</span> <span class="n">_networkOperationsInProgress</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>download taskwarrior archive</p>
+<p>This checks if <code class="language-plaintext highlighter-rouge">_networkOperationsInProgress</code> changes from <code class="language-plaintext highlighter-rouge">0</code> to <code class="language-plaintext highlighter-rouge">1</code>. If true, it means no network operation is running, and the current thread can proceed. If another operation is already in progress, the value remains <code class="language-plaintext highlighter-rouge">1</code>, so the condition is false and the code block does not execute.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>wget <span class="o">[</span>url_of_latest_task-x.x.x.tar.gz]
+<p>After the network operation completes, set the value back to <code class="language-plaintext highlighter-rouge">0</code> to allow future operations:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Interlocked</span><span class="p">.</span><span class="nf">Exchange</span><span class="p">(</span><span class="k">ref</span> <span class="n">_networkOperationsInProgress</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>After installing required packages run those following command to build and install taskwarrior on your machine</p>
+<p>This pattern is useful for scenarios like reading and updating a Redis cache with a lock before the value expires.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span>
-<span class="nv">$ </span>task-x.x.x.tar.gz
-<span class="nv">$ </span><span class="nb">tar </span>xzvf task-x.x.x.tar.gz
-<span class="nv">$ </span><span class="nb">cd </span>task-x.x.x
-<span class="nv">$ </span>cmake <span class="nt">-DCMAKE_BUILD_TYPE</span><span class="o">=</span>release <span class="nb">.</span>
-...
-<span class="nv">$ </span>make
-...
-<span class="nv">$ </span><span class="nb">sudo </span>make <span class="nb">install</span>
+<h2 id="example-code">Example Code</h2>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">ValueRefresher</span>
+<span class="p">{</span>
+    <span class="c1">// To avoid concurrent network operations, this flag is used </span>
+    <span class="c1">// to achieve synchronization between multiple threads.</span>
+    <span class="k">private</span> <span class="kt">int</span> <span class="n">_networkOperationsInProgress</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">RefreshAsync</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Interlocked</span><span class="p">.</span><span class="nf">Exchange</span><span class="p">(</span><span class="k">ref</span> <span class="n">_networkOperationsInProgress</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">try</span> 
+            <span class="p">{</span>
+                <span class="c1">//TODO: Refresh value here from network</span>
+            <span class="p">}</span>
+            <span class="k">finally</span>
+            <span class="p">{</span>
+                <span class="n">Interlocked</span><span class="p">.</span><span class="nf">Exchange</span><span class="p">(</span>
+                    <span class="k">ref</span> <span class="n">_networkOperationsInProgress</span><span class="p">,</span> 
+                    <span class="m">0</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>Change the <code class="language-plaintext highlighter-rouge">x's</code> with the correct version number from the <a href="https://taskwarrior.org/download/">TaskWarrior Download</a> page.</p>
+<h2 id="reference">Reference</h2>
 
-<p>Now run <code class="language-plaintext highlighter-rouge">Taskwarrior</code> from terminal by the command -</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>task
-</code></pre></div></div>
+<p>Microsoft Corporation. (2025). <a href="https://github.com/Azure/AppConfiguration-DotnetProvider/blob/main/src/Microsoft.Extensions.Configuration.AzureAppConfiguration/AzureAppConfigurationProvider.cs">AzureAppConfigurationProvider.cs</a>. In <em>Azure/AppConfiguration-DotnetProvider</em> (C# source code). GitHub.</p>
 
         
       </section>
@@ -444,25 +461,6 @@
       <footer class="page__meta">
         
         
-  
-
-
-  
-  
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      
-      
-      <a href="https://www.ratanparai.com/tags/ubuntu" class="page__taxonomy-item" rel="tag">Ubuntu</a>
-    
-    </span>
-  </p>
-
-
 
 
   
@@ -478,14 +476,14 @@
     
       
       
-      <a href="https://www.ratanparai.com/categories/taskwarrior" class="page__taxonomy-item" rel="tag">Taskwarrior</a>
+      <a href="https://www.ratanparai.com/categories/dotnet" class="page__taxonomy-item" rel="tag">dotnet</a>
     
     </span>
   </p>
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-04-05T15:50:00+00:00">April 05, 2018</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-08-02T00:00:00+00:00">August 02, 2025</time></p>
         
       </footer>
 
@@ -494,12 +492,11 @@
       
   <nav class="pagination">
     
-      <a href="https://www.ratanparai.com/java/java-application-using-gradle-with-code-coverage/" class="pagination--pager" title="Java application with code coverage report using gradle
+      <a href="https://www.ratanparai.com/dotnet/add-request-id-to-every-response/" class="pagination--pager" title="Add request id to all asp.net core MVC REST API response
 ">Previous</a>
     
     
-      <a href="https://www.ratanparai.com/c++/writing-unit-tests-with-bazel/" class="pagination--pager" title="Writing unit tests for C++ with Bazel and GoogleTest
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -521,35 +518,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="https://www.ratanparai.com/dotnet/limit-one-thread-for-network-operation/" rel="permalink">How to limit only one thread for network operation for update cached data
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
-
-
-
-
-  1 minute read
-
-        <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="https://www.ratanparai.com/dotnet/limit-one-thread-for-network-operation/#disqus_thread">~</a>
-      </p>
-    
-    <p class="archive__item-excerpt" itemprop="description">Learn how to use Interlocked.Exchange to ensure only one thread performs network operations for updating cached data.
-</p>
-  </article>
-</div>
         
           
 
@@ -637,6 +605,35 @@
   </article>
 </div>
         
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/" rel="permalink">Functional Testing of ASP.NET core 2.1 MVC Application
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+        <i class="fa fa-comment-o disqus-count-home" aria-hidden="true"></i><a href="https://www.ratanparai.com/dotnet/functional-testing-aspnet-core-2.1-mcv/#disqus_thread">~</a>
+      </p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In ASP.NET core 2.1, setting up functional testing project got much easier with the release of Microsoft.AspNetCore.Mvc.Testing nuget package.
+</p>
+  </article>
+</div>
+        
       </div>
     </div>
   
@@ -709,8 +706,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://www.ratanparai.com/taskwarrior/compile-taskwarrior-ubuntu/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/taskwarrior/compile-taskwarrior-ubuntu"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://www.ratanparai.com/dotnet/limit-one-thread-for-network-operation/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/dotnet/limit-one-thread-for-network-operation"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
